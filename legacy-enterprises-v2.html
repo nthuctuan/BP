@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legacy Enterprises · Vaše firma stojí víc, než si myslíte.</title>
+<meta name="description" content="Boutique poradenství pro pre-exit přípravu českých rodinných firem. Strukturovaná příprava 18 až 36 měsíců před prodejem zvyšuje cenu o 20 až 40 %.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Brand */
+    --blue:        #1B3A6B;
+    --blue-deep:   #0F2347;
+    --blue-soft:   #E8F0FB;
+    --gold:        #C9953C;
+    --gold-light:  #E5B65C;
+    --gold-tint:   rgba(201, 149, 60, 0.08);
+    --green:       #145232;
+    --ink:         #1A1A2E;
+    --ink-soft:    rgba(26, 26, 46, 0.72);
+    --ink-muted:   rgba(26, 26, 46, 0.52);
+    --ink-dim:     rgba(26, 26, 46, 0.32);
+    --cream:       #F8F6F1;
+    --white:       #FFFFFF;
+    --border:      rgba(26, 26, 46, 0.10);
+    --border-soft: rgba(26, 26, 46, 0.06);
+
+    /* Legent AI dark */
+    --legent-bg:    #0B0E1A;
+    --legent-bg-2:  #11142A;
+    --legent-purple:#6C3BCA;
+    --legent-blue:  #3B82F6;
+    --legent-text:  #E8E7EC;
+    --legent-muted: rgba(232, 231, 236, 0.62);
+    --legent-dim:   rgba(232, 231, 236, 0.32);
+    --legent-border:rgba(255,255,255,0.08);
+
+    --serif: "Lora", "Times New Roman", serif;
+    --sans:  "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono:  "JetBrains Mono", monospace;
+
+    --maxw: 1240px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 400;
+    line-height: 1.55;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 32px; }
+
+  /* Typography */
+  h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; letter-spacing: -0.015em; line-height: 1.1; color: var(--blue-deep); }
+  h1 { font-size: clamp(44px, 5.6vw, 76px); line-height: 1.05; }
+  h2 { font-size: clamp(34px, 3.8vw, 52px); }
+  h3 { font-size: clamp(22px, 2.2vw, 30px); }
+  h4 { font-size: 20px; font-weight: 600; }
+  p  { color: var(--ink-soft); font-size: 16px; max-width: 60ch; }
+  .lead { font-size: 19px; line-height: 1.6; color: var(--ink); max-width: 64ch; font-weight: 400; }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .eyebrow::before {
+    content: ""; width: 28px; height: 1px;
+    background: var(--gold);
+  }
+
+  .gold { color: var(--gold); }
+  .blue { color: var(--blue); }
+  .serif-it { font-family: var(--serif); font-style: italic; color: var(--blue); font-weight: 500; }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 26px; border-radius: 2px;
+    font-family: var(--sans); font-size: 14px; font-weight: 500;
+    letter-spacing: 0.02em; cursor: pointer;
+    border: 1px solid transparent; text-decoration: none;
+    transition: all 0.25s ease;
+  }
+  .btn-primary { background: var(--blue); color: var(--white); border-color: var(--blue); }
+  .btn-primary:hover { background: var(--blue-deep); border-color: var(--blue-deep); }
+  .btn-gold { background: var(--gold); color: var(--white); border-color: var(--gold); }
+  .btn-gold:hover { background: var(--gold-light); border-color: var(--gold-light); }
+  .btn-ghost { background: transparent; color: var(--ink); border-color: var(--ink); border-color: rgba(26,26,46,0.4); }
+  .btn-ghost:hover { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+  .btn .arrow { transition: transform 0.25s ease; }
+  .btn:hover .arrow { transform: translateX(4px); }
+
+  /* Tag */
+  .tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--blue);
+    padding: 6px 10px; background: var(--blue-soft); border-radius: 2px;
+  }
+
+  /* NAV */
+  nav.topnav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    background: rgba(248, 246, 241, 0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-soft);
+    padding: 18px 0;
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+  .logo {
+    font-family: var(--serif); font-size: 22px; font-weight: 600;
+    color: var(--ink); text-decoration: none; letter-spacing: -0.01em;
+    display: inline-flex; align-items: baseline; gap: 6px;
+  }
+  .logo .mark { color: var(--gold); font-style: italic; font-weight: 500; }
+  .logo .ent { font-style: italic; font-weight: 400; }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    color: var(--ink-soft); text-decoration: none;
+    font-size: 14px; font-weight: 400;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--blue); }
+
+  /* HERO */
+  .hero {
+    padding: 180px 0 120px;
+    position: relative;
+    border-bottom: 1px solid var(--border-soft);
+    background:
+      radial-gradient(ellipse 60% 50% at 90% 20%, var(--blue-soft), transparent 70%),
+      radial-gradient(ellipse 40% 40% at 10% 80%, var(--gold-tint), transparent 70%),
+      var(--cream);
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .hero h1 { margin: 24px 0 28px; }
+  .hero h1 .em {
+    font-style: italic; color: var(--blue);
+    font-weight: 500;
+    background: linear-gradient(180deg, transparent 65%, var(--gold-tint) 65%);
+  }
+  .hero-cta { display: flex; gap: 14px; margin-top: 40px; flex-wrap: wrap; }
+  .hero-meta {
+    display: flex; gap: 32px; margin-top: 48px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border-soft);
+    color: var(--ink-muted); font-size: 13px;
+    font-family: var(--mono); letter-spacing: 0.06em;
+  }
+  .hero-meta .check { color: var(--green); font-weight: 600; }
+
+  /* Hero side: dual stat */
+  .hero-aside {
+    display: flex; flex-direction: column; gap: 0;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .hero-aside-head {
+    padding: 24px 28px;
+    background: var(--blue);
+    color: var(--cream);
+  }
+  .hero-aside-head .lab {
+    font-family: var(--mono); font-size: 10px; color: var(--gold-light);
+    letter-spacing: 0.24em; text-transform: uppercase; margin-bottom: 6px;
+  }
+  .hero-aside-head .tt {
+    font-family: var(--serif); font-size: 18px; color: var(--cream);
+    font-weight: 500; line-height: 1.3;
+  }
+  .hero-aside-row {
+    padding: 28px;
+    border-bottom: 1px solid var(--border-soft);
+    display: grid; grid-template-columns: 100px 1fr; gap: 20px;
+    align-items: baseline;
+  }
+  .hero-aside-row:last-child { border-bottom: none; }
+  .hero-aside-row .big {
+    font-family: var(--serif); font-size: 56px; line-height: 1;
+    color: var(--blue); font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  .hero-aside-row .big .pct { font-size: 32px; color: var(--gold); margin-left: 2px; }
+  .hero-aside-row .desc {
+    color: var(--ink-soft); font-size: 13px; line-height: 1.55;
+  }
+  .hero-aside-row .src {
+    color: var(--ink-dim); font-size: 11px; font-family: var(--mono);
+    margin-top: 6px; letter-spacing: 0.04em;
+  }
+
+  /* SECTION generic */
+  .section {
+    padding: 120px 0;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .section-head { margin-bottom: 72px; max-width: 760px; }
+  .section-head h2 { margin-top: 20px; }
+  .section-head .lead { margin-top: 28px; }
+
+  /* MARKET GAP */
+  .gap-stats {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: var(--white);
+  }
+  .gap-stat {
+    padding: 40px 28px;
+    border-right: 1px solid var(--border-soft);
+    display: flex; flex-direction: column;
+  }
+  .gap-stat:last-child { border-right: none; }
+  .gap-stat .num {
+    font-family: var(--serif); font-size: 72px; line-height: 1;
+    color: var(--blue); font-weight: 600; letter-spacing: -0.03em;
+    margin-bottom: 20px;
+  }
+  .gap-stat .num .unit { font-size: 32px; color: var(--gold); }
+  .gap-stat .desc { color: var(--ink); font-size: 14px; line-height: 1.55; flex: 1; margin-bottom: 16px; }
+  .gap-stat .src {
+    font-family: var(--mono); font-size: 11px; color: var(--ink-dim);
+    letter-spacing: 0.04em;
+  }
+  .gap-mech {
+    margin-top: 72px;
+    display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px;
+    padding: 56px 48px;
+    background: var(--blue);
+    color: var(--cream);
+    border-radius: 4px;
+  }
+  .gap-mech h3 {
+    color: var(--cream); font-family: var(--serif); font-weight: 500;
+    font-size: 30px; line-height: 1.2;
+  }
+  .gap-mech h3 .em { color: var(--gold-light); font-style: italic; }
+  .gap-mech p { color: rgba(248,246,241,0.78); font-size: 16px; line-height: 1.7; max-width: none; }
+  .gap-mech p + p { margin-top: 16px; }
+
+  /* DIVISIONS */
+  .divisions-head { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: end; margin-bottom: 80px; }
+  .divisions-head .right p { font-size: 15px; line-height: 1.7; color: var(--ink-soft); }
+
+  .div-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 48px 48px 40px;
+    margin-bottom: 32px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 60px;
+  }
+  .div-card .div-meta {
+    border-right: 1px solid var(--border-soft);
+    padding-right: 24px;
+  }
+  .div-card .div-meta .lab {
+    font-family: var(--mono); font-size: 11px; color: var(--gold);
+    letter-spacing: 0.24em; text-transform: uppercase; margin-bottom: 12px;
+  }
+  .div-card .div-meta .num {
+    font-family: var(--serif); font-size: 80px; line-height: 1;
+    color: var(--blue); font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .div-card .div-meta .nm {
+    font-family: var(--serif); font-size: 22px; color: var(--ink);
+    font-weight: 500; line-height: 1.2;
+  }
+  .div-card .div-body h3 {
+    color: var(--blue-deep); font-family: var(--serif);
+    font-weight: 500;
+  }
+  .div-card .div-body p {
+    margin-top: 16px; color: var(--ink-soft);
+    font-size: 15px; line-height: 1.7;
+  }
+  .div-lines {
+    margin-top: 32px;
+    display: grid; gap: 16px;
+  }
+  .line {
+    padding: 20px 24px;
+    background: var(--cream);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 4px 4px 0;
+    display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center;
+  }
+  .line .ll {
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .line .ln {
+    font-family: var(--serif); font-size: 18px; color: var(--blue-deep);
+    font-weight: 500;
+  }
+  .line .ld {
+    font-size: 13px; color: var(--ink-muted);
+  }
+  .line .price {
+    font-family: var(--mono); font-size: 12px;
+    color: var(--blue); letter-spacing: 0.06em;
+    text-align: right; font-weight: 500;
+  }
+  .line .price .small { color: var(--ink-muted); font-weight: 400; }
+
+  /* VENTURE STUDIO startups */
+  .startups {
+    margin-top: 32px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+  }
+  .startup {
+    padding: 32px 28px;
+    border-radius: 4px;
+    color: var(--white);
+    position: relative; overflow: hidden;
+  }
+  .startup.univerze { background: linear-gradient(140deg, #F59E0B 0%, #D97706 100%); }
+  .startup.viets    { background: linear-gradient(140deg, #DC2626 0%, #991B1B 100%); }
+  .startup .label {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.24em; text-transform: uppercase;
+    opacity: 0.9; margin-bottom: 16px;
+  }
+  .startup .nm {
+    font-family: var(--serif); font-size: 38px; font-weight: 600;
+    line-height: 1; margin-bottom: 12px; color: var(--white);
+  }
+  .startup .ds {
+    font-size: 14px; line-height: 1.55; opacity: 0.92;
+    margin-bottom: 20px;
+  }
+  .startup .stat {
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.06em; opacity: 0.88;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 16px;
+  }
+  .startup .stat strong { font-weight: 600; }
+
+  /* LEGENT AI dark section */
+  .legent {
+    background: var(--legent-bg);
+    color: var(--legent-text);
+    padding: 140px 0;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--legent-border);
+  }
+  .legent::before {
+    content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 50% 60% at 80% 30%, rgba(108, 59, 202, 0.18), transparent 70%),
+      radial-gradient(ellipse 50% 60% at 20% 70%, rgba(59, 130, 246, 0.14), transparent 70%);
+    pointer-events: none;
+  }
+  .legent .wrap { position: relative; }
+  .legent h2 { color: var(--legent-text); font-family: var(--serif); font-weight: 500; }
+  .legent h2 .grad {
+    background: linear-gradient(90deg, var(--legent-purple), var(--legent-blue));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-style: italic;
+  }
+  .legent .eyebrow { color: var(--legent-blue); }
+  .legent .eyebrow::before { background: var(--legent-blue); }
+  .legent .lead { color: var(--legent-text); max-width: 64ch; }
+  .legent-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: end; margin-bottom: 64px; }
+  .legent-grid .right p { color: var(--legent-muted); font-size: 15px; line-height: 1.7; max-width: none; }
+
+  .legent-lines {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+  }
+  .legent-line {
+    padding: 28px 28px;
+    background: rgba(255,255,255,0.025);
+    border: 1px solid var(--legent-border);
+    border-radius: 4px;
+    backdrop-filter: blur(8px);
+  }
+  .legent-line .nh {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 12px;
+  }
+  .legent-line .n {
+    font-family: var(--mono); font-size: 10px; color: var(--legent-blue);
+    letter-spacing: 0.24em;
+  }
+  .legent-line .p {
+    font-family: var(--mono); font-size: 12px; color: var(--legent-text);
+    letter-spacing: 0.06em;
+  }
+  .legent-line .nm {
+    font-family: var(--serif); font-size: 22px; color: var(--legent-text);
+    font-weight: 500; line-height: 1.25; margin-bottom: 10px;
+  }
+  .legent-line .ds {
+    font-size: 13px; color: var(--legent-muted); line-height: 1.6;
+  }
+  .legent-foot {
+    margin-top: 56px;
+    padding-top: 32px;
+    border-top: 1px solid var(--legent-border);
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: var(--mono); font-size: 12px;
+    color: var(--legent-dim); letter-spacing: 0.06em;
+    flex-wrap: wrap; gap: 24px;
+  }
+  .legent-foot .stack { color: var(--legent-muted); }
+  .legent-foot .stack strong { color: var(--legent-text); }
+
+  /* PROCESS */
+  .process-head {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+    align-items: end; margin-bottom: 64px;
+  }
+  .process-pipe {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 48px;
+  }
+  .pipe-head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 40px;
+  }
+  .pipe-head h4 { font-family: var(--serif); font-size: 22px; color: var(--blue-deep); font-weight: 500; }
+  .pipe-head .meta {
+    font-family: var(--mono); font-size: 11px; color: var(--gold);
+    letter-spacing: 0.24em; text-transform: uppercase;
+  }
+  .pipe-steps {
+    display: grid; grid-template-columns: repeat(6, 1fr); gap: 0;
+    position: relative;
+  }
+  .pstep {
+    padding: 0 16px;
+    border-right: 1px solid var(--border-soft);
+    position: relative;
+  }
+  .pstep:first-child { padding-left: 0; }
+  .pstep:last-child { border-right: none; padding-right: 0; }
+  .pstep .num {
+    font-family: var(--mono); font-size: 11px; color: var(--gold);
+    letter-spacing: 0.24em; margin-bottom: 14px; font-weight: 500;
+  }
+  .pstep .nm {
+    font-family: var(--serif); font-size: 16px; color: var(--blue-deep);
+    font-weight: 500; line-height: 1.2; margin-bottom: 12px;
+  }
+  .pstep .ab {
+    font-family: var(--mono); font-size: 11px; color: var(--ink-dim);
+    margin-bottom: 8px; letter-spacing: 0.04em;
+  }
+  .pstep .ds { font-size: 12px; color: var(--ink-muted); line-height: 1.5; }
+  .pipe-foot {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-soft);
+    display: flex; align-items: center; gap: 16px;
+    color: var(--ink-muted); font-size: 13px;
+  }
+  .pipe-foot .badge {
+    background: var(--gold-tint);
+    color: var(--gold);
+    font-family: var(--mono); font-size: 11px;
+    padding: 6px 12px; border-radius: 2px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+  }
+
+  /* PERSONAE */
+  .personae {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+  }
+  .persona {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 28px 24px;
+    display: flex; flex-direction: column;
+    transition: all 0.3s ease;
+  }
+  .persona:hover { transform: translateY(-2px); border-color: var(--gold); box-shadow: 0 8px 24px rgba(26, 26, 46, 0.06); }
+  .persona .ph {
+    width: 60px; height: 60px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue), var(--blue-deep));
+    color: var(--gold-light);
+    font-family: var(--serif); font-size: 22px; font-weight: 600;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
+  }
+  .persona.p1 .ph { background: linear-gradient(135deg, var(--blue), var(--blue-deep)); }
+  .persona.p2 .ph { background: linear-gradient(135deg, var(--gold), #A87723); }
+  .persona.p3 .ph { background: linear-gradient(135deg, var(--green), #0A361F); }
+  .persona.p4 .ph { background: linear-gradient(135deg, var(--legent-purple), var(--legent-blue)); }
+  .persona .role {
+    font-family: var(--mono); font-size: 10px; color: var(--ink-dim);
+    letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 8px;
+  }
+  .persona .nm {
+    font-family: var(--serif); font-size: 20px; color: var(--blue-deep);
+    font-weight: 500; line-height: 1.2; margin-bottom: 14px;
+  }
+  .persona .qt {
+    font-family: var(--serif); font-style: italic;
+    font-size: 14px; color: var(--ink); line-height: 1.5;
+    border-left: 2px solid var(--gold); padding-left: 12px;
+    margin-bottom: 16px; flex: 1;
+  }
+  .persona .det {
+    font-size: 12px; color: var(--ink-muted); line-height: 1.6;
+    padding-top: 14px; border-top: 1px solid var(--border-soft);
+  }
+  .persona .det strong { color: var(--ink); font-weight: 500; }
+
+  /* TEAM */
+  .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .team-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 40px;
+    display: grid; grid-template-columns: 84px 1fr; gap: 28px;
+  }
+  .team-card .av {
+    width: 84px; height: 84px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue), var(--blue-deep));
+    color: var(--gold-light);
+    font-family: var(--serif); font-size: 30px; font-weight: 600;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .team-card .nm {
+    font-family: var(--serif); font-size: 24px; color: var(--blue-deep);
+    font-weight: 500; line-height: 1.15; margin-bottom: 4px;
+  }
+  .team-card .rl {
+    font-family: var(--mono); font-size: 11px; color: var(--gold);
+    letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 20px;
+  }
+  .team-card .bi {
+    font-size: 14px; color: var(--ink-soft); line-height: 1.65;
+    margin-bottom: 22px;
+  }
+  .team-card .mt {
+    list-style: none; padding-top: 18px;
+    border-top: 1px solid var(--border-soft);
+  }
+  .team-card .mt li {
+    display: flex; justify-content: space-between;
+    padding: 6px 0; font-size: 13px;
+  }
+  .team-card .mt .k {
+    font-family: var(--mono); font-size: 10px; color: var(--ink-dim);
+    letter-spacing: 0.12em; text-transform: uppercase;
+  }
+  .team-card .mt .v { color: var(--ink); font-weight: 500; }
+
+  /* WAITING LIST */
+  .waitlist {
+    padding: 140px 0;
+    background:
+      radial-gradient(ellipse 50% 50% at 50% 50%, var(--blue-soft), transparent 70%),
+      var(--cream);
+    text-align: center;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .waitlist-box {
+    max-width: 720px; margin: 0 auto;
+  }
+  .waitlist h2 {
+    margin: 24px auto 24px;
+    max-width: 18ch;
+  }
+  .waitlist h2 .em {
+    color: var(--gold);
+    font-style: italic;
+  }
+  .waitlist .lead {
+    margin: 0 auto 48px;
+    text-align: center;
+  }
+  .form {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 8px;
+    display: flex;
+    gap: 8px;
+    max-width: 520px;
+    margin: 0 auto 28px;
+    box-shadow: 0 8px 32px rgba(26, 26, 46, 0.06);
+  }
+  .form input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 14px 18px;
+    font-family: var(--sans);
+    font-size: 15px;
+    color: var(--ink);
+    outline: none;
+  }
+  .form input::placeholder { color: var(--ink-dim); }
+  .form button {
+    background: var(--blue);
+    color: var(--cream);
+    border: none;
+    padding: 14px 24px;
+    border-radius: 2px;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .form button:hover { background: var(--blue-deep); }
+
+  .waitlist-perks {
+    display: flex; justify-content: center; gap: 32px;
+    margin-top: 36px; flex-wrap: wrap;
+  }
+  .perk {
+    font-family: var(--mono); font-size: 12px;
+    color: var(--ink-muted); letter-spacing: 0.04em;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .perk::before { content: "✓"; color: var(--green); font-weight: 600; }
+
+  /* FOOTER */
+  footer {
+    padding: 72px 0 36px;
+    color: var(--ink-soft);
+  }
+  .foot-top {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .foot-top .logo { font-size: 26px; }
+  .foot-top p {
+    margin-top: 18px; font-size: 13px; line-height: 1.6;
+    max-width: 36ch; color: var(--ink-muted);
+  }
+  .foot-col h5 {
+    font-family: var(--mono); font-size: 10px;
+    color: var(--gold); letter-spacing: 0.24em;
+    text-transform: uppercase; font-weight: 500;
+    margin-bottom: 16px;
+  }
+  .foot-col ul { list-style: none; }
+  .foot-col li { padding: 5px 0; }
+  .foot-col a {
+    color: var(--ink-soft); text-decoration: none;
+    font-size: 13px; transition: color 0.2s;
+  }
+  .foot-col a:hover { color: var(--blue); }
+  .foot-bot {
+    padding-top: 28px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: var(--mono); font-size: 11px;
+    color: var(--ink-dim); letter-spacing: 0.06em;
+    flex-wrap: wrap; gap: 16px;
+  }
+  .foot-bot .legal { display: flex; gap: 24px; }
+  .foot-bot .legal a { color: var(--ink-dim); text-decoration: none; }
+  .foot-bot .legal a:hover { color: var(--blue); }
+
+  /* Responsive */
+  @media (max-width: 1000px) {
+    .hero-grid, .divisions-head, .process-head, .legent-grid, .gap-mech,
+    .div-card, .startups, .legent-lines, .team-grid, .foot-top {
+      grid-template-columns: 1fr !important; gap: 40px;
+    }
+    .div-card .div-meta { border-right: none; border-bottom: 1px solid var(--border-soft); padding-bottom: 24px; padding-right: 0; }
+    .gap-stats { grid-template-columns: repeat(2, 1fr); }
+    .gap-stat:nth-child(2) { border-right: none; }
+    .gap-stat:nth-child(1), .gap-stat:nth-child(2) { border-bottom: 1px solid var(--border-soft); }
+    .personae { grid-template-columns: repeat(2, 1fr); }
+    .pipe-steps { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .pstep { border-right: none; border-bottom: 1px solid var(--border-soft); padding-bottom: 20px; }
+    .nav-links { display: none; }
+    .section { padding: 80px 0; }
+    .hero { padding: 140px 0 80px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="topnav">
+  <div class="wrap nav-inner">
+    <a href="#" class="logo">Legacy<span class="mark">·</span><span class="ent">Enterprises</span></a>
+    <ul class="nav-links">
+      <li><a href="#divisions">Co děláme</a></li>
+      <li><a href="#gap">Mezera v trhu</a></li>
+      <li><a href="#process">Jak to funguje</a></li>
+      <li><a href="#team">Tým</a></li>
+      <li><a href="#wait" style="color: var(--blue); font-weight: 500;">Waiting list →</a></li>
+    </ul>
+    <a href="#wait" class="btn btn-primary" style="padding: 10px 20px; font-size: 13px;">Zapsat se</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Boutique poradenství pro exit českých rodinných firem</span>
+      <h1>
+        Vaše firma stojí víc, než si&nbsp;myslíte.
+        <span class="em">Ukážeme vám o&nbsp;kolik.</span>
+      </h1>
+      <p class="lead">
+        Osmnáct až třicet šest měsíců strukturované přípravy zvedne prodejní cenu malého podniku průměrně o&nbsp;20&nbsp;až&nbsp;40&nbsp;%. Brokeři přicházejí pozdě, protože je platí transakce, ne příprava. My pracujeme v&nbsp;okně, kde se hodnota skutečně tvoří.
+      </p>
+      <div class="hero-cta">
+        <a href="#wait" class="btn btn-primary">Zapsat se na waiting list <span class="arrow">→</span></a>
+        <a href="#gap" class="btn btn-ghost">Proč mezera existuje</a>
+      </div>
+      <div class="hero-meta">
+        <span><span class="check">✓</span> Bez závazku</span>
+        <span><span class="check">✓</span> Bezplatný úvodní rozhovor</span>
+        <span><span class="check">✓</span> Důvěrnost garantována</span>
+      </div>
+    </div>
+
+    <aside class="hero-aside">
+      <div class="hero-aside-head">
+        <div class="lab">Strukturální mezera</div>
+        <div class="tt">Český M&amp;A trh v&nbsp;číslech</div>
+      </div>
+      <div class="hero-aside-row">
+        <div class="big">38<span class="pct">%</span></div>
+        <div>
+          <div class="desc">vlastníků MSP v&nbsp;ČR je starších 55&nbsp;let a&nbsp;blíží se přirozenému exitu.</div>
+          <div class="src">ČSÚ, 2024</div>
+        </div>
+      </div>
+      <div class="hero-aside-row">
+        <div class="big">72<span class="pct">%</span></div>
+        <div>
+          <div class="desc">z&nbsp;nich nemá formální exitový plán ani vyjednaného nástupce.</div>
+          <div class="src">AMSP, 2024</div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- MARKET GAP -->
+<section class="section" id="gap">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Mezera v&nbsp;trhu</span>
+      <h2>Brokeři přijdou pozdě.<br>Vlastníci čekají dlouho.</h2>
+      <p class="lead">
+        Tradiční obchodní makléř žije ze&nbsp;success fee 8&nbsp;až&nbsp;12&nbsp;% z&nbsp;uzavřené transakce. Investovat osmnáct měsíců kapacity do&nbsp;klienta s&nbsp;neurčitým horizontem prodeje se&nbsp;v&nbsp;tomto modelu prostě nevyplatí. Mezera tedy není dírou v&nbsp;trhu náhodou, ale&nbsp;strukturálním selháním incentivního modelu.
+      </p>
+    </div>
+
+    <div class="gap-stats">
+      <div class="gap-stat">
+        <div class="num">38<span class="unit">%</span></div>
+        <div class="desc">vlastníků malých a&nbsp;středních podniků v&nbsp;ČR je starších 55&nbsp;let.</div>
+        <div class="src">ČSÚ, 2024</div>
+      </div>
+      <div class="gap-stat">
+        <div class="num">72<span class="unit">%</span></div>
+        <div class="desc">z&nbsp;nich nemá formální exitový plán ani vyjednaného nástupce.</div>
+        <div class="src">AMSP, 2024</div>
+      </div>
+      <div class="gap-stat">
+        <div class="num">+20<span class="unit">–40 %</span></div>
+        <div class="desc">průměrné navýšení prodejní ceny po&nbsp;strukturované přípravě.</div>
+        <div class="src">Pepperdine, 2022</div>
+      </div>
+      <div class="gap-stat">
+        <div class="num">+340<span class="unit">%</span></div>
+        <div class="desc">zájem o&nbsp;ETA akvizice v&nbsp;ČR mezi roky 2022 a&nbsp;2025.</div>
+        <div class="src">LinkedIn Learning, 2025</div>
+      </div>
+    </div>
+
+    <div class="gap-mech">
+      <h3>Proč to&nbsp;dnes nikdo nedělá <span class="em">a&nbsp;co&nbsp;to&nbsp;mění.</span></h3>
+      <div>
+        <p>Obchodní makléř bere odměnu z&nbsp;transakce. Pokud věnuje rok a&nbsp;půl klientovi, který nakonec neprodá, jeho ekonomika se&nbsp;rozpadne. Z&nbsp;téhož důvodu žádný velký poradenský dům neumí být placen za&nbsp;přípravu, která se&nbsp;může proměnit v&nbsp;rozhodnutí firmu nikdy nelistovat.</p>
+        <p>Legacy Enterprises ten incentivní model otáčí. Klient platí měsíční retainer za&nbsp;přípravu a&nbsp;optimalizaci. Success fee přijde jen tehdy, pokud k&nbsp;exitu skutečně dojde. AI vrstva přitom udrží náklady na&nbsp;úrovni, kde tato ekonomika dává smysl i&nbsp;při menší velikosti transakce.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIVISIONS -->
+<section class="section" id="divisions">
+  <div class="wrap">
+    <div class="divisions-head">
+      <div>
+        <span class="eyebrow">Tři divize, jedna teze</span>
+        <h2>Hodnota vzniká tam,<br>kde se&nbsp;ostatní nedívají.</h2>
+      </div>
+      <div class="right">
+        <p>
+          Legacy Enterprises kombinuje tři komplementární aktivity pod&nbsp;jednou střechou. Business Brokerage řeší pre-exitové okno. Venture Studio buduje vlastní produkty z&nbsp;dat a&nbsp;komunit, které vznikají kolem hlavní činnosti. Legent AI nasazuje stejnou AI vrstvu, kterou používáme interně, u&nbsp;klientů.
+        </p>
+      </div>
+    </div>
+
+    <!-- Division 01: Business Brokerage -->
+    <article class="div-card">
+      <div class="div-meta">
+        <div class="lab">Divize 01</div>
+        <div class="num">01</div>
+        <div class="nm">Business<br>Brokerage</div>
+      </div>
+      <div class="div-body">
+        <h3>Pre-exit poradenství pro&nbsp;MSP do&nbsp;50&nbsp;mil. Kč transakce.</h3>
+        <p>
+          Vstupujeme 18&nbsp;až&nbsp;36&nbsp;měsíců před plánovaným prodejem. V&nbsp;okně, kde se&nbsp;hodnota firmy dá&nbsp;ještě reálně formovat a&nbsp;kde stávající hráči nejsou ekonomicky motivovaní pracovat. Tři produktové linie pokrývají přípravu, transakci i&nbsp;vzdělání trhu.
+        </p>
+        <div class="div-lines">
+          <div class="line">
+            <div class="ll">
+              <div class="ln">Linie 1 · Exit Readiness Program</div>
+              <div class="ld">Šest modulů přípravy (ERA, QoE, SOP, Risk Mitigation, CIM, Valuation Tracking) plus Operational Enhancement Layer.</div>
+            </div>
+            <div class="price">15&nbsp;000 – 35&nbsp;000&nbsp;Kč<br><span class="small">retainer / měs.</span></div>
+          </div>
+          <div class="line">
+            <div class="ll">
+              <div class="ln">Linie 2 · Matchmaking &amp; transakční průvodcovství</div>
+              <div class="ld">Čtyři kupecké kanály: search fondy, ETA kupci, strategičtí nabyvatelé, family offices.</div>
+            </div>
+            <div class="price">success fee 3&nbsp;–&nbsp;5&nbsp;%<br><span class="small">min. 300&nbsp;000&nbsp;Kč</span></div>
+          </div>
+          <div class="line">
+            <div class="ll">
+              <div class="ln">Linie 3 · Educational &amp; Mentoring Platform</div>
+              <div class="ld">Workshopy pro&nbsp;vlastníky, mentorský program pro&nbsp;ETA kupce, digitální komunita.</div>
+            </div>
+            <div class="price">6&nbsp;–&nbsp;12&nbsp;000&nbsp;Kč / workshop<br><span class="small">+ retainery</span></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Division 02: Venture Studio -->
+    <article class="div-card">
+      <div class="div-meta">
+        <div class="lab">Divize 02</div>
+        <div class="num">02</div>
+        <div class="nm">Venture<br>Studio</div>
+      </div>
+      <div class="div-body">
+        <h3>Komunitní platformy stavěné na&nbsp;datech z&nbsp;hlavní činnosti.</h3>
+        <p>
+          Stejná logika jako u&nbsp;Business Brokerage. Najít skupinu, která má&nbsp;stejný problém a&nbsp;žádné dobré řešení, postavit kolem ní platformu a&nbsp;skrz ni budovat dlouhodobý vztah. Dva první produkty cílí na&nbsp;komunity, do&nbsp;kterých máme přirozený přístup.
+        </p>
+        <div class="startups">
+          <div class="startup univerze">
+            <div class="label">Startup · Univerze</div>
+            <div class="nm">Univerze</div>
+            <div class="ds">Komunitní aplikace pro&nbsp;studenty soukromých vysokých škol v&nbsp;ČR. Sdílení materiálů, mentoring, podnikatelské příležitosti. Budoucí talent pipeline studia.</div>
+            <div class="stat"><strong>~85&nbsp;000</strong> studentů soukromých VŠ &nbsp;·&nbsp; MŠMT, 2025</div>
+          </div>
+          <div class="startup viets">
+            <div class="label">Startup · Viets</div>
+            <div class="nm">Viets</div>
+            <div class="ds">Bilingvní platforma pro&nbsp;vietnamskou podnikatelskou komunitu v&nbsp;ČR. Spojuje starší vlastníky s&nbsp;nástupci a&nbsp;agency partnery.</div>
+            <div class="stat"><strong>~65&nbsp;000</strong> Vietnamců v&nbsp;ČR, ekonomicky nejaktivnější menšina &nbsp;·&nbsp; MV&nbsp;ČR, 2023</div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- LEGENT AI dark section -->
+<section class="legent" id="legent">
+  <div class="wrap">
+    <div class="legent-grid">
+      <div>
+        <span class="eyebrow">Divize 03 · Legent AI</span>
+        <h2 style="margin-top: 28px;">AI vrstva, kterou stavíme pro&nbsp;sebe, <span class="grad">nasazujeme i&nbsp;u&nbsp;klientů.</span></h2>
+      </div>
+      <div class="right">
+        <p>
+          Jméno vzniklo přirozeně. Latinské <em>legent</em> znamená „čtoucí“. Stejnou AI vrstvu, která uvnitř Legacy Enterprises čte trh, finanční výkazy a&nbsp;komunikaci, dokážeme implementovat u&nbsp;malých a&nbsp;středních podniků v&nbsp;ČR. Penetrace AI mezi evropskými MSP nedosahuje ani 12&nbsp;%, takže každý nasazený agent přináší nadprůměrný efekt.
+        </p>
+      </div>
+    </div>
+
+    <div class="legent-lines">
+      <div class="legent-line">
+        <div class="nh">
+          <span class="n">01 · ASSESSMENT</span>
+          <span class="p">15 000 – 35 000 Kč</span>
+        </div>
+        <div class="nm">AI Readiness Assessment</div>
+        <div class="ds">Audit procesů, datové infrastruktury a&nbsp;potenciálu automatizace. Výstupem je&nbsp;mapa rychlých výher a&nbsp;jejich očekávaný ROI.</div>
+      </div>
+      <div class="legent-line">
+        <div class="nh">
+          <span class="n">02 · SPRINT</span>
+          <span class="p">40 000 – 120 000 Kč</span>
+        </div>
+        <div class="nm">AI Implementation Sprint</div>
+        <div class="ds">Čtyřtýdenní nasazení tří až&nbsp;pěti agentů přímo do&nbsp;provozu klienta. Měříme úspory hodin a&nbsp;dopad na&nbsp;marži.</div>
+      </div>
+      <div class="legent-line">
+        <div class="nh">
+          <span class="n">03 · RETAINER</span>
+          <span class="p">8 000 – 30 000 Kč / měs.</span>
+        </div>
+        <div class="nm">Legent AI Retainer</div>
+        <div class="ds">Průběžná správa, optimalizace a&nbsp;rozšiřování agentní vrstvy. Ideální pro&nbsp;klienty Exit Readiness Programu, kteří se&nbsp;rozhodnou neprodávat.</div>
+      </div>
+      <div class="legent-line">
+        <div class="nh">
+          <span class="n">04 · ENABLEMENT</span>
+          <span class="p">6 000 – 40 000 Kč / session</span>
+        </div>
+        <div class="nm">AI Enablement Program</div>
+        <div class="ds">Školení a&nbsp;workshopy pro&nbsp;interní týmy klientů, aby agenty samostatně rozšiřovali a&nbsp;udržovali.</div>
+      </div>
+    </div>
+
+    <div class="legent-foot">
+      <span class="stack">Tech stack &nbsp;·&nbsp; <strong>Claude / GPT / Gemini</strong> &nbsp;+&nbsp; <strong>LangChain</strong>, n8n, Make, Pinecone, Whisper, Retool, Airtable, Bubble</span>
+      <span>← legent.ai &nbsp;|&nbsp; v&nbsp;přípravě 2026</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section" id="process">
+  <div class="wrap">
+    <div class="process-head">
+      <div>
+        <span class="eyebrow">Jak to&nbsp;funguje</span>
+        <h2 style="margin-top: 20px;">Exit Readiness Program v&nbsp;šesti modulech.</h2>
+      </div>
+      <p class="lead" style="font-size: 17px;">
+        Šest modulů a&nbsp;jedna AI vrstva, která&nbsp;jimi prochází. Každý modul má&nbsp;vlastní výstup, vlastní KPI a&nbsp;vlastní dopad na&nbsp;finální valuaci. Celkem nás klient ve&nbsp;střední variantě stojí přibližně dvanáct měsíců přípravy a&nbsp;25&nbsp;000&nbsp;Kč měsíčně.
+      </p>
+    </div>
+
+    <div class="process-pipe">
+      <div class="pipe-head">
+        <h4>Šest modulů Exit Readiness Programu</h4>
+        <span class="meta">+ Operational Enhancement Layer (AI agenti)</span>
+      </div>
+      <div class="pipe-steps">
+        <div class="pstep">
+          <div class="num">01</div>
+          <div class="nm">Exit Readiness Assessment</div>
+          <div class="ab">ERA · 4 týdny</div>
+          <div class="ds">Bodové skóre, mapa slabin, akční roadmapa pro&nbsp;dalších 18&nbsp;měsíců.</div>
+        </div>
+        <div class="pstep">
+          <div class="num">02</div>
+          <div class="nm">Quality of&nbsp;Earnings</div>
+          <div class="ab">QoE · 6 týdnů</div>
+          <div class="ds">Normalizace EBITDA, identifikace jednorázových položek, čitelný finanční obraz pro&nbsp;kupce.</div>
+        </div>
+        <div class="pstep">
+          <div class="num">03</div>
+          <div class="nm">SOP Package</div>
+          <div class="ab">SOP · 3 měsíce</div>
+          <div class="ds">Standardizované procesy, snížení závislosti na&nbsp;osobě vlastníka, dokumentační balíček.</div>
+        </div>
+        <div class="pstep">
+          <div class="num">04</div>
+          <div class="nm">Risk Mitigation</div>
+          <div class="ab">RMP · průběžně</div>
+          <div class="ds">Právní, finanční a&nbsp;operativní rizika, jejich oceňování a&nbsp;eliminace před&nbsp;due diligence.</div>
+        </div>
+        <div class="pstep">
+          <div class="num">05</div>
+          <div class="nm">Confidential Memorandum</div>
+          <div class="ab">CIM · 8 týdnů</div>
+          <div class="ds">Profesionální prezentace firmy pro&nbsp;kupce. Investiční teze, segmenty, projekce.</div>
+        </div>
+        <div class="pstep">
+          <div class="num">06</div>
+          <div class="nm">Valuation Tracking</div>
+          <div class="ab">VTR · čtvrtletně</div>
+          <div class="ds">Průběžné měření růstu hodnoty firmy, signalizace optimálního okna pro&nbsp;listing.</div>
+        </div>
+      </div>
+      <div class="pipe-foot">
+        <span class="badge">OEL · AI vrstva</span>
+        <span>Operational Enhancement Layer propojuje moduly. AI agenti automatizují reporting, monitoring KPI a&nbsp;sběr dat napříč procesy.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONAE -->
+<section class="section" id="for-whom">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Pro&nbsp;koho pracujeme</span>
+      <h2>Čtyři reálné situace, čtyři vstupní body.</h2>
+      <p class="lead">
+        Nestavíme se&nbsp;jen za&nbsp;prodávajícími. Pre-exitový trh je&nbsp;dvoustranný a&nbsp;komunita kolem něj má&nbsp;hodnotu, která dnes v&nbsp;ČR nemá kurátora. Personae níže odrážejí čtyři typické vstupy do&nbsp;ekosystému Legacy Enterprises.
+      </p>
+    </div>
+
+    <div class="personae">
+      <div class="persona p1">
+        <div class="ph">JH</div>
+        <div class="role">Persona 01 · Prodávající</div>
+        <div class="nm">Jan Holeček, 61</div>
+        <div class="qt">„Firmu jsem stavěl 27&nbsp;let. Teď nevím, jestli má&nbsp;cenu prodat, nebo nechat ležet.“</div>
+        <div class="det"><strong>HVAC, Olomouc.</strong> 18&nbsp;mil. Kč obrat, 12&nbsp;zaměstnanců, bez nástupce. Trigger: doporučení od&nbsp;účetního.</div>
+      </div>
+      <div class="persona p2">
+        <div class="ph">TM</div>
+        <div class="role">Persona 02 · ETA kupec</div>
+        <div class="nm">Tereza Málková, 34</div>
+        <div class="qt">„Chci koupit existující firmu, ne&nbsp;stavět start-up od&nbsp;nuly. Ale&nbsp;nikdo mě&nbsp;tu&nbsp;nenavedl.“</div>
+        <div class="det"><strong>IT projektová manažerka.</strong> 8&nbsp;let praxe, cca&nbsp;2&nbsp;mil. Kč úspory, hledá akvizici 10–30&nbsp;mil. Kč.</div>
+      </div>
+      <div class="persona p3">
+        <div class="ph">VN</div>
+        <div class="role">Persona 03 · Vietnamská diaspora</div>
+        <div class="nm">Van Thanh Nguyen, 58</div>
+        <div class="qt">„Syn nemá zájem. Komunita nemá nikoho, kdo by tomu rozuměl v&nbsp;naší řeči.“</div>
+        <div class="det"><strong>3&nbsp;restaurace v&nbsp;Praze od&nbsp;1992.</strong> Komunikuje primárně vietnamsky, vysoká nedůvěra k&nbsp;neznámým.</div>
+      </div>
+      <div class="persona p4">
+        <div class="ph">MK</div>
+        <div class="role">Persona 04 · Univerze</div>
+        <div class="nm">Matúš Kováč, 27</div>
+        <div class="qt">„Studuji soukromou VŠ a&nbsp;v&nbsp;ročníku nemáme nikoho, s&nbsp;kým bych začal podnikat.“</div>
+        <div class="det"><strong>Student soukromé VŠ v&nbsp;Praze.</strong> Hledá spoluzakladatele a&nbsp;mentora. Budoucí pipeline Venture Studia.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section" id="team">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Tým</span>
+      <h2>Dva zakladatelé, jeden AI tým.</h2>
+      <p class="lead">
+        Legacy Enterprises drží principiálně nízkou organizační hmotnost. Rok 1 a&nbsp;2 nemáme lidské zaměstnance, jen dva zakladatele a&nbsp;agentní vrstvu, která zastává analytické, výzkumné a&nbsp;administrativní role. Lidé přicházejí až&nbsp;tam, kde rozhoduje vztah, vyjednávání a&nbsp;důvěra.
+      </p>
+    </div>
+
+    <div class="team-grid">
+      <article class="team-card">
+        <div class="av">TN</div>
+        <div>
+          <div class="nm">Thuc Tuan Nguyen</div>
+          <div class="rl">CEO · M&amp;A · Strategie</div>
+          <div class="bi">Sedm let praxe v&nbsp;obchodu, business developmentu, investicích a&nbsp;tržní evaluaci. Studuje bakalářský program Podnikání a&nbsp;management na&nbsp;Panevropské univerzitě. Vede strategii holdingu, M&amp;A divizi a&nbsp;vztah s&nbsp;klienty.</div>
+          <ul class="mt">
+            <li><span class="k">Praxe</span><span class="v">~7 let · obchod &amp; investice</span></li>
+            <li><span class="k">Jazyky</span><span class="v">CZ · EN · VN</span></li>
+            <li><span class="k">Podíl</span><span class="v">50 %</span></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="team-card">
+        <div class="av">MK</div>
+        <div>
+          <div class="nm">Matěj Klíma</div>
+          <div class="rl">CTO · Head of&nbsp;AI · DevOps</div>
+          <div class="bi">Architekt AI vrstvy holdingu. Zodpovídá za&nbsp;DevOps, datovou infrastrukturu a&nbsp;agentní systémy, které tvoří provozní jádro všech tří divizí. Vyvíjí webové i&nbsp;mobilní aplikace Univerze a&nbsp;Viets interně.</div>
+          <ul class="mt">
+            <li><span class="k">Specializace</span><span class="v">IT · DevOps · AI</span></li>
+            <li><span class="k">Role</span><span class="v">Build &amp; Run</span></li>
+            <li><span class="k">Podíl</span><span class="v">50 %</span></li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- WAITING LIST -->
+<section class="waitlist" id="wait">
+  <div class="wrap waitlist-box">
+    <span class="eyebrow" style="justify-content: center;">Připojte se před oficiálním spuštěním</span>
+    <h2>Když firma stojí víc,<br><span class="em">čeká se pohodlněji.</span></h2>
+    <p class="lead">
+      Připravujeme oficiální spuštění Legacy Enterprises ve&nbsp;třetím kvartálu 2026. Zápis na&nbsp;waiting list je&nbsp;bez závazku a&nbsp;dostanete od&nbsp;nás kvartální insighty z&nbsp;českého M&amp;A trhu, případové studie a&nbsp;brzký přístup k&nbsp;Exit Readiness Auditu zdarma.
+    </p>
+    <form class="form" onsubmit="event.preventDefault(); alert('Děkujeme. Zápis přijat. Ozveme se brzy.');">
+      <input type="email" placeholder="vase@email.cz" required>
+      <button type="submit">Zapsat se na waiting list</button>
+    </form>
+    <div class="waitlist-perks">
+      <span class="perk">Bezplatný Exit Readiness Audit při launchi</span>
+      <span class="perk">Kvartální insighty z&nbsp;M&amp;A trhu</span>
+      <span class="perk">Bez spamu, kdykoli odhlášení</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a href="#" class="logo">Legacy<span class="mark" style="color: var(--gold);">·</span><span class="ent">Enterprises</span></a>
+        <p>
+          Boutique poradenství pro&nbsp;pre-exitovou přípravu českých rodinných firem. Tři divize, jedna AI vrstva. Praha, 2026.
+        </p>
+      </div>
+      <div class="foot-col">
+        <h5>Divize</h5>
+        <ul>
+          <li><a href="#divisions">Business Brokerage</a></li>
+          <li><a href="#divisions">Venture Studio</a></li>
+          <li><a href="#legent">Legent AI</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Portfolio</h5>
+        <ul>
+          <li><a href="#divisions">Univerze</a></li>
+          <li><a href="#divisions">Viets</a></li>
+          <li><a href="#legent">Legent AI</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Spojení</h5>
+        <ul>
+          <li><a href="#wait">Waiting list</a></li>
+          <li><a href="mailto:contact@legacyenterprises.cz">E-mail</a></li>
+          <li><a href="#team">Tým</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot-bot">
+      <div>© 2026 Legacy Enterprises s.r.o. &nbsp;·&nbsp; IČO ____ &nbsp;·&nbsp; Praha</div>
+      <div class="legal">
+        <a href="#">Zásady soukromí</a>
+        <a href="#">Cookies</a>
+        <a href="#">Etický kodex</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
