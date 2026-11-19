@@ -58,7 +58,7 @@ Legenda: `[x]` hotovo a ověřeno · `[~]` rozpracováno · `[ ]` čeká
 - [x] `sitemap.xml`, `robots.txt`, `llms.txt` (oba weby), canonical, OG/Twitter u všech stránek
 - [x] Strukturovaná data (Organization, Service, FAQPage, Article, HowTo, WebApplication, Breadcrumb) – validní JSON
 - [x] Interní prolinkování, žádné osiřelé stránky (`tests/seo.mjs`)
-- [~] Výkon: Lighthouse mobil – měřené stránky 96–100 ve všech kategoriích (LCP fix: bez animace H1, preload fontů); dávka všech stránek běží
+- [x] Výkon: Lighthouse mobil – všech 23 indexovaných stránek: výkon 96–100, a11y/best practices/SEO 100 (`docs/QA-REPORT.md`)
 - [ ] SEO audit agentem/skillem a oprava nálezů
 - [x] Návod Google Search Console + Bing Webmaster (v `docs/DEPLOY.md`)
 
