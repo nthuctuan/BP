@@ -55,20 +55,20 @@ Legenda: `[x]` hotovo a ověřeno · `[~]` rozpracováno · `[ ]` čeká
 ## SEO a GEO (vyhledávače + AI asistenti)
 
 - [ ] Klíčová slova CZ (prodej firmy, ocenění firmy, nástupnictví, příprava na prodej, M&A pro MSP, AI pro firmy…) → mapování na stránky, titulky, H1, meta popisky
-- [ ] `sitemap.xml`, `robots.txt`, `llms.txt` (oba weby), canonical, OG/Twitter u všech stránek
-- [ ] Strukturovaná data na všech stránkách (validní JSON-LD) + Breadcrumb
-- [ ] Interní prolinkování (články ↔ služby ↔ nástroje), žádné osiřelé stránky
-- [ ] Výkon: Lighthouse (Performance/SEO/Best Practices/A11y ≥ 95 na mobilu)
+- [x] `sitemap.xml`, `robots.txt`, `llms.txt` (oba weby), canonical, OG/Twitter u všech stránek
+- [x] Strukturovaná data (Organization, Service, FAQPage, Article, HowTo, WebApplication, Breadcrumb) – validní JSON
+- [x] Interní prolinkování, žádné osiřelé stránky (`tests/seo.mjs`)
+- [~] Výkon: Lighthouse mobil – měřené stránky 96–100 ve všech kategoriích (LCP fix: bez animace H1, preload fontů); dávka všech stránek běží
 - [ ] SEO audit agentem/skillem a oprava nálezů
-- [ ] Návod Google Search Console + Bing Webmaster (v `docs/DEPLOY.md`)
+- [x] Návod Google Search Console + Bing Webmaster (v `docs/DEPLOY.md`)
 
 ## Přílohy (ke stažení / pro obchod)
 
-- [ ] PDF „Checklist: příprava firmy na prodej“ (lead magnet, Legacy)
-- [ ] PDF one-pager Legacy Enterprises (pro e-mail a schůzky)
-- [ ] PDF one-pager Legent AI
-- [ ] Logo v SVG/PNG (světlé/tmavé) – mini brand kit `assets/brand/`
-- [~] Tisknutelný výsledek Exit testu (hotovo) a AI auditu (print CSS)
+- [x] PDF „Checklist: příprava firmy na prodej“ (2 strany A4) – prolinkováno z úvodu, článku, Exit Readiness, patičky
+- [x] PDF one-pager Legacy Enterprises
+- [x] PDF přehled služeb Legent AI
+- [x] Logo kit `assets/brand/` + `legent/assets/brand/` (PNG světlé/tmavé, SVG symbol) – sekce „Ke stažení“ na O nás
+- [x] Tisknutelný výsledek Exit testu a AI auditu (print CSS)
 
 ## Kvalita a ověření
 
@@ -76,8 +76,8 @@ Legenda: `[x]` hotovo a ověřeno · `[~]` rozpracováno · `[ ]` čeká
 - [x] axe-core přístupnost (0 vážných chyb, light+dark), html-validate bez chyb (25 stránek)
 - [x] Funkční testy: přepínač tématu, mobilní menu, formuláře (oba weby), předvyplnění tématu, Exit test, AI audit, kalkulačka, ROI
 - [ ] Vizuální kontrola screenshotů (desktop 1440, tablet 834, mobil 390; light + dark)
-- [ ] GitHub Actions CI (`npm test`)
-- [ ] `docs/DEPLOY.md` (GitHub Pages / Netlify / Vercel, domény, formuláře)
+- [x] GitHub Actions CI (`npm test`) + workflow nasazení na GitHub Pages
+- [x] `docs/DEPLOY.md` (GitHub Pages / Netlify / Cloudflare / Vercel, samostatná doména Legent, formuláře, analytika, Search Console) + `_headers` (CSP, HSTS, cache)
 - [ ] Zpětná kontrola: korektura češtiny, konzistence cen/údajů napříč stránkami, code review, kontrola odkazů
 - [ ] Finální QA průchod obou webů
 
@@ -93,3 +93,4 @@ Legenda: `[x]` hotovo a ověřeno · `[~]` rozpracováno · `[ ]` čeká
 - **#3d** — Legent AI: design systém (tmavý, glass, gradient, bento), partials, favicon + OG, sdílený site.js (kopie přes build), úvodní stránka s ilustrativní konzolí agentů (3 scénáře, respektuje reduced motion).
 - **#3e** — Legent: Služby a ceník, Řešení (6 oborů), AI readiness audit, ROI kalkulačka; funkční testy auditu a ROI zelené. Zbývá: O nás, Kontakt, GDPR, 404, llms.txt.
 - **#3f** — Legent: O nás, Kontakt, GDPR+cookies, 404, llms.txt. **Oba weby kompletní: 25 stránek, `npm test` zcela zelený** (jen varování o placeholderech IČO/sídla). Další: SEO audit, Lighthouse, přílohy (PDF), CI, DEPLOY.md, zpětná kontrola.
+- **#4 (čt 19. 11.)** — Lighthouse (mobil) 96–100 ve všech kategoriích, oprava LCP; PDF přílohy (checklist, 2× one-pager), logo kit, odkazy ke stažení; Netlify Forms atributy; CI + Pages workflow; `_headers`; DEPLOY.md; statická SEO kontrola v `npm test` (unikátní titulky, canonical, sitemap, sirotci).

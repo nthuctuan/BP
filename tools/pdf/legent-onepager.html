@@ -1,0 +1,55 @@
+<!doctype html><html lang="cs"><head><meta charset="utf-8"><title>Legent AI – přehled služeb</title>
+<link rel="stylesheet" href="{{fontsLegent}}"><style>
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Geist, sans-serif; color: #ECEBF2; font-size: 10pt; line-height: 1.5; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.page { width: 210mm; height: 297mm; padding: 16mm; position: relative; overflow: hidden; background: #07080F; }
+.page::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 40% at 90% 0%, rgba(124,77,255,.35), transparent 60%), radial-gradient(ellipse 50% 40% at 0% 100%, rgba(59,130,246,.22), transparent 60%); }
+.page > * { position: relative; }
+.top { display: flex; justify-content: space-between; align-items: center; border-bottom: .6pt solid rgba(255,255,255,.14); padding-bottom: 5mm; margin-bottom: 7mm; }
+.logo { display: flex; align-items: center; gap: 3mm; font-size: 15pt; font-weight: 600; }
+.logo b { width: 7mm; height: 7mm; border-radius: 1.8mm; background: linear-gradient(135deg,#7C4DFF,#3B82F6); display: inline-block; }
+.meta { font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; letter-spacing: .14em; text-transform: uppercase; color: #9DB8FF; }
+h1 { font-size: 27pt; font-weight: 500; letter-spacing: -.03em; line-height: 1.05; }
+h1 span, h2 span { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; background: linear-gradient(90deg,#B69CFF,#7FB2FF); -webkit-background-clip: text; color: transparent; }
+h2 { font-size: 14pt; font-weight: 500; letter-spacing: -.02em; margin-bottom: 3mm; }
+h3 { font-size: 11pt; font-weight: 600; margin-bottom: 1.2mm; }
+p, li { color: rgba(236,235,242,.75); }
+.lead { font-size: 11pt; margin-top: 4mm; max-width: 165mm; }
+.k { font-family: 'JetBrains Mono', monospace; font-size: 7pt; letter-spacing: .14em; text-transform: uppercase; color: #7FB2FF; display: block; margin-bottom: 1.5mm; }
+.box { background: rgba(255,255,255,.04); border: .6pt solid rgba(255,255,255,.12); border-radius: 3mm; padding: 5mm; }
+.box.hl { border-color: rgba(182,156,255,.5); background: rgba(124,77,255,.12); }
+.price { font-family: 'JetBrains Mono', monospace; font-size: 9pt; color: #ECEBF2; margin-top: 2.5mm; padding-top: 2mm; border-top: .6pt solid rgba(255,255,255,.12); }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; }
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; }
+.mt { margin-top: 5mm; } .mt-s { margin-top: 3mm; }
+ul { list-style: none; display: grid; gap: 1.3mm; } li { padding-left: 4.5mm; position: relative; } li::before { content: "✓"; position: absolute; left: 0; color: #34D399; }
+strong { color: #fff; font-weight: 600; }
+.foot { position: absolute; left: 16mm; right: 16mm; bottom: 7mm; display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 7pt; color: rgba(236,235,242,.6); border-top: .6pt solid rgba(255,255,255,.12); padding-top: 3mm; }
+</style></head><body>
+<section class="page">
+  <div class="top"><div class="logo"><b></b>Legent AI</div><div class="meta">AI agenti pro české MSP</div></div>
+  <h1>AI agenti, kteří <span>čtou vaši firmu.</span></h1>
+  <p class="lead">Faktury, poptávky, reporty, e-maily. Nasadíme 3–5 AI agentů přímo do vašeho provozu za čtyři týdny a změříme, kolik hodin vám vrátí. Sporné případy vždy schvaluje člověk.</p>
+  <div class="grid2 mt">
+    <div class="box"><span class="k">01 · ~2 týdny</span><h3>AI Readiness Assessment</h3><p>Audit procesů a dat, mapa rychlých výher podle návratnosti, odhad úspor.</p><div class="price">15 000 – 35 000 Kč</div></div>
+    <div class="box hl"><span class="k">02 · 4 týdny</span><h3>AI Implementation Sprint</h3><p>3–5 agentů v provozu, napojení na vaše systémy, zaškolení, měření úspor.</p><div class="price">40 000 – 120 000 Kč</div></div>
+    <div class="box"><span class="k">03 · průběžně</span><h3>Legent AI Retainer</h3><p>Správa, monitoring, nové automatizace, měsíční report úspor.</p><div class="price">8 000 – 30 000 Kč / měsíc</div></div>
+    <div class="box"><span class="k">04 · workshopy</span><h3>AI Enablement Program</h3><p>Tým, který AI používá bezpečně a sám rozšiřuje agenty.</p><div class="price">6 000 – 40 000 Kč / session</div></div>
+  </div>
+  <h2 class="mt">Kde agenti pomáhají <span>nejvíc</span></h2>
+  <div class="grid3 mt-s">
+    <div class="box"><h3>Servis &amp; instalace</h3><p>Poptávky do pár minut, plánování techniků, protokoly.</p></div>
+    <div class="box"><h3>Účetní kanceláře</h3><p>Vytěžování a párování dokladů, upomínky klientům.</p></div>
+    <div class="box"><h3>Gastronomie</h3><p>Rezervace, nákup surovin, odpovědi na recenze.</p></div>
+    <div class="box"><h3>Autoservisy</h3><p>Objednávky, stav zakázky, připomínky STK.</p></div>
+    <div class="box"><h3>E-commerce</h3><p>Podpora k objednávkám, vratky, produktové texty.</p></div>
+    <div class="box"><h3>Výroba</h3><p>Kalkulace z poptávek, znalostní asistent, reporting.</p></div>
+  </div>
+  <div class="grid2 mt">
+    <div><h2>Bezpečnost</h2><ul><li>Data přednostně v EU, bez trénování modelů na vašich datech</li><li>Člověk schvaluje citlivé kroky, vše se loguje</li><li>GDPR a AI Act, žádný vendor lock-in</li></ul></div>
+    <div><h2>Kontakt</h2><p><strong>Konzultace zdarma, 30 minut</strong><br>{{email}}<br>{{legentUrl}} · Praha a online<br>Divize skupiny Legacy Enterprises</p></div>
+  </div>
+  <div class="foot"><span>© {{year}} {{company}} · IČO {{ico}}</span><span>Ceny bez DPH · {{legentUrl}}</span></div>
+</section>
+</body></html>

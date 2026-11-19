@@ -1206,7 +1206,7 @@ input[type="range"] { width: 100%; accent-color: var(--accent); height: 28px; }
 @media (prefers-reduced-motion: no-preference) {
   .js .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .js .reveal.in { opacity: 1; transform: none; }
-  .hero h1, .page-hero h1 { animation: rise 0.9s cubic-bezier(.2,.7,.2,1) both; }
+  /* nadpisy bez animace — neoddalují LCP */
   .hero .lead, .page-hero .lead { animation: rise 0.9s 0.12s cubic-bezier(.2,.7,.2,1) both; }
   .hero-aside { animation: rise 1s 0.2s cubic-bezier(.2,.7,.2,1) both; }
   @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }

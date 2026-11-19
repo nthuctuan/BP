@@ -63,11 +63,26 @@ const LEGENT_JOBS = [
   { out: 'legent/assets/img/og-roi.png', w: 1200, h: 630, html: legentOg('Kolik hodin vám <span>AI agenti vrátí?</span>', 'ROI kalkulačka') },
 ];
 
+const legacyLogo = (color, dot) => `<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="${fontsLegacy}">
+<style>html,body{margin:0;background:transparent}div{font-family:Lora;font-size:120px;font-weight:600;color:${color};padding:30px 50px;display:inline-block;letter-spacing:-1px}i{color:${dot};font-weight:400}em{font-weight:400}</style></head>
+<body><div>Legacy <i>·</i> <em>Enterprises</em></div></body></html>`;
+const legentLogo = (color) => `<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="${fontsLegent}">
+<style>html,body{margin:0;background:transparent}div{font-family:Geist;font-size:120px;font-weight:600;color:${color};padding:30px 50px;display:inline-flex;align-items:center;gap:36px;letter-spacing:-4px}svg{width:150px;height:150px}</style></head>
+<body><div>${svg('legent/assets/img/favicon.svg').replace('<svg ', '<svg width="150" height="150" ')}Legent AI</div></body></html>`;
+JOBS.push(
+  { out: 'assets/brand/legacy-logo-na-svetle.png', w: 1500, h: 220, html: legacyLogo('#1A1A2E', '#C9953C'), transparent: true },
+  { out: 'assets/brand/legacy-logo-na-tmave.png', w: 1500, h: 220, html: legacyLogo('#F4F1EA', '#C8A86B'), transparent: true },
+);
+LEGENT_JOBS.push(
+  { out: 'legent/assets/brand/legent-logo-na-svetle.png', w: 1000, h: 220, html: legentLogo('#07080F'), transparent: true },
+  { out: 'legent/assets/brand/legent-logo-na-tmave.png', w: 1000, h: 220, html: legentLogo('#ECEBF2'), transparent: true },
+);
+
 const browser = await chromium.launch();
 const page = await browser.newPage({ deviceScaleFactor: 1 });
 let all = [...JOBS];
 for (const j of LEGENT_JOBS) {
-  try { all.push({ ...j, html: j.html || icon(j.file, j.w) }); } catch { /* legent favicon zatím neexistuje */ }
+  all.push({ ...j, html: j.html || icon(j.file, j.w) });
 }
 for (const j of all) {
   await page.setViewportSize({ width: j.w, height: j.h });
@@ -76,7 +91,8 @@ for (const j of all) {
   writeFileSync(tmp, j.html);
   await page.goto(pathToFileURL(tmp).href, { waitUntil: 'networkidle' });
   await page.evaluate(() => document.fonts.ready);
-  await page.screenshot({ path: join(ROOT, j.out), type: 'png' });
+  mkdirSync(dirname(join(ROOT, j.out)), { recursive: true });
+  await page.screenshot({ path: join(ROOT, j.out), type: 'png', omitBackground: !!j.transparent });
   console.log('✓', j.out);
 }
 await browser.close();

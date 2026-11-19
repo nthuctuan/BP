@@ -1,0 +1,33 @@
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Inter, sans-serif; color: #1A1A2E; font-size: 10pt; line-height: 1.5; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.page { width: 210mm; min-height: 297mm; padding: 16mm 16mm 14mm; position: relative; background: #F8F6F1; page-break-after: always; overflow: hidden; }
+.page:last-child { page-break-after: auto; }
+.top { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 0.6pt solid rgba(26,26,46,.18); padding-bottom: 5mm; margin-bottom: 8mm; }
+.logo { font-family: Lora, serif; font-size: 15pt; font-weight: 600; }
+.logo i { color: #C9953C; font-weight: 400; } .logo em { font-weight: 400; }
+.meta { font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; letter-spacing: .14em; text-transform: uppercase; color: #8A6420; }
+h1 { font-family: Lora, serif; font-weight: 500; font-size: 26pt; line-height: 1.08; letter-spacing: -.01em; }
+h1 span, h2 span { font-style: italic; color: #1B3A6B; }
+h2 { font-family: Lora, serif; font-weight: 500; font-size: 14pt; margin: 0 0 3mm; }
+h3 { font-family: Lora, serif; font-weight: 600; font-size: 11pt; margin-bottom: 1.5mm; }
+p { color: rgba(26,26,46,.78); }
+.lead { font-size: 11pt; color: #1A1A2E; margin-top: 4mm; max-width: 160mm; }
+.k { font-family: 'JetBrains Mono', monospace; font-size: 7pt; letter-spacing: .16em; text-transform: uppercase; color: #8A6420; display: block; margin-bottom: 1.5mm; }
+.foot { position: absolute; left: 16mm; right: 16mm; bottom: 10mm; display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 7pt; color: rgba(26,26,46,.6); border-top: 0.6pt solid rgba(26,26,46,.15); padding-top: 3mm; }
+.box { background: #fff; border: 0.6pt solid rgba(26,26,46,.12); border-radius: 2mm; padding: 5mm; }
+.navy { background: #1B3A6B; color: #F8F6F1; border-radius: 2mm; padding: 6mm; }
+.navy p, .navy li { color: rgba(248,246,241,.85); }
+.navy h2, .navy h3 { color: #fff; } .navy h2 span { color: #E5B65C; }
+ul.check { list-style: none; display: grid; gap: 1.6mm; }
+ul.check li { padding-left: 6mm; position: relative; }
+ul.check li::before { content: ""; position: absolute; left: 0; top: 1.2mm; width: 3mm; height: 3mm; border: 0.8pt solid #1B3A6B; border-radius: .6mm; }
+ul.dot { list-style: none; display: grid; gap: 1.2mm; }
+ul.dot li { padding-left: 4mm; position: relative; }
+ul.dot li::before { content: "◆"; position: absolute; left: 0; color: #C9953C; font-size: 6pt; top: .8mm; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; }
+.mt { margin-top: 6mm; } .mt-s { margin-top: 3mm; }
+strong { color: #1A1A2E; font-weight: 600; }
+.navy strong { color: #fff; }
+a { color: #1B3A6B; }

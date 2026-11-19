@@ -41,7 +41,7 @@ function build(siteDir, baseUrl, files) {
     .filter(({ f }) => !/name="robots" content="noindex"/.test(readFileSync(f, 'utf8')))
     .sort((a, b) => (a.rel === 'index.html' ? -1 : b.rel === 'index.html' ? 1 : a.rel.localeCompare(b.rel)))
     .map(({ f, rel }) => {
-      const loc = baseUrl.replace(/\/$/, '') + '/' + (rel === 'index.html' ? '' : rel.replace(/(^|\/)index\.html$/, '$1'));
+      const loc = baseUrl.replace(/\/$/, '') + '/' + (rel === 'index.html' ? '' : rel); // shodně s canonical
       return `  <url><loc>${loc}</loc><lastmod>${lastmod(f)}</lastmod><priority>${priority(rel)}</priority></url>`;
     });
   writeFileSync(join(siteDir, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>\n`);
