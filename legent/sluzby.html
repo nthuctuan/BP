@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<title>Služby a ceník · AI audit, implementace agentů, správa | Legent AI</title>
+<meta name="description" content="Čtyři služby Legent AI s pevnými cenami: AI Readiness Assessment (15–35 tis.), Implementation Sprint (40–120 tis.), Retainer (8–30 tis./měs.) a AI Enablement pro týmy.">
+<link rel="canonical" href="https://legent.ai/sluzby.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:site_name" content="Legent AI">
+<meta property="og:title" content="Služby a ceník · Legent AI">
+<meta property="og:description" content="Od AI auditu po agenty v provozu. Pevné ceny, měřitelné výsledky.">
+<meta property="og:url" content="https://legent.ai/sluzby.html">
+<meta property="og:image" content="https://legent.ai/assets/img/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<!-- @partial head root="" -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07080F">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preload" href="assets/fonts/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="assets/css/legent.css">
+<script>document.documentElement.classList.add('js');</script>
+<script src="assets/js/config.js" defer></script>
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/legent.js" defer></script>
+<!-- @end head -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ItemList",
+      "name": "Služby Legent AI",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "item": { "@type": "Service", "name": "AI Readiness Assessment", "provider": { "@type": "Organization", "name": "Legent AI" }, "offers": { "@type": "Offer", "priceSpecification": { "@type": "PriceSpecification", "minPrice": 15000, "maxPrice": 35000, "priceCurrency": "CZK" } } } },
+        { "@type": "ListItem", "position": 2, "item": { "@type": "Service", "name": "AI Implementation Sprint", "provider": { "@type": "Organization", "name": "Legent AI" }, "offers": { "@type": "Offer", "priceSpecification": { "@type": "PriceSpecification", "minPrice": 40000, "maxPrice": 120000, "priceCurrency": "CZK" } } } },
+        { "@type": "ListItem", "position": 3, "item": { "@type": "Service", "name": "Legent AI Retainer", "provider": { "@type": "Organization", "name": "Legent AI" }, "offers": { "@type": "Offer", "priceSpecification": { "@type": "UnitPriceSpecification", "minPrice": 8000, "maxPrice": 30000, "priceCurrency": "CZK", "unitText": "měsíc" } } } },
+        { "@type": "ListItem", "position": 4, "item": { "@type": "Service", "name": "AI Enablement Program", "provider": { "@type": "Organization", "name": "Legent AI" }, "offers": { "@type": "Offer", "priceSpecification": { "@type": "PriceSpecification", "minPrice": 6000, "maxPrice": 40000, "priceCurrency": "CZK" } } } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Legent AI", "item": "https://legent.ai/" },
+        { "@type": "ListItem", "position": 2, "name": "Služby a ceník", "item": "https://legent.ai/sluzby.html" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<!-- @partial header root="" active="sluzby" -->
+<a class="skip-link" href="#main">Přeskočit na obsah</a>
+<nav class="topnav" aria-label="Hlavní navigace">
+  <div class="wrap">
+    <div class="nav-inner">
+      <a href="index.html" class="logo" aria-label="Legent AI – úvodní stránka">
+        <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lg-sluzby" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7C4DFF"/><stop offset="1" stop-color="#3B82F6"/></linearGradient></defs><rect width="32" height="32" rx="8" fill="url(#lg-sluzby)"/><path d="M16 23.5c-3.2-2.4-6.8-2.6-9.5-1.2V9.6c2.7-1.4 6.3-1.2 9.5 1.2 3.2-2.4 6.8-2.6 9.5-1.2v12.7c-2.7-1.4-6.3-1.2-9.5 1.2zM16 10.8v12.7" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        Legent AI
+      </a>
+      <ul class="nav-links">
+        <li><a href="sluzby.html" data-nav="sluzby" aria-current="page">Služby</a></li>
+        <li><a href="reseni.html" data-nav="reseni">Řešení</a></li>
+        <li><a href="ai-audit.html" data-nav="audit">AI audit</a></li>
+        <li><a href="roi.html" data-nav="roi">ROI kalkulačka</a></li>
+        <li><a href="o-nas.html" data-nav="about">O nás</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="kontakt.html" class="btn btn-primary" data-nav="contact">Konzultace zdarma <span class="arrow">→</span></a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Otevřít menu">
+          <svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <ul>
+        <li><a href="sluzby.html" data-nav="sluzby" aria-current="page">Služby a ceník</a></li>
+        <li><a href="reseni.html" data-nav="reseni">Řešení podle oboru</a></li>
+        <li><a href="ai-audit.html" data-nav="audit">AI readiness audit</a></li>
+        <li><a href="roi.html" data-nav="roi">ROI kalkulačka</a></li>
+        <li><a href="o-nas.html" data-nav="about">O nás</a></li>
+      </ul>
+      <a href="kontakt.html" class="btn btn-primary">Konzultace zdarma <span class="arrow">→</span></a>
+    </div>
+  </div>
+</nav>
+<!-- @end header -->
+
+<main id="main">
+
+<section class="page-hero">
+  <div class="wrap">
+    <ol class="crumbs" aria-label="Drobečková navigace">
+      <li><a href="index.html">Legent AI</a></li>
+      <li aria-current="page">Služby a ceník</li>
+    </ol>
+    <span class="label">Služby a&nbsp;ceník</span>
+    <h1>Čtyři kroky k&nbsp;firmě, <span class="serif grad">která běží chytřeji.</span></h1>
+    <p class="lead">Začněte auditem, nebo rovnou implementací. Každá služba má jasný výstup a&nbsp;pevnou cenu, kterou znáte předem. Ceny jsou bez DPH.</p>
+  </div>
+</section>
+
+<section class="section" id="assessment">
+  <div class="wrap grid-2">
+    <div class="reveal">
+      <span class="label">01 · Assessment</span>
+      <h2 class="mt-16">AI Readiness Assessment</h2>
+      <p class="lead mt-16">Než začnete do AI investovat, zjistěte, kde se vám to vrátí nejrychleji. Za dva týdny projdeme procesy, nástroje a&nbsp;data a&nbsp;dostanete konkrétní plán.</p>
+    </div>
+    <div class="card reveal">
+      <span class="k">Co dostanete</span>
+      <ul class="ticks">
+        <li><strong>Mapa procesů</strong> s&nbsp;časem, který na ně tým týdně tráví</li>
+        <li><strong>Top 5 automatizací</strong> seřazených podle návratnosti a&nbsp;náročnosti</li>
+        <li><strong>Odhad úspor</strong> v&nbsp;hodinách a&nbsp;korunách</li>
+        <li><strong>Posouzení dat a&nbsp;rizik</strong> (GDPR, přístupy, kvalita dat)</li>
+        <li><strong>Návrh Sprintu</strong> s&nbsp;cenou — bez povinnosti ho objednat</li>
+      </ul>
+      <span class="price">15 000 – 35 000 Kč · ~2 týdny</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="sprint">
+  <div class="wrap grid-2">
+    <div class="reveal">
+      <span class="label">02 · Sprint</span>
+      <h2 class="mt-16">AI Implementation Sprint</h2>
+      <p class="lead mt-16">Čtyři týdny od zadání k&nbsp;agentům v&nbsp;provozu. Postavíme 3–5 agentů, napojíme je na vaše systémy a&nbsp;necháme je nejdřív běžet „ve stínu“, dokud výsledky nesedí.</p>
+      <ol class="steps steps-tight mt-32">
+        <li><h3>Týden 1</h3><p>Upřesnění zadání, přístupy, testovací data.</p></li>
+        <li><h3>Týden 2–3</h3><p>Stavba agentů, napojení, testy na reálných případech.</p></li>
+        <li><h3>Týden 4</h3><p>Provoz naostro, zaškolení týmu, měření úspor.</p></li>
+      </ol>
+    </div>
+    <div class="card glow reveal">
+      <span class="k">Co dostanete</span>
+      <ul class="ticks">
+        <li><strong>3–5 agentů v&nbsp;provozu</strong> (např. doklady, poptávky, e-maily, reporting)</li>
+        <li><strong>Napojení</strong> na e-mail, účetnictví, CRM, e-shop nebo tabulky</li>
+        <li><strong>Schvalování člověkem</strong> pro citlivé kroky</li>
+        <li><strong>Dokumentace a&nbsp;předání</strong> — automatizace jsou vaše</li>
+        <li><strong>Dashboard úspor</strong> a&nbsp;vyhodnocení po 30 dnech</li>
+      </ul>
+      <span class="price">40 000 – 120 000 Kč · 4 týdny</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="retainer">
+  <div class="wrap grid-2">
+    <div class="reveal">
+      <span class="label">03 · Retainer</span>
+      <h2 class="mt-16">Legent AI Retainer</h2>
+      <p class="lead mt-16">AI modely, nástroje i&nbsp;vaše procesy se mění. Retainer zajistí, že agenti fungují, zlepšují se a&nbsp;postupně přebírají další práci.</p>
+      <p class="mt-16">Ideální i&nbsp;pro klienty <strong>Exit Readiness Programu</strong> Legacy Enterprises, kteří se rozhodnou firmu neprodat a&nbsp;dál zvyšovat marži.</p>
+    </div>
+    <div class="card reveal">
+      <span class="k">Co je v&nbsp;ceně</span>
+      <ul class="ticks">
+        <li><strong>Monitoring a&nbsp;údržba</strong> běžících agentů</li>
+        <li><strong>Úpravy a&nbsp;vylepšení</strong> podle zpětné vazby týmu</li>
+        <li><strong>Nové automatizace</strong> v&nbsp;rozsahu dle tarifu</li>
+        <li><strong>Měsíční report</strong> úspor, chybovosti a&nbsp;doporučení</li>
+        <li><strong>Výpověď</strong> s&nbsp;měsíční lhůtou</li>
+      </ul>
+      <span class="price">8 000 – 30 000 Kč / měsíc</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="enablement">
+  <div class="wrap grid-2">
+    <div class="reveal">
+      <span class="label">04 · Enablement</span>
+      <h2 class="mt-16">AI Enablement Program</h2>
+      <p class="lead mt-16">Nejlepší AI je ta, kterou tým skutečně používá. Workshopy na vašich reálných úkolech — od bezpečného používání asistentů po samostatné rozšiřování agentů.</p>
+    </div>
+    <div class="card reveal">
+      <span class="k">Formáty</span>
+      <ul class="ticks">
+        <li><strong>Úvodní workshop</strong> pro celý tým (2–3 h)</li>
+        <li><strong>Prakticky podle rolí</strong> — obchod, administrativa, vedení</li>
+        <li><strong>Pravidla používání AI</strong> ve firmě (bezpečnost, data, GDPR)</li>
+        <li><strong>Train-the-trainer</strong> pro interního „AI championa“</li>
+      </ul>
+      <span class="price">6 000 – 40 000 Kč / session</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="srovnani">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="label">Srovnání</span>
+      <h2>Která služba je pro vás?</h2>
+    </div>
+    <div class="table-wrap reveal">
+      <table class="compare">
+        <thead><tr><th scope="col"><span class="sr-only">Parametr</span></th><th scope="col">Assessment</th><th scope="col">Sprint</th><th scope="col">Retainer</th><th scope="col">Enablement</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Pro koho</th><td>Nevíte, kde začít</td><td>Víte, co automatizovat</td><td>Agenti už běží</td><td>Chcete, aby AI používal tým</td></tr>
+          <tr><th scope="row">Délka</th><td>~2 týdny</td><td>4 týdny</td><td>průběžně</td><td>2–3 h / session</td></tr>
+          <tr><th scope="row">Výstup</th><td>Plán a&nbsp;odhad úspor</td><td>3–5 agentů v&nbsp;provozu</td><td>Údržba + nové automatizace</td><td>Proškolený tým, pravidla AI</td></tr>
+          <tr><th scope="row">Cena</th><td>15–35 tis. Kč</td><td>40–120 tis. Kč</td><td>8–30 tis. Kč / měs.</td><td>6–40 tis. Kč</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note mt-24">Přesnou cenu určuje počet procesů, systémů k&nbsp;napojení a&nbsp;objem dat. Nabídku dostanete písemně před zahájením. Náklady na AI služby a&nbsp;licence nástrojů (obvykle stovky až nízké tisíce Kč měsíčně) hradí klient přímo poskytovatelům, abyste měli vše pod kontrolou.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="cta reveal">
+      <div>
+        <h2>Nevíte, čím začít? <span class="serif grad">Zeptejte se.</span></h2>
+        <p class="mt-16">Konzultace zdarma, 30 minut. Odejdete s&nbsp;konkrétním tipem, i&nbsp;kdybyste nic neobjednali.</p>
+      </div>
+      <div class="actions">
+        <a href="kontakt.html" class="btn btn-primary">Domluvit konzultaci <span class="arrow">→</span></a>
+        <a href="roi.html" class="btn btn-ghost">ROI kalkulačka</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- @partial footer root="" -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a href="index.html" class="logo">
+          <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#7C4DFF"/><path d="M16 23.5c-3.2-2.4-6.8-2.6-9.5-1.2V9.6c2.7-1.4 6.3-1.2 9.5 1.2 3.2-2.4 6.8-2.6 9.5-1.2v12.7c-2.7-1.4-6.3-1.2-9.5 1.2zM16 10.8v12.7" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          Legent AI
+        </a>
+        <p>AI agenti a automatizace pro malé a střední firmy v Česku. Divize skupiny <a href="../index.html">Legacy Enterprises</a>.</p>
+      </div>
+      <div class="foot-col">
+        <h2>Služby</h2>
+        <ul>
+          <li><a href="sluzby.html#assessment">AI Readiness Assessment</a></li>
+          <li><a href="sluzby.html#sprint">Implementation Sprint</a></li>
+          <li><a href="sluzby.html#retainer">Legent AI Retainer</a></li>
+          <li><a href="sluzby.html#enablement">AI Enablement</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h2>Nástroje</h2>
+        <ul>
+          <li><a href="ai-audit.html">AI readiness audit</a></li>
+          <li><a href="roi.html">ROI kalkulačka</a></li>
+          <li><a href="reseni.html">Řešení podle oboru</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h2>Kontakt</h2>
+        <ul>
+          <li><a href="kontakt.html">Konzultace zdarma</a></li>
+          <li><a href="mailto:contact@legacyenterprises.cz">contact@legacyenterprises.cz</a></li>
+          <li><a href="o-nas.html">O nás</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 Legacy Enterprises s.r.o. · IČO [doplnit] · Praha</span>
+      <span><a href="ochrana-osobnich-udaju.html">Ochrana osobních údajů</a><a href="ochrana-osobnich-udaju.html#cookies">Cookies</a><a href="../index.html">Legacy Enterprises</a></span>
+    </div>
+  </div>
+</footer>
+<!-- @end footer -->
+</body>
+</html>

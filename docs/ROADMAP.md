@@ -44,8 +44,8 @@ Legenda: `[x]` hotovo a ověřeno · `[~]` rozpracováno · `[ ]` čeká
 
 - [x] Design systém `legent/assets/css/legent.css` (tmavý, Geist + Instrument Serif)
 - [x] `legent/index.html` — hero s animovanou konzolí agentů, Eurostat 2025 data, bento služeb, proces, obory, nástroje, bezpečnost, FAQ + JSON-LD
-- [ ] `legent/sluzby.html` — 4 balíčky s ceníkem a obsahem
-- [ ] `legent/reseni.html` — use-cases po oborech (servis, gastro, autoservis, účetní, e-shop, výroba)
+- [x] `legent/sluzby.html` — 4 služby (výstupy, délka, cena), harmonogram Sprintu, srovnávací tabulka
+- [x] `legent/reseni.html` — 6 oborů × 3 typičtí agenti, předvyplnění oboru v kontaktu
 - [ ] `legent/ai-audit.html` — interaktivní AI readiness test
 - [ ] `legent/roi.html` — ROI kalkulačka automatizace
 - [ ] `legent/o-nas.html` — kdo stojí za Legent AI, principy, AI Act & GDPR
