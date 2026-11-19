@@ -399,3 +399,5 @@ footer { border-top: 1px solid var(--border); padding: 64px 0 32px; margin-top: 
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .chips a { text-decoration: none; }
 .chips a:hover { border-color: var(--violet); color: var(--text); }
+/* Dostatečně velké dotykové cíle (WCAG 2.5.8) */
+a.more { display: inline-block; padding: 6px 0; }

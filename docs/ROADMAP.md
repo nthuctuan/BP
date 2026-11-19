@@ -37,7 +37,7 @@ Legenda: `[x]` hotovo a ověřeno · `[~]` rozpracováno · `[ ]` čeká
 - [x] `insights/` — rozcestník + 3 články (oceňování, checklist prodeje, nástupnictví) s Article/HowTo JSON-LD a prolinkováním
 - [x] Právní: `ochrana-osobnich-udaju.html` (GDPR), `cookies.html`, `eticky-kodex.html`
 - [x] `404.html`, `robots.txt`, `sitemap.xml` (generátor `tools/seo.mjs`), `llms.txt`, `site.webmanifest`, favicon, OG obrázky
-- [ ] JSON-LD (Organization, ProfessionalService, FAQPage, Person, Article, Breadcrumb)
+- [x] JSON-LD (Organization, ProfessionalService, FAQPage, Person, Article, HowTo, WebApplication, Breadcrumb)
 - [x] Ověření statistik a zdrojů – neověřitelné údaje z v2 nahrazeny zdrojovanými (AMSP ČR, Helas & Talers 2026, BusinessInfo.cz, Eurostat 2025 pro Legent)
 
 ## Legent AI (`/legent/`)
@@ -54,12 +54,12 @@ Legenda: `[x]` hotovo a ověřeno · `[~]` rozpracováno · `[ ]` čeká
 
 ## SEO a GEO (vyhledávače + AI asistenti)
 
-- [ ] Klíčová slova CZ (prodej firmy, ocenění firmy, nástupnictví, příprava na prodej, M&A pro MSP, AI pro firmy…) → mapování na stránky, titulky, H1, meta popisky
+- [x] Klíčová slova CZ → mapa v `docs/SEO.md` (bez kanibalizace), titulky/popisky upraveny
 - [x] `sitemap.xml`, `robots.txt`, `llms.txt` (oba weby), canonical, OG/Twitter u všech stránek
 - [x] Strukturovaná data (Organization, Service, FAQPage, Article, HowTo, WebApplication, Breadcrumb) – validní JSON
 - [x] Interní prolinkování, žádné osiřelé stránky (`tests/seo.mjs`)
 - [x] Výkon: Lighthouse mobil – všech 23 indexovaných stránek: výkon 96–100, a11y/best practices/SEO 100 (`docs/QA-REPORT.md`)
-- [ ] SEO audit agentem/skillem a oprava nálezů
+- [x] SEO audit (skill searchfit-seo + vlastní audit délek, nadpisů, dotykových cílů) – nálezy opraveny
 - [x] Návod Google Search Console + Bing Webmaster (v `docs/DEPLOY.md`)
 
 ## Přílohy (ke stažení / pro obchod)
