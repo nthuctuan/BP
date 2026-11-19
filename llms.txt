@@ -1,0 +1,24 @@
+# Legacy Enterprises
+
+> Legacy Enterprises je pražská poradenská firma pro pre-exitovou přípravu malých, středních a rodinných firem v ČR (transakce přibližně do 50 mil. Kč). Vstupuje 18–36 měsíců před prodejem, zvyšuje hodnotu firmy (normalizace EBITDA, nižší závislost na majiteli, procesy, snížení rizik) a pak firmu provede prodejem kupcům (ETA kupci, search fondy, strategičtí kupci, family offices). Model: měsíční retainer 15–35 tis. Kč za přípravu + success fee 3–5 % (min. 300 000 Kč) jen při skutečné transakci. Součástí holdingu jsou Venture Studio (Univerze, Viets) a Legent AI (implementace AI agentů pro MSP).
+
+Zakladatelé: Thuc Tuan Nguyen (CEO, M&A, CZ/EN/VI) a Matěj Klíma (CTO, AI). Kontakt: contact@legacyenterprises.cz. Jazyk webu: čeština.
+
+## Služby
+- [Exit Readiness Program](https://legacyenterprises.cz/exit-readiness.html): šest modulů přípravy firmy na prodej (ERA, Quality of Earnings, SOP, Risk Mitigation, CIM, Valuation Tracking), ceník a průběh
+- [Pro kupce firem](https://legacyenterprises.cz/kupci.html): matchmaking, proces akvizice, mentoring pro ETA kupce, registrace kupce
+- [Venture Studio](https://legacyenterprises.cz/venture-studio.html): komunitní platformy Univerze a Viets
+- [Legent AI](https://legent.ai/): AI agenti a automatizace pro malé a střední firmy
+
+## Nástroje zdarma
+- [Exit Readiness test](https://legacyenterprises.cz/exit-test.html): 12 otázek, skóre připravenosti 0–100 v šesti oblastech
+- [Kalkulačka hodnoty firmy](https://legacyenterprises.cz/kalkulacka.html): orientační ocenění podle EBITDA, oboru a rizikových faktorů
+
+## O firmě
+- [O nás](https://legacyenterprises.cz/o-nas.html): příběh, tým, principy, AI operační model
+- [Etický kodex](https://legacyenterprises.cz/eticky-kodex.html): důvěrnost, střet zájmů, odpovědné používání AI
+- [Kontakt](https://legacyenterprises.cz/kontakt.html)
+
+## Optional
+- [Insights](https://legacyenterprises.cz/insights/index.html): články o oceňování a prodeji malých firem
+- [Ochrana osobních údajů](https://legacyenterprises.cz/ochrana-osobnich-udaju.html)

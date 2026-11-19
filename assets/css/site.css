@@ -1365,3 +1365,13 @@ a.startup:hover { transform: translateY(-3px); box-shadow: 0 16px 34px -20px rgb
 .btn-link { background: none; border: 0; padding: 0; font: inherit; color: var(--accent); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
 [data-theme="dark"] .btn-link { color: var(--gold-light); }
 p.hint { font-size: 13px; color: var(--text-dim); }
+
+/* Identifikace společnosti (právní stránky) */
+.company-id { display: grid; gap: 0; border-top: 1px solid var(--border); margin: 1.4em 0; }
+.company-id > div { display: grid; grid-template-columns: 140px 1fr; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--border); }
+.company-id dt { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); padding-top: 4px; }
+.company-id dd { color: var(--text); font-size: 16px; }
+.legal-updated { font-family: var(--mono); font-size: 12px; color: var(--text-dim); letter-spacing: 0.06em; }
+.doc-layout > *, .tool > *, .contact-grid > * { min-width: 0; }
+.company-id dd { min-width: 0; overflow-wrap: anywhere; }
+@media (max-width: 600px) { .company-id > div { grid-template-columns: 1fr; gap: 4px; } }

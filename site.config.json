@@ -3,9 +3,10 @@
   "common": {
     "year": 2026,
     "company": "Legacy Enterprises s.r.o.",
-    "ico": "[doplnit IČO]",
-    "seat": "Praha, Česká republika",
-    "registry": "[doplnit spisovou značku OR]"
+    "ico": "[doplnit]",
+    "city": "Praha",
+    "seat": "[doplnit přesnou adresu sídla], Praha",
+    "registry": "[doplnit spisovou značku, např. C 123456 vedená u Městského soudu v Praze]"
   },
   "legacy": {
     "url": "https://legacyenterprises.cz",
