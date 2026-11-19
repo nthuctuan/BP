@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="cs" data-theme="light">
+<head>
+<meta charset="utf-8">
+<title>Kalkulačka hodnoty firmy · Kolik je vaše firma hodná?</title>
+<meta name="description" content="Orientační ocenění malé a střední firmy podle EBITDA, oboru a rizikových faktorů. Rozpětí hodnoty dnes a po přípravě na prodej. Zdarma, bez registrace.">
+<link rel="canonical" href="https://legacyenterprises.cz/kalkulacka.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:site_name" content="Legacy Enterprises">
+<meta property="og:title" content="Kolik je vaše firma skutečně hodná? · Kalkulačka">
+<meta property="og:description" content="Orientační rozpětí hodnoty firmy podle EBITDA a oboru – dnes a po přípravě na prodej.">
+<meta property="og:url" content="https://legacyenterprises.cz/kalkulacka.html">
+<meta property="og:image" content="https://legacyenterprises.cz/assets/img/og-kalkulacka.png">
+<meta name="twitter:card" content="summary_large_image">
+<!-- @partial head root="" -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F8F6F1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0A0B0F" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/lora-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="assets/css/site.css">
+<script>(function(d){d.classList.add('js');try{var t=localStorage.getItem('le-theme');}catch(e){}if(!t){t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}d.setAttribute('data-theme',t);})(document.documentElement);</script>
+<script src="assets/js/config.js" defer></script>
+<script src="assets/js/site.js" defer></script>
+<!-- @end head -->
+<script src="assets/js/calc.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Kalkulačka hodnoty firmy",
+      "url": "https://legacyenterprises.cz/kalkulacka.html",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "inLanguage": "cs",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CZK" },
+      "provider": { "@type": "Organization", "name": "Legacy Enterprises", "url": "https://legacyenterprises.cz/" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Jak se oceňuje malá firma?", "acceptedAnswer": { "@type": "Answer", "text": "Nejčastěji násobkem normalizované EBITDA (provozní zisk před odpisy, očištěný o jednorázové a soukromé položky). Výše násobku závisí na oboru, velikosti, růstu a rizicích, jako je závislost na majiteli nebo na jednom zákazníkovi. Od hodnoty podniku se pak odečítá čistý dluh." } },
+        { "@type": "Question", "name": "Co je normalizovaná EBITDA?", "acceptedAnswer": { "@type": "Answer", "text": "EBITDA upravená o položky, které by kupce po převzetí nečekaly: soukromé výdaje majitele, tržní mzda majitele, jednorázové náklady a výnosy. Je základem pro jednání o ceně." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Úvod", "item": "https://legacyenterprises.cz/" },
+        { "@type": "ListItem", "position": 2, "name": "Kalkulačka hodnoty firmy", "item": "https://legacyenterprises.cz/kalkulacka.html" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<!-- @partial header root="" active="calc" -->
+<a class="skip-link" href="#main">Přeskočit na obsah</a>
+<nav class="topnav" aria-label="Hlavní navigace">
+  <div class="wrap">
+    <div class="nav-inner">
+      <a href="index.html" class="logo" aria-label="Legacy Enterprises – úvodní stránka">Legacy <span class="mark">·</span> <span class="ent">Enterprises</span></a>
+      <ul class="nav-links">
+        <li><a href="exit-readiness.html" data-nav="owners">Pro vlastníky</a></li>
+        <li><a href="kupci.html" data-nav="buyers">Pro kupce</a></li>
+        <li><a href="venture-studio.html" data-nav="studio">Venture Studio</a></li>
+        <li><a href="legent/index.html" class="ext" data-nav="legent">Legent AI</a></li>
+        <li><a href="insights/index.html" data-nav="insights">Insights</a></li>
+        <li><a href="o-nas.html" data-nav="about">O nás</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="exit-test.html" class="nav-test" data-nav="test">Exit test</a>
+        <a href="kontakt.html" class="nav-cta" data-nav="contact">Domluvit rozhovor →</a>
+        <button class="theme-btn" type="button" data-theme-toggle aria-label="Přepnout barevný režim">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Otevřít menu">
+          <svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <ul>
+        <li><a href="exit-readiness.html" data-nav="owners">Pro vlastníky</a></li>
+        <li><a href="kupci.html" data-nav="buyers">Pro kupce</a></li>
+        <li><a href="venture-studio.html" data-nav="studio">Venture Studio</a></li>
+        <li><a href="legent/index.html" data-nav="legent">Legent AI</a></li>
+        <li><a href="insights/index.html" data-nav="insights">Insights</a></li>
+        <li><a href="o-nas.html" data-nav="about">O nás</a></li>
+        <li><a href="kalkulacka.html" data-nav="calc" aria-current="page">Kalkulačka hodnoty firmy</a></li>
+      </ul>
+      <div class="mm-cta">
+        <a href="exit-test.html" class="btn btn-ghost">Udělat Exit test (5 min)</a>
+        <a href="kontakt.html" class="btn btn-primary">Domluvit úvodní rozhovor <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- @end header -->
+
+<main id="main">
+
+<section class="page-hero page-hero-sm">
+  <div class="wrap">
+    <ol class="crumbs" aria-label="Drobečková navigace">
+      <li><a href="index.html">Úvod</a></li>
+      <li aria-current="page">Kalkulačka hodnoty firmy</li>
+    </ol>
+    <span class="eyebrow">Nástroj zdarma · 2 minuty</span>
+    <h1>Kolik je vaše firma <span class="em">skutečně hodná?</span></h1>
+    <p class="lead">Orientační rozpětí hodnoty podle zisku, oboru a&nbsp;faktorů, na které se dívají kupci. A&nbsp;vedle toho scénář po strukturované přípravě na prodej.</p>
+  </div>
+</section>
+
+<section class="section" id="kalkulacka">
+  <form class="wrap tool" data-calc aria-label="Kalkulačka hodnoty firmy">
+    <div class="tool-panel calc-grid">
+      <div class="field">
+        <label for="c-sector">Obor</label>
+        <select id="c-sector" name="sector">
+          <option value="services">Služby a&nbsp;servis (B2B, údržba, instalace)</option>
+          <option value="manufacturing">Výroba a&nbsp;strojírenství</option>
+          <option value="wholesale">Velkoobchod a&nbsp;distribuce</option>
+          <option value="retail">Maloobchod a&nbsp;gastronomie</option>
+          <option value="it">IT, software a&nbsp;digitální služby</option>
+          <option value="construction">Stavebnictví a&nbsp;řemesla</option>
+          <option value="ecommerce">E-commerce</option>
+          <option value="health">Zdravotnictví a&nbsp;péče</option>
+        </select>
+      </div>
+      <div class="row-2">
+        <div class="field">
+          <label for="c-ebitda">Roční EBITDA (Kč)</label>
+          <input id="c-ebitda" name="ebitda" type="number" inputmode="numeric" min="0" step="100000" value="3000000" aria-describedby="c-ebitda-hint">
+          <span class="hint" id="c-ebitda-hint">Provozní zisk před odpisy, úroky a&nbsp;daněmi · <span data-out="ebitda-fmt"></span></span>
+        </div>
+        <div class="field">
+          <label for="c-debt">Čistý dluh (Kč)</label>
+          <input id="c-debt" name="debt" type="number" inputmode="numeric" step="100000" value="0" aria-describedby="c-debt-hint">
+          <span class="hint" id="c-debt-hint">Úvěry minus volná hotovost · <span data-out="debt-fmt"></span></span>
+        </div>
+      </div>
+
+      <fieldset class="field factors">
+        <legend>Jak na tom firma je dnes?</legend>
+        <div class="factor">
+          <label for="f-owner">Závislost na majiteli</label>
+          <select id="f-owner"><option value="0">Vysoká – bez mě se nic nerozhodne</option><option value="1" selected>Střední</option><option value="2">Nízká – firma běží beze mě</option></select>
+        </div>
+        <div class="factor">
+          <label for="f-recurring">Opakované tržby</label>
+          <select id="f-recurring"><option value="0">Do 20&nbsp;% tržeb</option><option value="1" selected>20–50&nbsp;%</option><option value="2">Nad 50&nbsp;%</option></select>
+        </div>
+        <div class="factor">
+          <label for="f-concentration">Největší zákazník</label>
+          <select id="f-concentration"><option value="0">Nad 30&nbsp;% tržeb</option><option value="1" selected>10–30&nbsp;%</option><option value="2">Pod 10&nbsp;%</option></select>
+        </div>
+        <div class="factor">
+          <label for="f-growth">Vývoj zisku (3 roky)</label>
+          <select id="f-growth"><option value="0">Klesá</option><option value="1" selected>Stabilní</option><option value="2">Roste</option></select>
+        </div>
+        <div class="factor">
+          <label for="f-books">Kvalita čísel a&nbsp;dokumentace</label>
+          <select id="f-books"><option value="0">Jen pro daně</option><option value="1" selected>Standardní</option><option value="2">Reporting, sepsané procesy</option></select>
+        </div>
+      </fieldset>
+
+      <div class="range-field">
+        <div class="rh"><label for="c-addback">Normalizace EBITDA po Quality of Earnings</label><output for="c-addback" data-out="addback-fmt"></output></div>
+        <input id="c-addback" type="range" min="0" max="20" step="1" value="5">
+        <span class="hint">Typicky přičtení soukromých a&nbsp;jednorázových nákladů. Může být i&nbsp;0&nbsp;%.</span>
+      </div>
+      <p class="hint">Výsledek se přepočítává automaticky. <button type="submit" class="btn-link">Přepočítat</button></p>
+    </div>
+
+    <aside class="tool-side calc-out" aria-live="polite" aria-label="Výsledek">
+      <div class="kpi">
+        <div class="lbl">Hodnota vlastního kapitálu dnes</div>
+        <div class="v" data-out="mid">—</div>
+        <div class="s">rozpětí <span data-out="range"></span><br>násobek <span data-out="multiple"></span></div>
+      </div>
+      <div class="kpi hl">
+        <div class="lbl">Po strukturované přípravě</div>
+        <div class="v" data-out="after">—</div>
+        <div class="s">rozpětí <span data-out="after-range"></span><br>násobek <span data-out="after-multiple"></span></div>
+      </div>
+      <div class="kpi">
+        <div class="lbl">Potenciál navíc</div>
+        <div class="v" data-out="diff">—</div>
+        <div class="s" data-out="diff-pct"></div>
+      </div>
+      <div class="compare" aria-hidden="true">
+        <div class="cb"><span>Dnes</span><div class="track"><div class="fill now"></div></div></div>
+        <div class="cb"><span>Po přípravě</span><div class="track"><div class="fill prep"></div></div></div>
+        <p class="hint">Sloupec = střední odhad, světlejší konec = horní hranice rozpětí.</p>
+      </div>
+      <a href="kontakt.html?topic=exit" class="btn btn-primary">Chci přesnější ocenění <span class="arrow">→</span></a>
+    </aside>
+  </form>
+  <div class="wrap">
+    <p class="note mt-48"><strong>Jak počítáme:</strong> hodnota podniku = EBITDA × násobek. Násobek volíme v&nbsp;ilustrativním rozpětí pro malé soukromé firmy daného oboru a&nbsp;posouváme ho podle pěti faktorů výše. Scénář „po přípravě“ předpokládá zlepšení každého faktoru o&nbsp;jeden stupeň a&nbsp;zvolenou normalizaci EBITDA. Od hodnoty podniku odečítáme čistý dluh. Výsledek je <strong>orientační</strong>, nejde o&nbsp;znalecký posudek ani nabídku — skutečná cena závisí na konkrétním kupci, struktuře transakce a&nbsp;due diligence.</p>
+  </div>
+</section>
+
+<section class="section" id="jak-se-ocenuje">
+  <div class="wrap doc-layout">
+    <div class="reveal"><span class="eyebrow">Krátce o&nbsp;oceňování</span></div>
+    <div class="prose reveal">
+      <h2 class="mt-0">Proč mají dvě firmy se stejným ziskem jinou cenu</h2>
+      <p>Kupec si kupuje budoucí cash flow. Čím jistější mu připadá, tím víc je ochoten zaplatit dnes. Proto násobek EBITDA roste s&nbsp;opakovanými tržbami, diverzifikací zákazníků, růstem a&nbsp;hlavně s&nbsp;tím, nakolik firma funguje bez majitele.</p>
+      <h3>Co je normalizovaná EBITDA</h3>
+      <p>Účetní zisk malých firem bývá optimalizovaný pro daně. Normalizace ho upraví na to, co by firma vydělávala pod novým vlastníkem: přičte soukromé výdaje placené firmou, upraví mzdu majitele na tržní úroveň a&nbsp;odstraní jednorázové položky. Právě to dělá modul <a href="exit-readiness.html#moduly">Quality of Earnings</a>.</p>
+      <h3>Co kalkulačka nezachytí</h3>
+      <ul>
+        <li>strategickou prémii konkrétního kupce (synergie, vstup na trh),</li>
+        <li>strukturu ceny — earn-out, zádržné, vendor financing,</li>
+        <li>hodnotu nemovitostí a&nbsp;neprovozního majetku,</li>
+        <li>výsledky due diligence a&nbsp;vyjednávání.</li>
+      </ul>
+      <p>Pro přesnější odhad si udělejte <a href="exit-test.html">Exit Readiness test</a> nebo nám <a href="kontakt.html">napište</a> — pre-feasibility audit trvá 2–3 týdny.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- @partial footer root="" -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a href="index.html" class="logo">Legacy <span class="mark">·</span> <span class="ent">Enterprises</span></a>
+        <p>Pre-exitová příprava malých, středních a rodinných firem. Tři divize, jedna AI vrstva. Praha, Česká republika.</p>
+      </div>
+      <div class="foot-col">
+        <h2 class="h5">Služby</h2>
+        <ul>
+          <li><a href="exit-readiness.html">Exit Readiness Program</a></li>
+          <li><a href="kupci.html">Pro kupce firem</a></li>
+          <li><a href="venture-studio.html">Venture Studio</a></li>
+          <li><a href="legent/index.html">Legent AI</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h2 class="h5">Nástroje</h2>
+        <ul>
+          <li><a href="exit-test.html">Exit Readiness test</a></li>
+          <li><a href="kalkulacka.html">Kalkulačka hodnoty firmy</a></li>
+          <li><a href="insights/index.html">Insights &amp; články</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h2 class="h5">Spojení</h2>
+        <ul>
+          <li><a href="kontakt.html">Úvodní rozhovor</a></li>
+          <li><a href="kontakt.html#waitlist">Waiting list</a></li>
+          <li><a href="mailto:contact@legacyenterprises.cz">contact@legacyenterprises.cz</a></li>
+          <li><a href="o-nas.html#tym">Tým</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 Legacy Enterprises s.r.o. · IČO [doplnit IČO] · Praha, Česká republika</span>
+      <span class="legal">
+        <a href="ochrana-osobnich-udaju.html">Ochrana osobních údajů</a>
+        <a href="cookies.html">Cookies</a>
+        <a href="eticky-kodex.html">Etický kodex</a>
+      </span>
+    </div>
+  </div>
+</footer>
+<!-- @end footer -->
+</body>
+</html>

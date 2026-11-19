@@ -78,7 +78,7 @@ export default async function functional({ browser, base, fail, pages }) {
       await pg.click('[data-quiz-next]');
     }
     expect(await pg.locator('[data-quiz-result]').isVisible(), 'výsledek se nezobrazil');
-    const score = Number(await pg.locator('[data-score]').first().innerText());
+    const score = Number(await pg.locator('[data-score]').first().textContent());
     expect(score >= 0 && score <= 100, `skóre mimo rozsah: ${score}`);
   });
 

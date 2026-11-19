@@ -32,8 +32,8 @@ Legenda: `[x]` hotovo a ověřeno · `[~]` rozpracováno · `[ ]` čeká
 - [x] `venture-studio.html` — Univerze, Viets, teze studia
 - [x] `o-nas.html` — teze, AI operační model, tým, hodnoty
 - [x] `kontakt.html` — kontaktní formulář + waiting list + průběh spolupráce
-- [ ] `exit-test.html` — interaktivní Exit Readiness test (skóre, doporučení, lead)
-- [ ] `kalkulacka.html` — orientační kalkulačka hodnoty firmy a efektu přípravy
+- [x] `exit-test.html` — interaktivní Exit Readiness test (skóre, doporučení, lead)
+- [x] `kalkulacka.html` — orientační kalkulačka hodnoty firmy a efektu přípravy
 - [ ] `insights/` — rozcestník + 3 vzdělávací články
 - [ ] Právní: `ochrana-osobnich-udaju.html` (GDPR), `cookies.html`, `eticky-kodex.html`
 - [ ] `404.html`, `robots.txt`, `sitemap.xml`, `llms.txt`, `site.webmanifest`, favicon, OG obrázek
@@ -52,6 +52,24 @@ Legenda: `[x]` hotovo a ověřeno · `[~]` rozpracováno · `[ ]` čeká
 - [ ] `legent/kontakt.html` — formulář
 - [ ] `legent/ochrana-osobnich-udaju.html`, `legent/404.html`, SEO soubory, OG, favicon
 
+## SEO a GEO (vyhledávače + AI asistenti)
+
+- [ ] Klíčová slova CZ (prodej firmy, ocenění firmy, nástupnictví, příprava na prodej, M&A pro MSP, AI pro firmy…) → mapování na stránky, titulky, H1, meta popisky
+- [ ] `sitemap.xml`, `robots.txt`, `llms.txt` (oba weby), canonical, OG/Twitter u všech stránek
+- [ ] Strukturovaná data na všech stránkách (validní JSON-LD) + Breadcrumb
+- [ ] Interní prolinkování (články ↔ služby ↔ nástroje), žádné osiřelé stránky
+- [ ] Výkon: Lighthouse (Performance/SEO/Best Practices/A11y ≥ 95 na mobilu)
+- [ ] SEO audit agentem/skillem a oprava nálezů
+- [ ] Návod Google Search Console + Bing Webmaster (v `docs/DEPLOY.md`)
+
+## Přílohy (ke stažení / pro obchod)
+
+- [ ] PDF „Checklist: příprava firmy na prodej“ (lead magnet, Legacy)
+- [ ] PDF one-pager Legacy Enterprises (pro e-mail a schůzky)
+- [ ] PDF one-pager Legent AI
+- [ ] Logo v SVG/PNG (světlé/tmavé) – mini brand kit `assets/brand/`
+- [~] Tisknutelný výsledek Exit testu (hotovo) a AI auditu (print CSS)
+
 ## Kvalita a ověření
 
 - [x] `tests/run.mjs` — Playwright: načtení stránek, chyby v konzoli, interní odkazy a kotvy, přetečení na mobilu, meta tagy, axe-core (light+dark), externí požadavky
@@ -60,6 +78,7 @@ Legenda: `[x]` hotovo a ověřeno · `[~]` rozpracováno · `[ ]` čeká
 - [ ] Vizuální kontrola screenshotů (desktop 1440, tablet 834, mobil 390; light + dark)
 - [ ] GitHub Actions CI (`npm test`)
 - [ ] `docs/DEPLOY.md` (GitHub Pages / Netlify / Vercel, domény, formuláře)
+- [ ] Zpětná kontrola: korektura češtiny, konzistence cen/údajů napříč stránkami, code review, kontrola odkazů
 - [ ] Finální QA průchod obou webů
 
 ## Otevřené otázky pro majitele → `docs/OPEN-QUESTIONS.md`
@@ -67,4 +86,5 @@ Legenda: `[x]` hotovo a ověřeno · `[~]` rozpracováno · `[ ]` čeká
 ## Log iterací
 
 - **#1 (čt 19. 11.)** — architektura, tooling, self-hosted fonty (Cormorant → EB Garamond kvůli vadné sazbě háčků), design systém v3 (kontrast WCAG AA, mobilní menu, formuláře, FAQ, marquee), partials, nová úvodní stránka (FAQ + JSON-LD, nástroje, waiting list), favicon + OG obrázky, testovací runner (axe, odkazy, mobil, funkce). Úvodní stránka: 0 chyb kromě odkazů na dosud nevytvořené stránky.
-- **#2 (čt 19. 11.)** — podstránky Exit Readiness (6 modulů, ceník, průběh, FAQ + JSON-LD), Pro kupce (4 typy kupců, proces akvizice, vzdělávání, registrační formulář), Venture Studio (Univerze, Viets), O nás (příběh, AI vs. lidé, tým, principy), Kontakt (formulář s předvýběrem tématu z URL, waiting list). Testy: 0 chyb kromě odkazů na stránky z dalších iterací. Pozn.: u týmu vynechán údaj „Podíl 50 %“ (vlastnické podíly se na webech běžně neuvádějí – lze vrátit). Push stále blokován (403).
+- **#2 (čt 19. 11.)** — podstránky Exit Readiness (6 modulů, ceník, průběh, FAQ + JSON-LD), Pro kupce (4 typy kupců, proces akvizice, vzdělávání, registrační formulář), Venture Studio (Univerze, Viets), O nás (příběh, AI vs. lidé, tým, principy), Kontakt (formulář s předvýběrem tématu z URL, waiting list). Testy: 0 chyb kromě odkazů na stránky z dalších iterací. Pozn.: u týmu vynechán údaj „Podíl 50 %“ (vlastnické podíly se na webech běžně neuvádějí – lze vrátit). Push byl blokován (403) → uživatel povolil přístup, oba commity nahrány. Časovač smyčky zanikl s restartem kontejneru → nahrazen odolnou plánovanou zprávou (send_later, každých 30 min do 22. 11.).
+- **#3 (čt 19. 11.)** — GitHub přístup povolen, vše nahráno. Odolná smyčka (send_later). Exit Readiness test (1+12 otázek, 6 oblastí, skóre, doporučení, časový tlak, tisk/PDF, odeslání výsledku) a kalkulačka hodnoty (8 oborů, 5 faktorů, normalizace EBITDA, čistý dluh, scénář po přípravě, graf). Funkční testy obou nástrojů zelené. Roadmapa rozšířena o SEO/GEO, přílohy a zpětnou kontrolu.
