@@ -75,10 +75,10 @@ Legenda: `[x]` hotovo a ověřeno · `[~]` rozpracováno · `[ ]` čeká
 - [x] `tests/run.mjs` — Playwright: načtení stránek, chyby v konzoli, interní odkazy a kotvy, přetečení na mobilu, meta tagy, axe-core (light+dark), externí požadavky
 - [x] axe-core přístupnost (0 vážných chyb, light+dark), html-validate bez chyb (25 stránek)
 - [x] Funkční testy: přepínač tématu, mobilní menu, formuláře (oba weby), předvyplnění tématu, Exit test, AI audit, kalkulačka, ROI
-- [ ] Vizuální kontrola screenshotů (desktop 1440, tablet 834, mobil 390; light + dark)
+- [x] Vizuální kontrola screenshotů (desktop 1440, tablet 834, mobil 390; light + dark)
 - [x] GitHub Actions CI (`npm test`) + workflow nasazení na GitHub Pages
 - [x] `docs/DEPLOY.md` (GitHub Pages / Netlify / Cloudflare / Vercel, samostatná doména Legent, formuláře, analytika, Search Console) + `_headers` (CSP, HSTS, cache)
-- [ ] Zpětná kontrola: korektura češtiny, konzistence cen/údajů napříč stránkami, code review, kontrola odkazů
+- [x] Zpětná kontrola: nezávislá korektura češtiny (40 nálezů zapracováno – gramatika, kalky, sjednocení pravidel střetu zájmů, zmírnění absolutních slibů, „hodna“), konzistence cen a kontaktů ověřena, odkazy OK
 - [ ] Finální QA průchod obou webů
 
 ## Otevřené otázky pro majitele → `docs/OPEN-QUESTIONS.md`
@@ -94,3 +94,4 @@ Legenda: `[x]` hotovo a ověřeno · `[~]` rozpracováno · `[ ]` čeká
 - **#3e** — Legent: Služby a ceník, Řešení (6 oborů), AI readiness audit, ROI kalkulačka; funkční testy auditu a ROI zelené. Zbývá: O nás, Kontakt, GDPR, 404, llms.txt.
 - **#3f** — Legent: O nás, Kontakt, GDPR+cookies, 404, llms.txt. **Oba weby kompletní: 25 stránek, `npm test` zcela zelený** (jen varování o placeholderech IČO/sídla). Další: SEO audit, Lighthouse, přílohy (PDF), CI, DEPLOY.md, zpětná kontrola.
 - **#4 (čt 19. 11.)** — Lighthouse (mobil) 96–100 ve všech kategoriích, oprava LCP; PDF přílohy (checklist, 2× one-pager), logo kit, odkazy ke stažení; Netlify Forms atributy; CI + Pages workflow; `_headers`; DEPLOY.md; statická SEO kontrola v `npm test` (unikátní titulky, canonical, sitemap, sirotci).
+- **#4b** — Lighthouse všech 23 stránek (96–100 / 100 / 100 / 100) → `docs/QA-REPORT.md`; CI na GitHubu zelené; korektura textů zapracována (střet zájmů sjednocen s etickým kodexem, „data primárně v EU“, bez nepodložených srovnání s konkurencí, opravy gramatiky).

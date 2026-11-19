@@ -14,7 +14,7 @@
 
   var Q = [
     { d: 'data', t: 'Kde máte hlavní firemní data?', o: ['Hlavně na papíře a v hlavách lidí', 'V Excelu a v e-mailech', 'V několika systémech (účetnictví, CRM, e-shop)', 'V propojených systémech s exporty nebo API'] },
-    { d: 'data', t: 'Jak rychle dáte dohromady přehled tržeb, zakázek a nákladů za minulý týden?', o: ['Trvá to dny nebo vůbec', 'Někdo to ručně poskládá', 'Máme reporty, ale aktualizujeme je ručně', 'Automaticky, máme dashboard'] },
+    { d: 'data', t: 'Jak rychle dáte dohromady přehled tržeb, zakázek a nákladů za minulý týden?', o: ['Trvá to dny, nebo to vůbec nejde', 'Někdo to ručně poskládá', 'Máme reporty, ale aktualizujeme je ručně', 'Automaticky, máme dashboard'] },
     { d: 'proc', t: 'Jsou vaše hlavní procesy popsané (kdo, co, kdy, v jakém nástroji)?', o: ['Ne', 'Částečně a neaktuálně', 'Hlavní procesy ano', 'Ano a tým se jimi řídí'] },
     { d: 'proc', t: 'Řídí se opakované úkoly jasnými pravidly?', o: ['Každý případ je jiný', 'Spíše ne', 'Většinou ano', 'Ano, máme šablony a pravidla'] },
     { d: 'team', t: 'Používá váš tým už nějaké AI nástroje (ChatGPT, Copilot, Gemini…)?', o: ['Ne a není zájem', 'Ne, ale zájem je', 'Někteří ano, spíš neoficiálně', 'Ano, běžně a podle pravidel'] },

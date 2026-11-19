@@ -51,7 +51,7 @@ const JOBS = [
   { out: 'assets/img/icon-512.png', w: 512, h: 512, html: icon('assets/img/favicon.svg', 512) },
   { out: 'assets/img/og-default.png', w: 1200, h: 630, html: legacyOg('Vaše firma stojí víc, <span>než si myslíte.</span>', 'Pre-exit příprava MSP') },
   { out: 'assets/img/og-exit-test.png', w: 1200, h: 630, html: legacyOg('Je vaše firma <span>připravená na prodej?</span>', 'Exit Readiness test · 5 min') },
-  { out: 'assets/img/og-kalkulacka.png', w: 1200, h: 630, html: legacyOg('Kolik je vaše firma <span>skutečně</span> hodná?', 'Kalkulačka hodnoty firmy') },
+  { out: 'assets/img/og-kalkulacka.png', w: 1200, h: 630, html: legacyOg('Kolik je vaše firma <span>skutečně</span> hodna?', 'Kalkulačka hodnoty firmy') },
   { out: 'assets/img/og-insights.png', w: 1200, h: 630, html: legacyOg('Insights z&nbsp;českého <span>M&amp;A trhu</span>', 'Insights · Legacy Enterprises') },
 ];
 
