@@ -120,5 +120,12 @@ export default async function functional({ browser, base, fail, pages }) {
     const v2 = await pg.locator('[data-out="mid"]').innerText();
     expect(v1 !== v2, 'výsledek se nezměnil po změně EBITDA');
     expect(/Kč/.test(v2), `výstup bez měny: ${v2}`);
+    await pg.waitForTimeout(400);
+    expect(/e=9000000/.test(pg.url()), 'stav kalkulačky se nepropsal do URL');
+  });
+
+  await run('kalkulačka – načtení z URL', 'kalkulacka.html?s=it&e=5000000&d=0&a=0&o=2&r=2&c=2&g=2&b=2', async (pg) => {
+    expect((await pg.locator('#c-sector').inputValue()) === 'it', 'obor se nenačetl z URL');
+    expect((await pg.locator('[data-out="multiple"]').innerText()).startsWith('7,0'), 'násobek neodpovídá parametrům');
   });
 }

@@ -1415,3 +1415,4 @@ table.cmp .hl { background: var(--accent-tint); color: var(--text); }
 table.cmp tr:last-child th, table.cmp tr:last-child td { border-bottom: 0; }
 .featured-card { border-color: var(--accent); }
 [data-theme="dark"] .featured-card { border-color: var(--gold); }
+.copy-row { font-size: 13px; text-align: center; }

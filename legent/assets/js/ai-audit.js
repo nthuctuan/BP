@@ -159,6 +159,7 @@
     var hidden = resultBox.querySelector('input[name="result"]');
     if (hidden) hidden.value = summary;
 
+    try { localStorage.setItem('legent-audit-last', JSON.stringify({ score: r.score, verdict: v.t, date: new Date().toISOString().slice(0, 10) })); } catch (e) { /* soukromý režim */ }
     panel.hidden = true;
     if (intro) intro.hidden = true;
     resultBox.hidden = false;
@@ -168,6 +169,17 @@
     window.scrollTo({ top: window.scrollY + resultBox.getBoundingClientRect().top - 96, behavior: 'smooth' });
     if (window.plausible) window.plausible('AI audit dokončen', { props: { score: String(Math.round(r.score / 10) * 10) } });
   }
+
+  // Poslední výsledek (jen v tomto prohlížeči)
+  try {
+    var last = JSON.parse(localStorage.getItem('legent-audit-last') || 'null');
+    var lastBox = root.querySelector('[data-quiz-last]');
+    if (last && lastBox) {
+      var d = last.date.split('-');
+      lastBox.textContent = 'Naposledy jste test dokončili ' + (+d[2]) + '. ' + (+d[1]) + '. ' + d[0] + ' se skóre ' + last.score + '/100 (' + last.verdict + ').';
+      lastBox.hidden = false;
+    }
+  } catch (e) { /* soukromý režim */ }
 
   root.querySelector('[data-quiz-start]').addEventListener('click', function () {
     state.step = 0;

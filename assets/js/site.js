@@ -63,6 +63,16 @@
     reveals.forEach(function (el) { el.classList.add('in'); });
   }
 
+  /* ---------- Kopírování odkazu na výpočet ---------- */
+  document.querySelectorAll('[data-copy-link]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var st = btn.parentNode.querySelector('[data-copy-status]');
+      var done = function (ok) { if (st) st.textContent = ok ? 'Odkaz zkopírován do schránky.' : 'Zkopírujte adresu z řádku prohlížeče.'; };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(location.href).then(function () { done(true); }, function () { done(false); });
+      else done(false);
+    });
+  });
+
   /* ---------- Rok v patičce ---------- */
   document.querySelectorAll('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 

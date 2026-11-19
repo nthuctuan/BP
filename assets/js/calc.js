@@ -73,8 +73,23 @@
     bar('.fill.prep', eqAfter, ebitdaAfter * bAfter[1] - debt);
   }
 
-  form.addEventListener('input', calc);
-  form.addEventListener('change', calc);
-  form.addEventListener('submit', function (e) { e.preventDefault(); calc(); });
+  // Stav ve URL → výpočet lze sdílet odkazem
+  var KEYS = { s: 'c-sector', e: 'c-ebitda', d: 'c-debt', a: 'c-addback', o: 'f-owner', r: 'f-recurring', c: 'f-concentration', g: 'f-growth', b: 'f-books' };
+  try {
+    var q = new URLSearchParams(location.search);
+    Object.keys(KEYS).forEach(function (k) { if (q.has(k) && $(KEYS[k])) $(KEYS[k]).value = q.get(k); });
+  } catch (e) { /* starý prohlížeč */ }
+  function saveUrl() {
+    try {
+      var q = new URLSearchParams();
+      Object.keys(KEYS).forEach(function (k) { q.set(k, $(KEYS[k]).value); });
+      history.replaceState(null, '', location.pathname + '?' + q.toString());
+    } catch (e) { /* file:// apod. */ }
+  }
+  var t;
+  function onChange() { calc(); clearTimeout(t); t = setTimeout(saveUrl, 300); }
+  form.addEventListener('input', onChange);
+  form.addEventListener('change', onChange);
+  form.addEventListener('submit', function (e) { e.preventDefault(); onChange(); });
   calc();
 })();

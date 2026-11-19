@@ -33,7 +33,21 @@
     out('roi').textContent = (roi >= 0 ? '+' : '') + Math.round(roi) + ' % ROI za 12 měsíců';
     out('year').textContent = kc(12 * value - yearCost);
   }
-  form.addEventListener('input', calc);
-  form.addEventListener('submit', function (e) { e.preventDefault(); calc(); });
+  var KEYS = { p: 'r-people', h: 'r-hours', r: 'r-rate', s: 'r-share', i: 'r-impl', m: 'r-monthly' };
+  try {
+    var q = new URLSearchParams(location.search);
+    Object.keys(KEYS).forEach(function (k) { if (q.has(k)) $(KEYS[k]).value = q.get(k); });
+  } catch (e) { /* starý prohlížeč */ }
+  function saveUrl() {
+    try {
+      var q = new URLSearchParams();
+      Object.keys(KEYS).forEach(function (k) { q.set(k, $(KEYS[k]).value); });
+      history.replaceState(null, '', location.pathname + '?' + q.toString());
+    } catch (e) { /* file:// apod. */ }
+  }
+  var t;
+  function onChange() { calc(); clearTimeout(t); t = setTimeout(saveUrl, 300); }
+  form.addEventListener('input', onChange);
+  form.addEventListener('submit', function (e) { e.preventDefault(); onChange(); });
   calc();
 })();
