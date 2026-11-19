@@ -10,7 +10,7 @@ const fontsLegacy = pathToFileURL(join(ROOT, 'assets/fonts/fonts.css')).href;
 const fontsLegent = pathToFileURL(join(ROOT, 'legent/assets/fonts/fonts.css')).href;
 const svg = (p) => readFileSync(join(ROOT, p), 'utf8');
 
-const legacyOg = (title, kicker) => `<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="${fontsLegacy}">
+const legacyOg = (title, kicker, foot = 'Praha · ČR · EU') => `<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="${fontsLegacy}">
 <style>
   body{margin:0;width:1200px;height:630px;background:#F8F6F1;font-family:Inter;color:#1A1A2E;position:relative;overflow:hidden}
   .g{position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 92% 10%,#E8F0FB,transparent 70%),radial-gradient(ellipse 40% 50% at 0% 100%,rgba(201,149,60,.14),transparent 70%)}
@@ -24,9 +24,9 @@ const legacyOg = (title, kicker) => `<!doctype html><html><head><meta charset="u
 </style></head><body><div class="g"></div><div class="in">
 <div class="logo">Legacy <i>·</i> <em>Enterprises</em></div>
 <div><div class="k">${kicker}</div><h1>${title}</h1></div>
-<div class="f"><span>legacyenterprises.cz</span><span>Praha · ČR · EU</span></div></div></body></html>`;
+<div class="f"><span>legacyenterprises.cz</span><span>${foot}</span></div></div></body></html>`;
 
-const legentOg = (title, kicker) => `<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="${fontsLegent}">
+const legentOg = (title, kicker, foot = 'AI agenti pro české MSP') => `<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="${fontsLegent}">
 <style>
   body{margin:0;width:1200px;height:630px;background:#07080F;font-family:Geist;color:#ECEBF2;position:relative;overflow:hidden}
   .g{position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 85% 20%,rgba(124,77,255,.35),transparent 70%),radial-gradient(ellipse 50% 60% at 10% 90%,rgba(59,130,246,.25),transparent 70%)}
@@ -41,7 +41,7 @@ const legentOg = (title, kicker) => `<!doctype html><html><head><meta charset="u
 </style></head><body><div class="g"></div><div class="grid"></div><div class="in">
 <div class="logo"><b></b>Legent AI</div>
 <div><div class="k">${kicker}</div><h1>${title}</h1></div>
-<div class="f"><span>legent.ai</span><span>AI agenti pro české MSP</span></div></div></body></html>`;
+<div class="f"><span>legent.ai</span><span>${foot}</span></div></div></body></html>`;
 
 const icon = (file, size) => `<!doctype html><html><body style="margin:0;width:${size}px;height:${size}px">
 ${svg(file).replace('<svg ', `<svg width="${size}" height="${size}" `)}</body></html>`;
@@ -53,6 +53,7 @@ const JOBS = [
   { out: 'assets/img/og-exit-test.png', w: 1200, h: 630, html: legacyOg('Je vaše firma <span>připravená na prodej?</span>', 'Exit Readiness test · 5 min') },
   { out: 'assets/img/og-kalkulacka.png', w: 1200, h: 630, html: legacyOg('Kolik je vaše firma <span>skutečně</span> hodna?', 'Kalkulačka hodnoty firmy') },
   { out: 'assets/img/og-insights.png', w: 1200, h: 630, html: legacyOg('Insights z&nbsp;českého <span>M&amp;A trhu</span>', 'Insights · Legacy Enterprises') },
+  { out: 'assets/img/og-en.png', w: 1200, h: 630, html: legacyOg('Your business is worth more <span>than you think.</span>', 'Pre-exit advisory · Czech Republic', 'Prague · CZ · EU') },
 ];
 
 const LEGENT_JOBS = [
@@ -61,6 +62,7 @@ const LEGENT_JOBS = [
   { out: 'legent/assets/img/og-default.png', w: 1200, h: 630, html: legentOg('AI agenti, kteří <span>čtou vaši firmu.</span>', 'Legent AI · implementace AI pro MSP') },
   { out: 'legent/assets/img/og-ai-audit.png', w: 1200, h: 630, html: legentOg('Jak je vaše firma <span>připravená na AI?</span>', 'AI Readiness test · 4 min') },
   { out: 'legent/assets/img/og-roi.png', w: 1200, h: 630, html: legentOg('Kolik hodin vám <span>AI agenti vrátí?</span>', 'ROI kalkulačka') },
+  { out: 'legent/assets/img/og-en.png', w: 1200, h: 630, html: legentOg('AI agents that <span>read your business.</span>', 'Legent AI · AI agents for SMEs', 'AI agents for SMEs') },
 ];
 
 const legacyLogo = (color, dot) => `<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="${fontsLegacy}">
