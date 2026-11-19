@@ -142,6 +142,14 @@
     return Promise.resolve('mailto');
   }
 
+  /* Předvyplnění tématu z URL (?topic=…) */
+  var TOPICS = { univerze: 'Univerze', viets: 'Viets', studio: 'Venture Studio', legent: 'Legent AI', buy: 'Koupě firmy', sell: 'Prodej firmy', exit: 'Příprava firmy na prodej', family: 'Nástupnictví v rodině' };
+  try {
+    var qp = new URLSearchParams(location.search).get('topic');
+    var topicSel = document.querySelector('select[name="topic"]');
+    if (qp && topicSel && TOPICS[qp]) topicSel.value = TOPICS[qp];
+  } catch (e) { /* starý prohlížeč */ }
+
   document.querySelectorAll('form[data-form]').forEach(function (form) {
     form.setAttribute('novalidate', '');
     var fields = form.querySelectorAll('input, select, textarea');

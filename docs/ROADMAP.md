@@ -27,11 +27,11 @@ Legenda: `[x]` hotovo a ověřeno · `[~]` rozpracováno · `[ ]` čeká
 - [x] Design systém `assets/css/site.css` (převzatý z v2 + přístupnost, kontrast, mobilní menu, formuláře, FAQ, kvíz, kalkulačka, prose)
 - [x] Sdílený JS `assets/js/site.js` (téma bez probliknutí, mobilní menu, reveal animace, formuláře)
 - [x] Úvodní stránka `index.html` (přestavba v2, aktualizované datumy, CTA na nástroje)
-- [ ] `exit-readiness.html` — Exit Readiness Program (6 modulů, ceník, průběh, FAQ)
-- [ ] `kupci.html` — Pro kupce (ETA, search fondy, matchmaking, mentoring)
-- [ ] `venture-studio.html` — Univerze, Viets, teze studia
-- [ ] `o-nas.html` — teze, AI operační model, tým, hodnoty
-- [ ] `kontakt.html` — kontaktní formulář + waiting list + průběh spolupráce
+- [x] `exit-readiness.html` — Exit Readiness Program (6 modulů, ceník, průběh, FAQ)
+- [x] `kupci.html` — Pro kupce (ETA, search fondy, matchmaking, mentoring)
+- [x] `venture-studio.html` — Univerze, Viets, teze studia
+- [x] `o-nas.html` — teze, AI operační model, tým, hodnoty
+- [x] `kontakt.html` — kontaktní formulář + waiting list + průběh spolupráce
 - [ ] `exit-test.html` — interaktivní Exit Readiness test (skóre, doporučení, lead)
 - [ ] `kalkulacka.html` — orientační kalkulačka hodnoty firmy a efektu přípravy
 - [ ] `insights/` — rozcestník + 3 vzdělávací články
@@ -67,3 +67,4 @@ Legenda: `[x]` hotovo a ověřeno · `[~]` rozpracováno · `[ ]` čeká
 ## Log iterací
 
 - **#1 (čt 19. 11.)** — architektura, tooling, self-hosted fonty (Cormorant → EB Garamond kvůli vadné sazbě háčků), design systém v3 (kontrast WCAG AA, mobilní menu, formuláře, FAQ, marquee), partials, nová úvodní stránka (FAQ + JSON-LD, nástroje, waiting list), favicon + OG obrázky, testovací runner (axe, odkazy, mobil, funkce). Úvodní stránka: 0 chyb kromě odkazů na dosud nevytvořené stránky.
+- **#2 (čt 19. 11.)** — podstránky Exit Readiness (6 modulů, ceník, průběh, FAQ + JSON-LD), Pro kupce (4 typy kupců, proces akvizice, vzdělávání, registrační formulář), Venture Studio (Univerze, Viets), O nás (příběh, AI vs. lidé, tým, principy), Kontakt (formulář s předvýběrem tématu z URL, waiting list). Testy: 0 chyb kromě odkazů na stránky z dalších iterací. Pozn.: u týmu vynechán údaj „Podíl 50 %“ (vlastnické podíly se na webech běžně neuvádějí – lze vrátit). Push stále blokován (403).

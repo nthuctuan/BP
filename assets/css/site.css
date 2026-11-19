@@ -1289,3 +1289,32 @@ a.startup:hover { transform: translateY(-3px); box-shadow: 0 16px 34px -20px rgb
   .strip:hover .strip-track { animation-play-state: paused; }
   @keyframes marquee { to { transform: translateX(-50%); } }
 }
+
+/* ================================================================
+   31. PODSTRÁNKY v3 — KPI sloupec, ceník, produktové karty
+   ================================================================ */
+.grid-kpi { display: grid; gap: 14px; }
+.pricing h3 small { font-family: var(--sans); font-size: 14px; font-weight: 400; color: var(--text-muted); letter-spacing: 0; }
+.pricing .featured { border-color: var(--accent); box-shadow: 0 18px 40px -28px rgba(27,58,107,0.55); position: relative; }
+[data-theme="dark"] .pricing .featured { border-color: var(--gold); box-shadow: 0 18px 40px -28px rgba(0,0,0,0.8); }
+.pricing .featured::before {
+  content: ""; position: absolute; left: -1px; right: -1px; top: -1px; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--gold)); border-radius: 4px 4px 0 0;
+}
+.pricing .ticks { margin-top: 6px; }
+.gap-mech a.on-dark { color: var(--gold-light); }
+.aside-ticks { padding: 26px 28px; }
+.product { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 64px; align-items: center; }
+#viets .product { grid-template-columns: 1.1fr 0.9fr; }
+#viets .product .product-card { order: 2; }
+.product-card { min-height: 340px; display: flex; flex-direction: column; justify-content: flex-end; padding: 40px 36px; }
+.product-card .s-nm { font-size: 64px; }
+.product h2 { font-size: clamp(40px, 4.6vw, 64px); }
+.split .card { height: 100%; }
+.contact-card .h3, .contact-left .h3, .h3 { font-family: var(--serif); font-size: clamp(22px, 2.4vw, 32px); font-weight: 500; margin-bottom: 24px; }
+.contact-fields .val a { word-break: break-word; }
+@media (max-width: 1000px) {
+  .product, #viets .product { grid-template-columns: 1fr; gap: 32px; }
+  #viets .product .product-card { order: 0; }
+  .product-card { min-height: 240px; }
+}
