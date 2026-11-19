@@ -1402,3 +1402,16 @@ a.more, .card .meta a { display: inline-block; padding: 6px 0; }
 .glossary dd p { font-size: 16px; line-height: 1.7; max-width: none; }
 .glossary .rel { font-size: 13px; margin-top: 8px; color: var(--text-dim); }
 @media (max-width: 700px) { .glossary .term { grid-template-columns: 1fr; gap: 8px; } }
+
+/* Srovnávací tabulka */
+.table-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 4px; background: var(--surface); }
+table.cmp { width: 100%; min-width: 760px; border-collapse: collapse; font-size: 15px; }
+table.cmp th, table.cmp td { padding: 16px 18px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border-soft); color: var(--text-muted); line-height: 1.5; }
+table.cmp thead th { font-family: var(--serif); font-size: 18px; color: var(--text); font-weight: 500; border-bottom: 1px solid var(--border); }
+table.cmp thead th small { font-family: var(--mono); font-size: 11px; letter-spacing: .06em; color: var(--text-dim); }
+table.cmp tbody th { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-dim); font-weight: 500; width: 150px; }
+table.cmp .hl { background: var(--accent-tint); color: var(--text); }
+[data-theme="dark"] table.cmp .hl { background: var(--gold-tint); }
+table.cmp tr:last-child th, table.cmp tr:last-child td { border-bottom: 0; }
+.featured-card { border-color: var(--accent); }
+[data-theme="dark"] .featured-card { border-color: var(--gold); }

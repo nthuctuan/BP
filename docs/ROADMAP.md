@@ -90,7 +90,7 @@ Cíl: víc organické návštěvnosti (SEO/GEO), vyšší konverze a dosah mimo 
 - [x] `/.well-known/security.txt` (oba weby)
 - [x] Nové články Legacy: „Earn-out, zádržné a vendor financing“ (FAQ JSON-LD), „ETA v Česku: jak koupit první firmu“ (HowTo JSON-LD) – prolinkováno z Insights, Pro kupce, Exit Readiness, llms.txt, RSS
 - [x] Insights pro Legent AI (`legent/insights/`) – rozcestník + 2 články (bezpečný start s AI vč. GDPR/AI Act; AI agent pro faktury vč. ARES a registru plátců DPH), RSS, odkaz v navigaci a patičce
-- [ ] Srovnávací stránka „Broker vs. příprava na prodej“ (`broker-vs-priprava.html`)
+- [x] Srovnávací stránka „Broker, nebo příprava na prodej?“ (`broker-vs-priprava.html`) – férová tabulka 3 cest, kdy co stačí, FAQ JSON-LD; odkazy z úvodu, Exit Readiness, patičky, llms.txt
 - [ ] Sdílitelné výsledky kalkulaček (stav v URL) a uložení posledního výsledku testů v prohlížeči
 - [ ] Anglické verze: `en/index.html` (Legacy) a `legent/en/index.html` (Legent) + hreflang
 - [ ] Korektura nových textů, Lighthouse, `npm test`, aktualizace QA reportu

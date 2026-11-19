@@ -6,6 +6,7 @@ Zakladatelé: Thuc Tuan Nguyen (CEO, M&A, CZ/EN/VI) a Matěj Klíma (CTO, AI). K
 
 ## Služby
 - [Exit Readiness Program](https://legacyenterprises.cz/exit-readiness.html): šest modulů přípravy firmy na prodej (ERA, Quality of Earnings, SOP, Risk Mitigation, CIM, Valuation Tracking), ceník a průběh
+- [Broker, nebo příprava na prodej?](https://legacyenterprises.cz/broker-vs-priprava.html): férové srovnání tří cest k prodeji firmy
 - [Pro kupce firem](https://legacyenterprises.cz/kupci.html): matchmaking, proces akvizice, mentoring pro ETA kupce, registrace kupce
 - [Venture Studio](https://legacyenterprises.cz/venture-studio.html): komunitní platformy Univerze a Viets
 - [Legent AI](https://legent.ai/): AI agenti a automatizace pro malé a střední firmy
