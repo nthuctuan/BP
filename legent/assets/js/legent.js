@@ -4,7 +4,7 @@
   var box = document.querySelector('[data-console]');
   if (!box) return;
   var SCEN = [
-    { id: 'faktury', title: 'legent-agent · přijaté faktury', foot: 'Ušetřeno dnes: 3 h 10 min', lines: [
+    { id: 'faktury', title: 'legent-agent · přijaté faktury', foot: 'Ušetřeno dnes: 2 h 15 min', lines: [
       ['run', 'Čtu schránku faktury@… — <b>38 nových dokladů</b>'],
       ['ok', '<b>Vytěženo 38/38:</b> dodavatel, IČO, částka, DPH, splatnost'],
       ['run', 'Páruji s objednávkami a bankovními pohyby…'],

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>AI agent pro přijaté faktury: jak funguje krok za krokem</title>
-<meta name="description" content="Jak AI agent zpracuje přijaté faktury: vytěžení údajů, kontrola v ARES a registru plátců DPH, párování s objednávkami a platbami, výjimky ke schválení a export.">
+<meta name="description" content="Jak AI agent zpracuje přijaté faktury: vytěžení údajů, kontrola v ARES a registru plátců DPH, párování s objednávkami a platbami, výjimky a export.">
 <link rel="canonical" href="https://legent.ai/insights/ai-agent-pro-prijate-faktury.html">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="cs_CZ">
@@ -53,7 +53,7 @@
       "step": [
         { "@type": "HowToStep", "position": 1, "name": "Příjem", "text": "Agent zachytí nový doklad ve schránce nebo složce." },
         { "@type": "HowToStep", "position": 2, "name": "Vytěžení", "text": "Vytáhne dodavatele, IČO, DIČ, částky, DPH a bankovní účet." },
-        { "@type": "HowToStep", "position": 3, "name": "Ověření", "text": "Zkontroluje dodavatele v ARES, zveřejněný účet plátce DPH a duplicity." },
+        { "@type": "HowToStep", "position": 3, "name": "Ověření", "text": "Zkontroluje dodavatele v ARES a v registru plátců DPH (nespolehlivý plátce, zveřejněný účet) a duplicity." },
         { "@type": "HowToStep", "position": 4, "name": "Párování", "text": "Porovná doklad s objednávkou a bankovním pohybem." },
         { "@type": "HowToStep", "position": 5, "name": "Výjimky", "text": "Nesoulady předá ke schválení člověku." },
         { "@type": "HowToStep", "position": 6, "name": "Export", "text": "Schválené doklady připraví k zaúčtování v účetním systému." }
@@ -143,15 +143,15 @@
       <ol>
         <li><strong>Příjem.</strong> Agent sleduje schránku (např. faktury@…) nebo sdílenou složku a&nbsp;zachytí každý nový doklad.</li>
         <li><strong>Vytěžení.</strong> Z&nbsp;PDF, fotky nebo e-mailu vytáhne dodavatele, IČO a&nbsp;DIČ, číslo dokladu, data, částky, sazby DPH a&nbsp;bankovní účet.</li>
-        <li><strong>Ověření.</strong> Zkontroluje dodavatele v&nbsp;registru ARES a&nbsp;u&nbsp;plátců DPH, zda je bankovní účet zveřejněný v&nbsp;registru plátců DPH (platba na nezveřejněný účet může znamenat ručení za DPH). Hlídá také duplicity.</li>
+        <li><strong>Ověření.</strong> Zkontroluje dodavatele v&nbsp;registru ARES a&nbsp;v&nbsp;registru plátců DPH: zda není nespolehlivým plátcem a&nbsp;zda je bankovní účet zveřejněný. Ručení za DPH hrozí při platbě nespolehlivému plátci nebo při platbě nad 540&nbsp;000&nbsp;Kč na nezveřejněný účet (§ 109 zákona o&nbsp;DPH). Hlídá také duplicity.</li>
         <li><strong>Párování.</strong> Porovná doklad s&nbsp;objednávkou nebo smlouvou a&nbsp;později s&nbsp;bankovním pohybem.</li>
-        <li><strong>Výjimky ke schválení.</strong> Nesoulad v&nbsp;částce, nový dodavatel nebo neověřený účet jdou do fronty, kde je během pár vteřin potvrdí nebo opraví člověk.</li>
-        <li><strong>Export.</strong> Schválené doklady připraví k&nbsp;zaúčtování — importem do účetního systému (u&nbsp;běžných českých systémů typicky přes XML import nebo API) nebo pro externí účetní.</li>
+        <li><strong>Výjimky ke schválení.</strong> Nesoulad v&nbsp;částce, nový dodavatel nebo neověřený účet jdou do fronty, kde je člověk jedním kliknutím potvrdí nebo opraví.</li>
+        <li><strong>Export.</strong> Schválené doklady připraví k&nbsp;zaúčtování — importem do účetního systému (u&nbsp;běžných českých systémů typicky přes XML nebo API) nebo pro externí účetní.</li>
         <li><strong>Reporting.</strong> Přehled zpracovaných dokladů, výjimek a&nbsp;ušetřeného času za týden či měsíc.</li>
       </ol>
 
       <h2 id="presnost">Jak je to přesné?</h2>
-      <p>U&nbsp;čitelných PDF bývá vytěžení velmi spolehlivé, u&nbsp;fotek a&nbsp;neobvyklých formátů méně. Proto agent nikdy „nehádá“: když si není jistý nebo nesedí kontrolní součty, doklad označí ke kontrole. Po prvních týdnech se pravidla doladí podle vašich dodavatelů.</p>
+      <p>U&nbsp;čitelných PDF bývá vytěžení velmi spolehlivé, u&nbsp;fotek a&nbsp;neobvyklých formátů méně. Proto je agent nastavený tak, aby „nehádal“: když si není jistý nebo nesedí kontrolní součty, doklad označí ke kontrole. Po prvních týdnech se pravidla doladí podle vašich dodavatelů.</p>
 
       <h2 id="zavedeni">Co je potřeba k&nbsp;zavedení</h2>
       <ul>

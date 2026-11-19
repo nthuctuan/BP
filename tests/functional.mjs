@@ -63,7 +63,6 @@ export default async function functional({ browser, base, fail, pages }) {
       await pg.fill('#cf-name', 'Jan Test');
       await pg.fill('#cf-email', 'jan@example.com');
       await pg.fill('#cf-message', 'Dobrý den, zajímá mě spolupráce.');
-      await pg.check('#cf-consent');
       await pg.click('#contact-form button[type="submit"]');
       await pg.waitForTimeout(200);
       const status = await pg.locator('#contact-form .form-status').innerText();

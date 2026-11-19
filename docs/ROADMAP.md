@@ -93,7 +93,8 @@ Cíl: víc organické návštěvnosti (SEO/GEO), vyšší konverze a dosah mimo 
 - [x] Srovnávací stránka „Broker, nebo příprava na prodej?“ (`broker-vs-priprava.html`) – férová tabulka 3 cest, kdy co stačí, FAQ JSON-LD; odkazy z úvodu, Exit Readiness, patičky, llms.txt
 - [x] Sdílitelné výsledky kalkulaček (stav v URL + tlačítko „Zkopírovat odkaz“) a zapamatování posledního výsledku Exit testu / AI auditu v prohlížeči (s testy)
 - [x] Anglické verze: `en/index.html` (Legacy – vč. sekce pro zahraniční kupce) a `legent/en/index.html` (Legent) + hreflang, přepínač CZ/EN, anglické hlášky formulářů (s testy)
-- [ ] Korektura nových textů, Lighthouse, `npm test`, aktualizace QA reportu
+- [x] Korektura nových textů (30 nálezů: definice asset deal, ručení za DPH, zádržné × úschova, AI Act, souhlasy ve formulářích → informace dle čl. 6/1 b,f GDPR…), Lighthouse 32 stránek (98–100), QA report aktualizován
+- [x] Bonus: blok nejnovějších článků na obou úvodních stránkách, anglické OG obrázky, větší dotykové cíle v patičkách
 
 ## Otevřené otázky pro majitele → `docs/OPEN-QUESTIONS.md`
 
@@ -111,3 +112,4 @@ Cíl: víc organické návštěvnosti (SEO/GEO), vyšší konverze a dosah mimo 
 - **#4b** — Lighthouse všech 23 stránek (96–100 / 100 / 100 / 100) → `docs/QA-REPORT.md`; CI na GitHubu zelené; korektura textů zapracována (střet zájmů sjednocen s etickým kodexem, „data primárně v EU“, bez nepodložených srovnání s konkurencí, opravy gramatiky).
 - **#4c** — SEO audit (titulky ≤ 65 znaků, popisky, Twitter karty, dotykové cíle ≥ 24 px), mapa klíčových slov `docs/SEO.md`, finální vizuální QA. **Všechny body roadmapy hotové a ověřené.** Zbývají jen údaje od majitele (`docs/OPEN-QUESTIONS.md`).
 - **#5 (čt 19. 11. večer)** — uživatel požádal o pokračování a vylepšování → fáze 2, nová smyčka po 30 min.
+- **#5b (čt 19. 11. ~22:10)** — fáze 2 hotová: slovník, RSS, security.txt, 2+2 články, srovnání broker vs. příprava, sdílení výpočtů, EN verze; korektura + Lighthouse; `npm test` zelený (34 stránek).

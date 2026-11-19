@@ -1418,3 +1418,5 @@ table.cmp tr:last-child th, table.cmp tr:last-child td { border-bottom: 0; }
 .copy-row { font-size: 13px; text-align: center; }
 .nav-lang { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; color: var(--text-muted); text-decoration: none; padding: 10px 6px; }
 .nav-lang:hover { color: var(--gold-ink); }
+.consent-note { font-size: 13px; color: var(--text-dim); line-height: 1.55; max-width: none; }
+.foot-bot .legal a { display: inline-block; padding: 5px 0; }

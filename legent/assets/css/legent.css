@@ -414,3 +414,5 @@ a.more { display: inline-block; padding: 6px 0; }
 @media (max-width: 1000px) { .doc-grid { grid-template-columns: 1fr; } .toc { display: none; } }
 @media (max-width: 1180px) and (min-width: 1021px) { .nav-links a { padding: 7px 10px; } }
 .copy-row { font-size: 13px; text-align: center; }
+.consent-note { font-size: 13px; color: var(--dim); line-height: 1.55; max-width: none; }
+.foot-bot a { display: inline-block; padding: 5px 0; }
