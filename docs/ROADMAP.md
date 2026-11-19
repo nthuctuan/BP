@@ -81,6 +81,20 @@ Legenda: `[x]` hotovo a ověřeno · `[~]` rozpracováno · `[ ]` čeká
 - [x] Zpětná kontrola: nezávislá korektura češtiny (40 nálezů zapracováno – gramatika, kalky, sjednocení pravidel střetu zájmů, zmírnění absolutních slibů, „hodna“), konzistence cen a kontaktů ověřena, odkazy OK
 - [x] Finální QA průchod obou webů (náhledy všech 25 stránek, detailní kontrola formulářů, tablet/mobil, oprava zalamování přepínačů)
 
+## Fáze 2 – vylepšení (od 19. 11. večer, do 22. 11.)
+
+Cíl: víc organické návštěvnosti (SEO/GEO), vyšší konverze a dosah mimo češtinu.
+
+- [x] Slovník pojmů M&A (`slovnik.html`) – 32 hesel, rejstřík A–Z (vč. Č), DefinedTermSet JSON-LD, prolinkováno z článků, patičky, Insights, llms.txt
+- [x] RSS feed pro Insights (`insights/feed.xml`, generuje `tools/seo.mjs`) + `<link rel="alternate">` v hlavičce
+- [x] `/.well-known/security.txt` (oba weby)
+- [ ] Nové články Legacy: „Earn-out, zádržné a vendor financing“, „ETA v Česku: jak koupit první firmu“
+- [ ] Insights pro Legent AI (`legent/insights/`) – 2 články: „Jak bezpečně začít s AI ve firmě“, „AI agent pro přijaté faktury krok za krokem“
+- [ ] Srovnávací stránka „Broker vs. příprava na prodej“ (`broker-vs-priprava.html`)
+- [ ] Sdílitelné výsledky kalkulaček (stav v URL) a uložení posledního výsledku testů v prohlížeči
+- [ ] Anglické verze: `en/index.html` (Legacy) a `legent/en/index.html` (Legent) + hreflang
+- [ ] Korektura nových textů, Lighthouse, `npm test`, aktualizace QA reportu
+
 ## Otevřené otázky pro majitele → `docs/OPEN-QUESTIONS.md`
 
 ## Log iterací
@@ -96,3 +110,4 @@ Legenda: `[x]` hotovo a ověřeno · `[~]` rozpracováno · `[ ]` čeká
 - **#4 (čt 19. 11.)** — Lighthouse (mobil) 96–100 ve všech kategoriích, oprava LCP; PDF přílohy (checklist, 2× one-pager), logo kit, odkazy ke stažení; Netlify Forms atributy; CI + Pages workflow; `_headers`; DEPLOY.md; statická SEO kontrola v `npm test` (unikátní titulky, canonical, sitemap, sirotci).
 - **#4b** — Lighthouse všech 23 stránek (96–100 / 100 / 100 / 100) → `docs/QA-REPORT.md`; CI na GitHubu zelené; korektura textů zapracována (střet zájmů sjednocen s etickým kodexem, „data primárně v EU“, bez nepodložených srovnání s konkurencí, opravy gramatiky).
 - **#4c** — SEO audit (titulky ≤ 65 znaků, popisky, Twitter karty, dotykové cíle ≥ 24 px), mapa klíčových slov `docs/SEO.md`, finální vizuální QA. **Všechny body roadmapy hotové a ověřené.** Zbývají jen údaje od majitele (`docs/OPEN-QUESTIONS.md`).
+- **#5 (čt 19. 11. večer)** — uživatel požádal o pokračování a vylepšování → fáze 2, nová smyčka po 30 min.

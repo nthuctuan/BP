@@ -55,3 +55,40 @@ const legacyFiles = all.filter((f) => !f.startsWith(legentDir + sep));
 const legentFiles = all.filter((f) => f.startsWith(legentDir + sep));
 console.log(`sitemap Legacy: ${build(ROOT, cfg.legacy.url, legacyFiles)} URL`);
 if (existsSync(legentDir) && legentFiles.length) console.log(`sitemap Legent: ${build(legentDir, cfg.legent.url, legentFiles)} URL`);
+
+// RSS feed pro Insights (Legacy) a Legent insights (pokud existují)
+function feed(dir, siteUrl, title, desc) {
+  if (!existsSync(dir)) return 0;
+  const items = readdirSync(dir).filter((n) => n.endsWith('.html') && n !== 'index.html').map((n) => {
+    const h = readFileSync(join(dir, n), 'utf8');
+    const get = (re) => (h.match(re) || [])[1] || '';
+    return {
+      title: get(/<title>([^<]*)<\/title>/), desc: get(/<meta name="description" content="([^"]*)"/),
+      link: get(/<link rel="canonical" href="([^"]*)"/), date: get(/<meta property="article:published_time" content="([^"]*)"/),
+    };
+  }).sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+  const esc = (s) => s.replace(/&(?!amp;|lt;|gt;|quot;|#)/g, '&amp;').replace(/</g, '&lt;');
+  const rss = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>${esc(title)}</title>
+  <link>${siteUrl}</link>
+  <description>${esc(desc)}</description>
+  <language>cs</language>
+  <atom:link href="${siteUrl}feed.xml" rel="self" type="application/rss+xml"/>
+${items.map((i) => `  <item>
+    <title>${esc(i.title)}</title>
+    <link>${i.link}</link>
+    <guid>${i.link}</guid>
+    <description>${esc(i.desc)}</description>
+    <pubDate>${new Date(i.date + 'T08:00:00Z').toUTCString()}</pubDate>
+  </item>`).join('\n')}
+</channel>
+</rss>
+`;
+  writeFileSync(join(dir, 'feed.xml'), rss);
+  return items.length;
+}
+console.log(`RSS Legacy: ${feed(join(ROOT, 'insights'), cfg.legacy.url.replace(/\/$/, '') + '/insights/', 'Insights – Legacy Enterprises', 'Prodej, ocenění a nástupnictví malých a středních firem v ČR.')} článků`);
+const lf = feed(join(ROOT, 'legent', 'insights'), cfg.legent.url.replace(/\/$/, '') + '/insights/', 'Insights – Legent AI', 'AI agenti a automatizace v praxi malých a středních firem.');
+if (lf) console.log(`RSS Legent: ${lf} článků`);

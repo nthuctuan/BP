@@ -21,4 +21,5 @@ Zakladatelé: Thuc Tuan Nguyen (CEO, M&A, CZ/EN/VI) a Matěj Klíma (CTO, AI). K
 
 ## Optional
 - [Insights](https://legacyenterprises.cz/insights/index.html): články o oceňování a prodeji malých firem
+- [Slovník pojmů M&A](https://legacyenterprises.cz/slovnik.html): 32 pojmů z prodeje a koupě firem (EBITDA, násobek, due diligence, earn-out, LOI…)
 - [Ochrana osobních údajů](https://legacyenterprises.cz/ochrana-osobnich-udaju.html)

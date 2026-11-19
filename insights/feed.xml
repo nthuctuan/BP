@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Insights – Legacy Enterprises</title>
+  <link>https://legacyenterprises.cz/insights/</link>
+  <description>Prodej, ocenění a nástupnictví malých a středních firem v ČR.</description>
+  <language>cs</language>
+  <atom:link href="https://legacyenterprises.cz/insights/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Prodej firmy krok za krokem: checklist na 18–36 měsíců</title>
+    <link>https://legacyenterprises.cz/insights/checklist-prodej-firmy.html</link>
+    <guid>https://legacyenterprises.cz/insights/checklist-prodej-firmy.html</guid>
+    <description>Praktický checklist přípravy firmy na prodej: co udělat 36, 24, 12 a 6 měsíců před transakcí. Finance, procesy, tým, smlouvy, kupci a vyjednávání v jednom přehledu.</description>
+    <pubDate>Thu, 19 Nov 2026 08:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title>Jak se oceňuje malá firma: násobek EBITDA a co srazí cenu</title>
+    <link>https://legacyenterprises.cz/insights/jak-se-ocenuje-mala-firma.html</link>
+    <guid>https://legacyenterprises.cz/insights/jak-se-ocenuje-mala-firma.html</guid>
+    <description>Jak kupci oceňují malé a střední firmy v ČR: normalizovaná EBITDA, násobky podle oboru, čistý dluh a pět rizik, která snižují cenu. Praktický průvodce pro majitele.</description>
+    <pubDate>Thu, 19 Nov 2026 08:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title>Nástupnictví v rodinné firmě: předat dětem, nebo prodat?</title>
+    <link>https://legacyenterprises.cz/insights/nastupnictvi-v-rodinne-firme.html</link>
+    <guid>https://legacyenterprises.cz/insights/nastupnictvi-v-rodinne-firme.html</guid>
+    <description>Generační výměna v českých rodinných firmách: tři cesty (rodina, management, prodej), jejich výhody a rizika a jak se rozhodnout včas. S aktuálními daty z průzkumů.</description>
+    <pubDate>Thu, 19 Nov 2026 08:00:00 GMT</pubDate>
+  </item>
+</channel>
+</rss>
