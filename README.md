@@ -25,9 +25,23 @@ hostovat kdekoli a upravovat i přímo na GitHubu.
 npm install          # jednorázově (fonty, validátor, axe-core)
 npm run serve        # náhled na http://localhost:8080 (Legent AI: /legent/)
 npm run build        # propsání sdílených partials do stránek
-npm test             # build check + HTML validace + Playwright testy (odkazy, a11y, mobil, funkce)
+npm test             # build check + HTML validace + SEO kontrola + Playwright testy (odkazy, a11y, mobil, funkce)
 npm run fonts        # přegenerování self-hosted fontů
 node tools/images.mjs  # přegenerování ikon a OG obrázků
 ```
 
-Plán a stav prací: [`docs/ROADMAP.md`](docs/ROADMAP.md) · Otevřené otázky: [`docs/OPEN-QUESTIONS.md`](docs/OPEN-QUESTIONS.md)
+## Dokumentace
+
+- [`docs/DEPLOY.md`](docs/DEPLOY.md) — nasazení, domény, formuláře, analytika, Search Console
+- [`docs/QA-REPORT.md`](docs/QA-REPORT.md) — výsledky testů a Lighthouse
+- [`docs/SEO.md`](docs/SEO.md) — mapa klíčových slov a obsahový plán
+- [`docs/OPEN-QUESTIONS.md`](docs/OPEN-QUESTIONS.md) — co doplnit před spuštěním
+- [`docs/ROADMAP.md`](docs/ROADMAP.md) — plán a log prací
+
+## Přílohy ke stažení
+
+- `assets/downloads/` — checklist přípravy na prodej (PDF), one-pager Legacy Enterprises (PDF)
+- `legent/assets/downloads/` — přehled služeb Legent AI (PDF)
+- `assets/brand/`, `legent/assets/brand/` — loga (PNG, SVG)
+
+PDF se generují z `tools/pdf/*.html` příkazem `node tools/pdf.mjs`.

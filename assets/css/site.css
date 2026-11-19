@@ -1386,3 +1386,4 @@ p.hint { font-size: 13px; color: var(--text-dim); }
 @media (max-width: 1000px) { .posts { grid-template-columns: 1fr; } }
 /* Dostatečně velké dotykové cíle (WCAG 2.5.8) */
 a.more, .card .meta a { display: inline-block; padding: 6px 0; }
+.choice-row label { white-space: nowrap; }

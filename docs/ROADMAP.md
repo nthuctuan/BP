@@ -79,7 +79,7 @@ Legenda: `[x]` hotovo a ověřeno · `[~]` rozpracováno · `[ ]` čeká
 - [x] GitHub Actions CI (`npm test`) + workflow nasazení na GitHub Pages
 - [x] `docs/DEPLOY.md` (GitHub Pages / Netlify / Cloudflare / Vercel, samostatná doména Legent, formuláře, analytika, Search Console) + `_headers` (CSP, HSTS, cache)
 - [x] Zpětná kontrola: nezávislá korektura češtiny (40 nálezů zapracováno – gramatika, kalky, sjednocení pravidel střetu zájmů, zmírnění absolutních slibů, „hodna“), konzistence cen a kontaktů ověřena, odkazy OK
-- [ ] Finální QA průchod obou webů
+- [x] Finální QA průchod obou webů (náhledy všech 25 stránek, detailní kontrola formulářů, tablet/mobil, oprava zalamování přepínačů)
 
 ## Otevřené otázky pro majitele → `docs/OPEN-QUESTIONS.md`
 
@@ -95,3 +95,4 @@ Legenda: `[x]` hotovo a ověřeno · `[~]` rozpracováno · `[ ]` čeká
 - **#3f** — Legent: O nás, Kontakt, GDPR+cookies, 404, llms.txt. **Oba weby kompletní: 25 stránek, `npm test` zcela zelený** (jen varování o placeholderech IČO/sídla). Další: SEO audit, Lighthouse, přílohy (PDF), CI, DEPLOY.md, zpětná kontrola.
 - **#4 (čt 19. 11.)** — Lighthouse (mobil) 96–100 ve všech kategoriích, oprava LCP; PDF přílohy (checklist, 2× one-pager), logo kit, odkazy ke stažení; Netlify Forms atributy; CI + Pages workflow; `_headers`; DEPLOY.md; statická SEO kontrola v `npm test` (unikátní titulky, canonical, sitemap, sirotci).
 - **#4b** — Lighthouse všech 23 stránek (96–100 / 100 / 100 / 100) → `docs/QA-REPORT.md`; CI na GitHubu zelené; korektura textů zapracována (střet zájmů sjednocen s etickým kodexem, „data primárně v EU“, bez nepodložených srovnání s konkurencí, opravy gramatiky).
+- **#4c** — SEO audit (titulky ≤ 65 znaků, popisky, Twitter karty, dotykové cíle ≥ 24 px), mapa klíčových slov `docs/SEO.md`, finální vizuální QA. **Všechny body roadmapy hotové a ověřené.** Zbývají jen údaje od majitele (`docs/OPEN-QUESTIONS.md`).
