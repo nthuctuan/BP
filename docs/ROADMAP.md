@@ -34,11 +34,11 @@ Legenda: `[x]` hotovo a ověřeno · `[~]` rozpracováno · `[ ]` čeká
 - [x] `kontakt.html` — kontaktní formulář + waiting list + průběh spolupráce
 - [x] `exit-test.html` — interaktivní Exit Readiness test (skóre, doporučení, lead)
 - [x] `kalkulacka.html` — orientační kalkulačka hodnoty firmy a efektu přípravy
-- [ ] `insights/` — rozcestník + 3 vzdělávací články
+- [x] `insights/` — rozcestník + 3 články (oceňování, checklist prodeje, nástupnictví) s Article/HowTo JSON-LD a prolinkováním
 - [x] Právní: `ochrana-osobnich-udaju.html` (GDPR), `cookies.html`, `eticky-kodex.html`
 - [x] `404.html`, `robots.txt`, `sitemap.xml` (generátor `tools/seo.mjs`), `llms.txt`, `site.webmanifest`, favicon, OG obrázky
 - [ ] JSON-LD (Organization, ProfessionalService, FAQPage, Person, Article, Breadcrumb)
-- [ ] Ověření statistik a zdrojů (ČSÚ, AMSP, Pepperdine…) – co nejde ověřit, zmírnit/označit
+- [x] Ověření statistik a zdrojů – neověřitelné údaje z v2 nahrazeny zdrojovanými (AMSP ČR, Helas & Talers 2026, BusinessInfo.cz, Eurostat 2025 pro Legent)
 
 ## Legent AI (`/legent/`)
 
@@ -89,3 +89,4 @@ Legenda: `[x]` hotovo a ověřeno · `[~]` rozpracováno · `[ ]` čeká
 - **#2 (čt 19. 11.)** — podstránky Exit Readiness (6 modulů, ceník, průběh, FAQ + JSON-LD), Pro kupce (4 typy kupců, proces akvizice, vzdělávání, registrační formulář), Venture Studio (Univerze, Viets), O nás (příběh, AI vs. lidé, tým, principy), Kontakt (formulář s předvýběrem tématu z URL, waiting list). Testy: 0 chyb kromě odkazů na stránky z dalších iterací. Pozn.: u týmu vynechán údaj „Podíl 50 %“ (vlastnické podíly se na webech běžně neuvádějí – lze vrátit). Push byl blokován (403) → uživatel povolil přístup, oba commity nahrány. Časovač smyčky zanikl s restartem kontejneru → nahrazen odolnou plánovanou zprávou (send_later, každých 30 min do 22. 11.).
 - **#3 (čt 19. 11.)** — GitHub přístup povolen, vše nahráno. Odolná smyčka (send_later). Exit Readiness test (1+12 otázek, 6 oblastí, skóre, doporučení, časový tlak, tisk/PDF, odeslání výsledku) a kalkulačka hodnoty (8 oborů, 5 faktorů, normalizace EBITDA, čistý dluh, scénář po přípravě, graf). Funkční testy obou nástrojů zelené. Roadmapa rozšířena o SEO/GEO, přílohy a zpětnou kontrolu.
 - **#3b** — GDPR zásady (tabulka účelů a právních základů, doby uložení, příjemci, AI, práva, ÚOOÚ), cookies (bez cookie lišty – jen localStorage tématu), etický kodex (7 oblastí), 404, sitemap/robots generátor (povoleni AI crawleři pro GEO), llms.txt; identifikace firmy z `site.config.json` (partial `company`). Opraveno přetečení tabulek na mobilu.
+- **#3c** — ověření statistik (WebSearch): údaje v2 neověřitelné → nahrazeny zdrojovanými s odkazy. Insights: rozcestník + 3 SEO články, související články, odběr. Web Legacy kompletní (16 stránek), testy zelené kromě odkazu na Legent AI.
