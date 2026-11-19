@@ -16,3 +16,4 @@ většina se mění na jednom místě (`site.config.json` → `npm run build`, n
 | 9 | Chcete **analytiku bez cookies** (Plausible ~9 €/měs. nebo Umami zdarma self-host)? | `assets/js/config.js` | Měření konverzí formulářů a testů |
 | 10 | Odkaz na **rezervaci schůzky** (Cal.com / Calendly / Google Calendar booking)? | `kontakt.html` | Rychlejší domluva úvodního rozhovoru |
 | 11 | Mají **Univerze** a **Viets** vlastní weby / stav vývoje? | `venture-studio.html` | Teď prezentováno jako „ve vývoji" |
+| 12 | **Revize vietnamské stránky** `vi/index.html` rodilým mluvčím (např. Thuc Tuan Nguyen) — text je napsaný jednoduše a srozumitelně, ale před spuštěním by ho měl zkontrolovat rodilý mluvčí | `vi/index.html`, hlášky formuláře v `assets/js/site.js` (větev VI) | Důvěra komunity stojí na jazyce |

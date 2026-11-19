@@ -1420,3 +1420,4 @@ table.cmp tr:last-child th, table.cmp tr:last-child td { border-bottom: 0; }
 .nav-lang:hover { color: var(--gold-ink); }
 .consent-note { font-size: 13px; color: var(--text-dim); line-height: 1.55; max-width: none; }
 .foot-bot .legal a { display: inline-block; padding: 5px 0; }
+@media (max-width: 600px) { .nav-lang { display: none; } }

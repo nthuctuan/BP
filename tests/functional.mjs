@@ -79,6 +79,12 @@ export default async function functional({ browser, base, fail, pages }) {
     });
   }
 
+  await run('VI formulář', 'vi/index.html', async (pg) => {
+    await pg.click('#contact-form button[type="submit"]');
+    const err = await pg.locator('#cf-name-err').innerText();
+    expect(/Vui lòng/.test(err), `chybová hláška není vietnamsky: ${err}`);
+  });
+
   // Předvyplnění tématu z URL
   await run('předvyplnění tématu', 'legent/kontakt.html?topic=gastro', async (pg) => {
     expect((await pg.locator('#cf-topic').inputValue()) === 'Gastronomie', 'téma se nepředvyplnilo');

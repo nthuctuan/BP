@@ -53,6 +53,7 @@ const JOBS = [
   { out: 'assets/img/og-exit-test.png', w: 1200, h: 630, html: legacyOg('Je vaše firma <span>připravená na prodej?</span>', 'Exit Readiness test · 5 min') },
   { out: 'assets/img/og-kalkulacka.png', w: 1200, h: 630, html: legacyOg('Kolik je vaše firma <span>skutečně</span> hodna?', 'Kalkulačka hodnoty firmy') },
   { out: 'assets/img/og-insights.png', w: 1200, h: 630, html: legacyOg('Insights z&nbsp;českého <span>M&amp;A trhu</span>', 'Insights · Legacy Enterprises') },
+  { out: 'assets/img/og-vi.png', w: 1200, h: 630, html: legacyOg('Doanh nghiệp của bạn <span>đáng giá hơn bạn nghĩ.</span>', 'Tư vấn bán doanh nghiệp · Séc', 'Praha · Séc · EU') },
   { out: 'assets/img/og-en.png', w: 1200, h: 630, html: legacyOg('Your business is worth more <span>than you think.</span>', 'Pre-exit advisory · Czech Republic', 'Prague · CZ · EU') },
 ];
 

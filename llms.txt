@@ -24,6 +24,9 @@ Zakladatelé: Thuc Tuan Nguyen (CEO, M&A, CZ/EN/VI) a Matěj Klíma (CTO, AI). K
 ## English
 - [English overview](https://legacyenterprises.cz/en/index.html): pre-exit advisory for Czech SMEs; information for international buyers, search funds and family offices
 
+## Tiếng Việt
+- [Vietnamese page](https://legacyenterprises.cz/vi/index.html): advisory for Vietnamese business owners in Czechia on selling or handing over a business, in Vietnamese
+
 ## Optional
 - [Insights](https://legacyenterprises.cz/insights/index.html): články o oceňování a prodeji malých firem
 - [Earn-out, zádržné a vendor financing](https://legacyenterprises.cz/insights/earn-out-zadrzne-vendor-financing.html): jak se platí za firmu a jak vyjednat strukturu ceny

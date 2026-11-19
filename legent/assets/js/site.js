@@ -4,8 +4,18 @@
   'use strict';
   var doc = document.documentElement;
   var CFG = window.SITE_CONFIG || { email: 'contact@legacyenterprises.cz', forms: { provider: 'mailto' } };
-  var EN = (doc.getAttribute('lang') || '').slice(0, 2) === 'en';
-  var T = EN ? {
+  var LANG = (doc.getAttribute('lang') || 'cs').slice(0, 2);
+  var EN = LANG === 'en';
+  var VI = LANG === 'vi';
+  var T = VI ? {
+    toLight: 'Chuyển sang chế độ sáng', toDark: 'Chuyển sang chế độ tối', menuOpen: 'Mở menu', menuClose: 'Đóng menu',
+    required: 'Vui lòng điền thông tin này.', email: 'Vui lòng nhập địa chỉ email hợp lệ.', pattern: 'Vui lòng kiểm tra định dạng.',
+    short: 'Nội dung quá ngắn.', consent: 'Chúng tôi không thể trả lời nếu bạn không đồng ý xử lý dữ liệu.',
+    check: 'Vui lòng kiểm tra các ô được đánh dấu.', ok: 'Cảm ơn bạn, tin nhắn đã được gửi. Chúng tôi sẽ trả lời trong vòng 48 giờ.',
+    mailto: 'Chúng tôi đã mở ứng dụng email với tin nhắn soạn sẵn — bạn chỉ cần nhấn gửi. Nếu ứng dụng không mở, hãy viết cho chúng tôi theo địa chỉ ',
+    fail: 'Gửi không thành công. Vui lòng thử lại hoặc viết cho chúng tôi theo địa chỉ ', copied: 'Đã sao chép liên kết.', copyFail: 'Hãy sao chép địa chỉ trên thanh trình duyệt.',
+    subject: 'Tin nhắn từ trang web'
+  } : EN ? {
     toLight: 'Switch to light mode', toDark: 'Switch to dark mode', menuOpen: 'Open menu', menuClose: 'Close menu',
     required: 'This field is required.', email: 'Please enter a valid email address.', pattern: 'Please check the format.',
     short: 'The text is too short.', consent: 'We cannot reply without your consent to data processing.',
@@ -128,7 +138,7 @@
     return Object.keys(data).filter(function (k) { return k.charAt(0) !== '_' && data[k]; })
       .map(function (k) { return (labelFor(k) || k) + ': ' + data[k]; }).join('\n');
   }
-  var LABELS = EN ? { name: 'Name', email: 'Email', phone: 'Phone', company: 'Company', role: 'I am', topic: 'Topic', message: 'Message', consent: 'Consent', interest: 'Interest', horizon: 'Horizon', size: 'Company size' } : {
+  var LABELS = VI ? { name: 'Họ và tên', email: 'Email', phone: 'Điện thoại', company: 'Công ty', message: 'Tin nhắn', interest: 'Quan tâm' } : EN ? { name: 'Name', email: 'Email', phone: 'Phone', company: 'Company', role: 'I am', topic: 'Topic', message: 'Message', consent: 'Consent', interest: 'Interest', horizon: 'Horizon', size: 'Company size' } : {
     name: 'Jméno', email: 'E-mail', phone: 'Telefon', company: 'Firma', role: 'Jsem', revenue: 'Obrat',
     horizon: 'Horizont', message: 'Zpráva', topic: 'Téma', budget: 'Rozpočet', industry: 'Obor',
     result: 'Výsledek', consent: 'Souhlas', interest: 'Zájem'

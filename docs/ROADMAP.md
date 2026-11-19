@@ -99,7 +99,7 @@ Cíl: víc organické návštěvnosti (SEO/GEO), vyšší konverze a dosah mimo 
 ## Fáze 3 – obchodní kanály (do 22. 11.)
 
 - [x] Stránka „Pro partnery“ (`partneri.html`) – účetní, daňoví poradci, advokáti, banky: principy, role podle profese, 4 kroky doporučení, materiály pro klienty, FAQ (JSON-LD), formulář; odkaz z patičky, O nás, llms.txt
-- [ ] Vietnamská stránka (`vi/index.html`) pro vietnamské podnikatele v ČR – nástupnictví a prodej firmy; označit k revizi rodilým mluvčím (Thuc Tuan Nguyen)
+- [x] Vietnamská stránka (`vi/index.html`) – hoàn cảnh, postup, ceny, Viets, formulář s vietnamskými hláškami, hreflang, přepínač VI, OG obrázek; **k revizi rodilým mluvčím** (OPEN-QUESTIONS #12)
 - [ ] Finální kontrola fáze 3 (testy, Lighthouse, korektura)
 
 ## Otevřené otázky pro majitele → `docs/OPEN-QUESTIONS.md`
