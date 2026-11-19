@@ -100,7 +100,7 @@ Cíl: víc organické návštěvnosti (SEO/GEO), vyšší konverze a dosah mimo 
 
 - [x] Stránka „Pro partnery“ (`partneri.html`) – účetní, daňoví poradci, advokáti, banky: principy, role podle profese, 4 kroky doporučení, materiály pro klienty, FAQ (JSON-LD), formulář; odkaz z patičky, O nás, llms.txt
 - [x] Vietnamská stránka (`vi/index.html`) – hoàn cảnh, postup, ceny, Viets, formulář s vietnamskými hláškami, hreflang, přepínač VI, OG obrázek; **k revizi rodilým mluvčím** (OPEN-QUESTIONS #12)
-- [ ] Finální kontrola fáze 3 (testy, Lighthouse, korektura)
+- [x] Finální kontrola fáze 3 (testy 36 stránek, Lighthouse partneri 100 / vi 99, QA report)
 
 ## Otevřené otázky pro majitele → `docs/OPEN-QUESTIONS.md`
 
@@ -119,3 +119,4 @@ Cíl: víc organické návštěvnosti (SEO/GEO), vyšší konverze a dosah mimo 
 - **#4c** — SEO audit (titulky ≤ 65 znaků, popisky, Twitter karty, dotykové cíle ≥ 24 px), mapa klíčových slov `docs/SEO.md`, finální vizuální QA. **Všechny body roadmapy hotové a ověřené.** Zbývají jen údaje od majitele (`docs/OPEN-QUESTIONS.md`).
 - **#5 (čt 19. 11. večer)** — uživatel požádal o pokračování a vylepšování → fáze 2, nová smyčka po 30 min.
 - **#5b (čt 19. 11. ~22:10)** — fáze 2 hotová: slovník, RSS, security.txt, 2+2 články, srovnání broker vs. příprava, sdílení výpočtů, EN verze; korektura + Lighthouse; `npm test` zelený (34 stránek).
+- **#6 (čt 19. 11. 22:20)** — fáze 3 hotová (Pro partnery, vietnamská stránka). Všechny body fází 1–3 hotové a ověřené → smyčka ukončena.

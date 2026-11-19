@@ -1,12 +1,12 @@
 # QA report — Legacy Enterprises & Legent AI
 
-Stav k 19. 11. 2026 (fáze 2: 34 stránek včetně anglických verzí). Ověřováno automaticky (`npm test`, CI na GitHubu) i ručně (screenshoty).
+Stav k 19. 11. 2026 (fáze 2 a 3: 36 stránek včetně anglických a vietnamské verze). Ověřováno automaticky (`npm test`, CI na GitHubu) i ručně (screenshoty).
 
 ## Shrnutí
 
 | Oblast | Výsledek |
 |---|---|
-| Stránek celkem | 34 (Legacy 21 vč. EN, Legent 13 vč. EN) |
+| Stránek celkem | 36 (Legacy 23 vč. EN a VI, Legent 13 vč. EN) |
 | HTML validace (`html-validate`) | 0 chyb |
 | Přístupnost (axe-core, světlý i tmavý režim) | 0 kritických a vážných nálezů |
 | Rozbité interní odkazy a kotvy | 0 |
@@ -19,7 +19,7 @@ Stav k 19. 11. 2026 (fáze 2: 34 stránek včetně anglických verzí). Ověřov
 | Lighthouse (mobil, simulované 4G) | výkon 98–100, přístupnost/best practices/SEO 100 |
 | CI (GitHub Actions) | zelené |
 
-## Lighthouse — všechny indexované stránky (mobil, 32 stránek)
+## Lighthouse — všechny indexované stránky (mobil, 34 stránek)
 
 | Stránka | Výkon | Přístupnost | Best practices | SEO | LCP | CLS | TBT |
 |---|---|---|---|---|---|---|---|
@@ -55,6 +55,8 @@ Stav k 19. 11. 2026 (fáze 2: 34 stránek včetně anglických verzí). Ověřov
 | `ochrana-osobnich-udaju.html` | 100 | 100 | 100 | 100 | 1.4 s | 0 | 0 ms |
 | `slovnik.html` | 100 | 100 | 100 | 100 | 1.4 s | 0 | 50 ms |
 | `venture-studio.html` | 100 | 100 | 100 | 100 | 1.4 s | 0 | 40 ms |
+| `partneri.html` | 100 | 100 | 100 | 100 | 1.4 s | 0 | 0 ms |
+| `vi/index.html` | 99 | 100 | 100 | 100 | 1.7 s | 0 | 50 ms |
 
 Měřeno Lighthouse 13.6 (mobilní profil, simulované zpomalení sítě a CPU) proti lokálnímu statickému serveru.
 Na produkčním hostingu s CDN a kompresí budou časy podobné nebo lepší.
@@ -72,3 +74,4 @@ npm run serve     # ruční náhled na http://localhost:8080
 - Údaje o firmě (IČO, sídlo, spisová značka) jsou placeholdery — viz `docs/OPEN-QUESTIONS.md`.
 - Formuláře bez nastaveného backendu otevírají předvyplněný e-mail — viz `docs/DEPLOY.md`, kap. 4.
 - Kalkulačka hodnoty a ROI kalkulačka jsou orientační (uvedeno přímo na stránkách).
+- Vietnamská stránka čeká na revizi rodilým mluvčím (OPEN-QUESTIONS #12).
