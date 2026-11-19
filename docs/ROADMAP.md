@@ -89,7 +89,7 @@ Cíl: víc organické návštěvnosti (SEO/GEO), vyšší konverze a dosah mimo 
 - [x] RSS feed pro Insights (`insights/feed.xml`, generuje `tools/seo.mjs`) + `<link rel="alternate">` v hlavičce
 - [x] `/.well-known/security.txt` (oba weby)
 - [x] Nové články Legacy: „Earn-out, zádržné a vendor financing“ (FAQ JSON-LD), „ETA v Česku: jak koupit první firmu“ (HowTo JSON-LD) – prolinkováno z Insights, Pro kupce, Exit Readiness, llms.txt, RSS
-- [ ] Insights pro Legent AI (`legent/insights/`) – 2 články: „Jak bezpečně začít s AI ve firmě“, „AI agent pro přijaté faktury krok za krokem“
+- [x] Insights pro Legent AI (`legent/insights/`) – rozcestník + 2 články (bezpečný start s AI vč. GDPR/AI Act; AI agent pro faktury vč. ARES a registru plátců DPH), RSS, odkaz v navigaci a patičce
 - [ ] Srovnávací stránka „Broker vs. příprava na prodej“ (`broker-vs-priprava.html`)
 - [ ] Sdílitelné výsledky kalkulaček (stav v URL) a uložení posledního výsledku testů v prohlížeči
 - [ ] Anglické verze: `en/index.html` (Legacy) a `legent/en/index.html` (Legent) + hreflang

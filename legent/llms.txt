@@ -10,6 +10,7 @@ Kontakt: contact@legacyenterprises.cz. Jazyk webu: čeština. Tým: Matěj Klím
 - [Řešení podle oboru](https://legent.ai/reseni.html): servis a instalace, účetní kanceláře, gastronomie, autoservisy, e-commerce, výroba
 - [AI readiness audit](https://legent.ai/ai-audit.html): bezplatný test připravenosti firmy na AI
 - [ROI kalkulačka](https://legent.ai/roi.html): úspora hodin a návratnost investice do AI agentů
+- [Insights](https://legent.ai/insights/index.html): návody – jak bezpečně začít s AI ve firmě (GDPR, AI Act), AI agent pro přijaté faktury
 - [O nás](https://legent.ai/o-nas.html): tým a principy odpovědného nasazení AI (GDPR, AI Act)
 - [Kontakt](https://legent.ai/kontakt.html): konzultace zdarma
 

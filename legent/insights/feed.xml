@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Insights – Legent AI</title>
+  <link>https://legent.ai/insights/</link>
+  <description>AI agenti a automatizace v praxi malých a středních firem.</description>
+  <language>cs</language>
+  <atom:link href="https://legent.ai/insights/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>AI agent pro přijaté faktury: jak funguje krok za krokem</title>
+    <link>https://legent.ai/insights/ai-agent-pro-prijate-faktury.html</link>
+    <guid>https://legent.ai/insights/ai-agent-pro-prijate-faktury.html</guid>
+    <description>Jak AI agent zpracuje přijaté faktury: vytěžení údajů, kontrola v ARES a registru plátců DPH, párování s objednávkami a platbami, výjimky ke schválení a export.</description>
+    <pubDate>Thu, 19 Nov 2026 08:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title>Jak bezpečně začít s AI ve firmě: 8 pravidel | Legent AI</title>
+    <link>https://legent.ai/insights/jak-bezpecne-zacit-s-ai.html</link>
+    <guid>https://legent.ai/insights/jak-bezpecne-zacit-s-ai.html</guid>
+    <description>Praktický návod pro malé a střední firmy: firemní účty, co do AI nevkládat, kontrola výstupů, interní pravidla, GDPR a AI Act v kostce.</description>
+    <pubDate>Thu, 19 Nov 2026 08:00:00 GMT</pubDate>
+  </item>
+</channel>
+</rss>

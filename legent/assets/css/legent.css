@@ -402,3 +402,14 @@ footer { border-top: 1px solid var(--border); padding: 64px 0 32px; margin-top: 
 /* Dostatečně velké dotykové cíle (WCAG 2.5.8) */
 a.more { display: inline-block; padding: 6px 0; }
 .choice-row label { white-space: nowrap; }
+/* Články */
+.doc-grid { display: grid; grid-template-columns: 220px 1fr; gap: 56px; align-items: start; }
+.doc-grid > * { min-width: 0; }
+.toc { position: sticky; top: 100px; font-size: 14px; }
+.toc .lbl { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); margin-bottom: 12px; }
+.toc ol { list-style: none; display: grid; gap: 8px; border-left: 1px solid var(--border); padding-left: 16px; }
+.toc a { color: var(--muted); text-decoration: none; }
+.toc a:hover { color: var(--text); }
+.prose h3 { font-size: 20px; margin-top: 1.4em; }
+@media (max-width: 1000px) { .doc-grid { grid-template-columns: 1fr; } .toc { display: none; } }
+@media (max-width: 1180px) and (min-width: 1021px) { .nav-links a { padding: 7px 10px; } }
