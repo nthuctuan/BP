@@ -1,0 +1,20 @@
+{
+  "_comment": "Centrální údaje webů. Po změně spusťte: npm run build",
+  "common": {
+    "year": 2026,
+    "company": "Legacy Enterprises s.r.o.",
+    "ico": "[doplnit IČO]",
+    "seat": "Praha, Česká republika",
+    "registry": "[doplnit spisovou značku OR]"
+  },
+  "legacy": {
+    "url": "https://legacyenterprises.cz",
+    "email": "contact@legacyenterprises.cz",
+    "legentUrl": ""
+  },
+  "legent": {
+    "url": "https://legent.ai",
+    "email": "contact@legacyenterprises.cz",
+    "legacyUrl": ""
+  }
+}

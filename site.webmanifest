@@ -1,0 +1,14 @@
+{
+  "name": "Legacy Enterprises",
+  "short_name": "Legacy",
+  "lang": "cs",
+  "start_url": "./index.html",
+  "display": "browser",
+  "background_color": "#F8F6F1",
+  "theme_color": "#1B3A6B",
+  "icons": [
+    { "src": "assets/img/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "assets/img/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "assets/img/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
