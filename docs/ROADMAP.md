@@ -46,7 +46,7 @@ Legenda: `[x]` hotovo a ověřeno · `[~]` rozpracováno · `[ ]` čeká
 - [x] `legent/index.html` — hero s animovanou konzolí agentů, Eurostat 2025 data, bento služeb, proces, obory, nástroje, bezpečnost, FAQ + JSON-LD
 - [x] `legent/sluzby.html` — 4 služby (výstupy, délka, cena), harmonogram Sprintu, srovnávací tabulka
 - [x] `legent/reseni.html` — 6 oborů × 3 typičtí agenti, předvyplnění oboru v kontaktu
-- [ ] `legent/ai-audit.html` — interaktivní AI readiness test
+- [x] `legent/ai-audit.html` — AI readiness audit (obor + 10 otázek, 5 oblastí, doporučení podle oboru, tisk, odeslání)
 - [ ] `legent/roi.html` — ROI kalkulačka automatizace
 - [ ] `legent/o-nas.html` — kdo stojí za Legent AI, principy, AI Act & GDPR
 - [ ] `legent/kontakt.html` — formulář

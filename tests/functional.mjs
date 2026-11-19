@@ -82,6 +82,20 @@ export default async function functional({ browser, base, fail, pages }) {
     expect(score >= 0 && score <= 100, `skóre mimo rozsah: ${score}`);
   });
 
+  // Legent: AI audit
+  await run('AI audit', 'legent/ai-audit.html', async (pg) => {
+    await pg.click('[data-quiz-start]');
+    for (let i = 0; i < 30; i++) {
+      if (await pg.locator('[data-quiz-result]').isVisible()) break;
+      await pg.locator('.q-opt').nth(1).click();
+      await pg.click('[data-quiz-next]');
+    }
+    expect(await pg.locator('[data-quiz-result]').isVisible(), 'výsledek se nezobrazil');
+    const score = Number(await pg.locator('[data-score]').first().textContent());
+    expect(score >= 0 && score <= 100, `skóre mimo rozsah: ${score}`);
+    expect((await pg.locator('[data-recs] li').count()) >= 3, 'chybí doporučení');
+  });
+
   // Kalkulačka
   await run('kalkulačka', 'kalkulacka.html', async (pg) => {
     const v1 = await pg.locator('[data-out="mid"]').innerText();
