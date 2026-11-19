@@ -1,6 +1,6 @@
 // Funkční testy interaktivních prvků. Každý test se spustí jen pokud daná stránka existuje.
 export default async function functional({ browser, base, fail, pages }) {
-  const has = (p) => pages.includes(p);
+  const has = (p) => pages.includes(p.split('?')[0]);
   const run = async (name, page, fn, opts = {}) => {
     if (!has(page)) return;
     const ctx = await browser.newContext({ viewport: opts.viewport || { width: 1280, height: 900 }, reducedMotion: 'reduce' });
@@ -54,19 +54,26 @@ export default async function functional({ browser, base, fail, pages }) {
     expect(/e-mailový program|Zápis přijat/.test(status), `nečekaný stav: ${status}`);
   });
 
-  // Kontaktní formulář
-  await run('kontaktní formulář', 'kontakt.html', async (pg) => {
-    await pg.click('#contact-form button[type="submit"]');
-    const invalid = await pg.locator('#contact-form [aria-invalid="true"]').count();
-    expect(invalid >= 3, `očekávány chyby validace, nalezeno ${invalid}`);
-    await pg.fill('#cf-name', 'Jan Test');
-    await pg.fill('#cf-email', 'jan@example.com');
-    await pg.fill('#cf-message', 'Dobrý den, zajímá mě příprava firmy na prodej.');
-    await pg.check('#cf-consent');
-    await pg.click('#contact-form button[type="submit"]');
-    await pg.waitForTimeout(200);
-    const status = await pg.locator('#contact-form .form-status').innerText();
-    expect(/e-mailový program|Děkujeme/.test(status), `nečekaný stav: ${status}`);
+  // Kontaktní formuláře (Legacy i Legent mají stejná ID polí)
+  for (const page of ['kontakt.html', 'legent/kontakt.html']) {
+    await run('kontaktní formulář', page, async (pg) => {
+      await pg.click('#contact-form button[type="submit"]');
+      const invalid = await pg.locator('#contact-form [aria-invalid="true"]').count();
+      expect(invalid >= 3, `očekávány chyby validace, nalezeno ${invalid}`);
+      await pg.fill('#cf-name', 'Jan Test');
+      await pg.fill('#cf-email', 'jan@example.com');
+      await pg.fill('#cf-message', 'Dobrý den, zajímá mě spolupráce.');
+      await pg.check('#cf-consent');
+      await pg.click('#contact-form button[type="submit"]');
+      await pg.waitForTimeout(200);
+      const status = await pg.locator('#contact-form .form-status').innerText();
+      expect(/e-mailový program|Děkujeme/.test(status), `nečekaný stav: ${status}`);
+    });
+  }
+
+  // Předvyplnění tématu z URL
+  await run('předvyplnění tématu', 'legent/kontakt.html?topic=gastro', async (pg) => {
+    expect((await pg.locator('#cf-topic').inputValue()) === 'Gastronomie', 'téma se nepředvyplnilo');
   });
 
   // Exit test

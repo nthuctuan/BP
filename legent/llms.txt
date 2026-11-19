@@ -1,0 +1,18 @@
+# Legent AI
+
+> Legent AI implementuje AI agenty a automatizace pro malé a střední firmy v České republice. Typické nasazení: AI Readiness Assessment (~2 týdny, 15–35 tis. Kč), AI Implementation Sprint (4 týdny, 3–5 agentů v provozu, 40–120 tis. Kč), Legent AI Retainer (správa a rozvoj, 8–30 tis. Kč měsíčně) a AI Enablement (školení týmů, 6–40 tis. Kč za session). Ceny bez DPH. Agenti zpracovávají doklady, poptávky, e-maily a reporting; sporné případy schvaluje člověk; data přednostně v EU, bez trénování modelů na datech klienta. Legent AI je divize skupiny Legacy Enterprises (Praha).
+
+Kontakt: contact@legacyenterprises.cz. Jazyk webu: čeština. Tým: Matěj Klíma (CTO, Head of AI), Thuc Tuan Nguyen (CEO).
+
+## Stránky
+- [Úvod](https://legent.ai/): přehled služeb, ukázka práce agentů, bezpečnost, FAQ
+- [Služby a ceník](https://legent.ai/sluzby.html): čtyři služby, výstupy, délka a ceny
+- [Řešení podle oboru](https://legent.ai/reseni.html): servis a instalace, účetní kanceláře, gastronomie, autoservisy, e-commerce, výroba
+- [AI readiness audit](https://legent.ai/ai-audit.html): bezplatný test připravenosti firmy na AI
+- [ROI kalkulačka](https://legent.ai/roi.html): úspora hodin a návratnost investice do AI agentů
+- [O nás](https://legent.ai/o-nas.html): tým a principy odpovědného nasazení AI (GDPR, AI Act)
+- [Kontakt](https://legent.ai/kontakt.html): konzultace zdarma
+
+## Optional
+- [Legacy Enterprises](https://legacyenterprises.cz/): mateřská skupina – příprava firem na prodej
+- [Ochrana osobních údajů](https://legent.ai/ochrana-osobnich-udaju.html)

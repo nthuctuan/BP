@@ -48,9 +48,9 @@ Legenda: `[x]` hotovo a ověřeno · `[~]` rozpracováno · `[ ]` čeká
 - [x] `legent/reseni.html` — 6 oborů × 3 typičtí agenti, předvyplnění oboru v kontaktu
 - [x] `legent/ai-audit.html` — AI readiness audit (obor + 10 otázek, 5 oblastí, doporučení podle oboru, tisk, odeslání)
 - [x] `legent/roi.html` — ROI kalkulačka (hodiny, hodnota, návratnost, ROI 12 měs., čistý přínos)
-- [ ] `legent/o-nas.html` — kdo stojí za Legent AI, principy, AI Act & GDPR
-- [ ] `legent/kontakt.html` — formulář
-- [ ] `legent/ochrana-osobnich-udaju.html`, `legent/404.html`, SEO soubory, OG, favicon
+- [x] `legent/o-nas.html` — význam jména, tým, 6 principů (AI Act, GDPR, lock-in)
+- [x] `legent/kontakt.html` — formulář (obor, velikost firmy), průběh konzultace
+- [x] `legent/ochrana-osobnich-udaju.html` (vč. role zpracovatele, čl. 28), `legent/404.html`, sitemap/robots/llms.txt, OG, favicon
 
 ## SEO a GEO (vyhledávače + AI asistenti)
 
@@ -73,8 +73,8 @@ Legenda: `[x]` hotovo a ověřeno · `[~]` rozpracováno · `[ ]` čeká
 ## Kvalita a ověření
 
 - [x] `tests/run.mjs` — Playwright: načtení stránek, chyby v konzoli, interní odkazy a kotvy, přetečení na mobilu, meta tagy, axe-core (light+dark), externí požadavky
-- [ ] axe-core přístupnost (0 vážných chyb), html-validate bez chyb
-- [ ] Funkční testy: přepínač tématu, mobilní menu, formuláře, kvízy, kalkulačky
+- [x] axe-core přístupnost (0 vážných chyb, light+dark), html-validate bez chyb (25 stránek)
+- [x] Funkční testy: přepínač tématu, mobilní menu, formuláře (oba weby), předvyplnění tématu, Exit test, AI audit, kalkulačka, ROI
 - [ ] Vizuální kontrola screenshotů (desktop 1440, tablet 834, mobil 390; light + dark)
 - [ ] GitHub Actions CI (`npm test`)
 - [ ] `docs/DEPLOY.md` (GitHub Pages / Netlify / Vercel, domény, formuláře)
@@ -92,3 +92,4 @@ Legenda: `[x]` hotovo a ověřeno · `[~]` rozpracováno · `[ ]` čeká
 - **#3c** — ověření statistik (WebSearch): údaje v2 neověřitelné → nahrazeny zdrojovanými s odkazy. Insights: rozcestník + 3 SEO články, související články, odběr. Web Legacy kompletní (16 stránek), testy zelené kromě odkazu na Legent AI.
 - **#3d** — Legent AI: design systém (tmavý, glass, gradient, bento), partials, favicon + OG, sdílený site.js (kopie přes build), úvodní stránka s ilustrativní konzolí agentů (3 scénáře, respektuje reduced motion).
 - **#3e** — Legent: Služby a ceník, Řešení (6 oborů), AI readiness audit, ROI kalkulačka; funkční testy auditu a ROI zelené. Zbývá: O nás, Kontakt, GDPR, 404, llms.txt.
+- **#3f** — Legent: O nás, Kontakt, GDPR+cookies, 404, llms.txt. **Oba weby kompletní: 25 stránek, `npm test` zcela zelený** (jen varování o placeholderech IČO/sídla). Další: SEO audit, Lighthouse, přílohy (PDF), CI, DEPLOY.md, zpětná kontrola.
