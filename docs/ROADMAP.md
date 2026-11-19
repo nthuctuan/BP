@@ -42,8 +42,8 @@ Legenda: `[x]` hotovo a ověřeno · `[~]` rozpracováno · `[ ]` čeká
 
 ## Legent AI (`/legent/`)
 
-- [ ] Design systém `legent/assets/css/legent.css` (tmavý, Geist + Instrument Serif)
-- [ ] `legent/index.html` — hero, problém, balíčky, proces, ukázka agenta, bezpečnost, FAQ
+- [x] Design systém `legent/assets/css/legent.css` (tmavý, Geist + Instrument Serif)
+- [x] `legent/index.html` — hero s animovanou konzolí agentů, Eurostat 2025 data, bento služeb, proces, obory, nástroje, bezpečnost, FAQ + JSON-LD
 - [ ] `legent/sluzby.html` — 4 balíčky s ceníkem a obsahem
 - [ ] `legent/reseni.html` — use-cases po oborech (servis, gastro, autoservis, účetní, e-shop, výroba)
 - [ ] `legent/ai-audit.html` — interaktivní AI readiness test
@@ -90,3 +90,4 @@ Legenda: `[x]` hotovo a ověřeno · `[~]` rozpracováno · `[ ]` čeká
 - **#3 (čt 19. 11.)** — GitHub přístup povolen, vše nahráno. Odolná smyčka (send_later). Exit Readiness test (1+12 otázek, 6 oblastí, skóre, doporučení, časový tlak, tisk/PDF, odeslání výsledku) a kalkulačka hodnoty (8 oborů, 5 faktorů, normalizace EBITDA, čistý dluh, scénář po přípravě, graf). Funkční testy obou nástrojů zelené. Roadmapa rozšířena o SEO/GEO, přílohy a zpětnou kontrolu.
 - **#3b** — GDPR zásady (tabulka účelů a právních základů, doby uložení, příjemci, AI, práva, ÚOOÚ), cookies (bez cookie lišty – jen localStorage tématu), etický kodex (7 oblastí), 404, sitemap/robots generátor (povoleni AI crawleři pro GEO), llms.txt; identifikace firmy z `site.config.json` (partial `company`). Opraveno přetečení tabulek na mobilu.
 - **#3c** — ověření statistik (WebSearch): údaje v2 neověřitelné → nahrazeny zdrojovanými s odkazy. Insights: rozcestník + 3 SEO články, související články, odběr. Web Legacy kompletní (16 stránek), testy zelené kromě odkazu na Legent AI.
+- **#3d** — Legent AI: design systém (tmavý, glass, gradient, bento), partials, favicon + OG, sdílený site.js (kopie přes build), úvodní stránka s ilustrativní konzolí agentů (3 scénáře, respektuje reduced motion).

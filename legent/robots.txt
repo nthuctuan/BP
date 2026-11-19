@@ -1,0 +1,15 @@
+# https://legent.ai
+User-agent: *
+Allow: /
+
+# AI asistenti a vyhledávače odpovědí smí web číst (GEO)
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://legent.ai/sitemap.xml

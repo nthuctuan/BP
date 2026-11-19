@@ -82,6 +82,15 @@ for (const file of walk(ROOT)) {
   }
 }
 
+// Sdílený JS: zdroj assets/js/site.js → kopie pro samostatně nasaditelný web Legent AI
+const SHARED = [['assets/js/site.js', 'legent/assets/js/site.js']];
+for (const [from, to] of SHARED) {
+  const src = '/* KOPIE z ' + from + ' — needitovat zde, spusťte npm run build */\n' + readFileSync(join(ROOT, from), 'utf8');
+  const dest = join(ROOT, to);
+  const cur = existsSync(dest) ? readFileSync(dest, 'utf8') : '';
+  if (cur !== src) { if (CHECK) stale.push(to); else { writeFileSync(dest, src); changed++; } }
+}
+
 if (CHECK) {
   if (stale.length) {
     console.error('✗ Zastaralé partials (spusťte npm run build):\n  ' + stale.join('\n  '));
