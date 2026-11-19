@@ -14,6 +14,9 @@ Kontakt: contact@legacyenterprises.cz. Jazyk webu: čeština. Tým: Matěj Klím
 - [O nás](https://legent.ai/o-nas.html): tým a principy odpovědného nasazení AI (GDPR, AI Act)
 - [Kontakt](https://legent.ai/kontakt.html): konzultace zdarma
 
+## English
+- [English overview](https://legent.ai/en/index.html): AI agent implementation for SMEs, services, pricing, security
+
 ## Optional
 - [Legacy Enterprises](https://legacyenterprises.cz/): mateřská skupina – příprava firem na prodej
 - [Ochrana osobních údajů](https://legent.ai/ochrana-osobnich-udaju.html)

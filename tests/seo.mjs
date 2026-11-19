@@ -45,7 +45,8 @@ for (const site of sites) {
         const local = join(site.dir, ogImg.replace(site.url.replace(/\/$/, ''), ''));
         if (!existsSync(local)) errors.push(`${rel}: og:image neexistuje (${ogImg})`);
       }
-      if (!/<html lang="cs"/.test(html)) errors.push(`${rel}: chybí lang="cs"`);
+      const wantLang = /(^|\/)en\//.test(rel) ? 'en' : 'cs';
+      if (!new RegExp(`<html lang="${wantLang}"`).test(html)) errors.push(`${rel}: chybí lang="${wantLang}"`);
     }
     // interní odkazy → příchozí odkazy pro cílové stránky
     for (const m of html.matchAll(/<a [^>]*href="([^"#?]+\.html)[^"]*"/g)) {

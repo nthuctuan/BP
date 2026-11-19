@@ -4,6 +4,24 @@
   'use strict';
   var doc = document.documentElement;
   var CFG = window.SITE_CONFIG || { email: 'contact@legacyenterprises.cz', forms: { provider: 'mailto' } };
+  var EN = (doc.getAttribute('lang') || '').slice(0, 2) === 'en';
+  var T = EN ? {
+    toLight: 'Switch to light mode', toDark: 'Switch to dark mode', menuOpen: 'Open menu', menuClose: 'Close menu',
+    required: 'This field is required.', email: 'Please enter a valid email address.', pattern: 'Please check the format.',
+    short: 'The text is too short.', consent: 'We cannot reply without your consent to data processing.',
+    check: 'Please check the highlighted fields.', ok: 'Thank you, your message has been sent. We will reply within 48 hours.',
+    mailto: 'We opened your email app with a pre-filled message — just press send. If it did not open, write to us at ',
+    fail: 'Sending failed. Please try again or write to ', copied: 'Link copied to clipboard.', copyFail: 'Copy the address from your browser bar.',
+    subject: 'Message from the website'
+  } : {
+    toLight: 'Přepnout na světlý režim', toDark: 'Přepnout na tmavý režim', menuOpen: 'Otevřít menu', menuClose: 'Zavřít menu',
+    required: 'Toto pole je povinné.', email: 'Zadejte platnou e-mailovou adresu.', pattern: 'Zkontrolujte formát.',
+    short: 'Text je příliš krátký.', consent: 'Bez souhlasu se zpracováním vám nemůžeme odpovědět.',
+    check: 'Prosím zkontrolujte zvýrazněná pole.', ok: 'Děkujeme, zpráva odešla. Ozveme se do 48 hodin.',
+    mailto: 'Otevřeli jsme váš e-mailový program s předvyplněnou zprávou — stačí ji odeslat. Pokud se neotevřel, napište nám přímo na ',
+    fail: 'Odeslání se nepodařilo. Zkuste to prosím znovu nebo napište na ', copied: 'Odkaz zkopírován do schránky.', copyFail: 'Zkopírujte adresu z řádku prohlížeče.',
+    subject: 'Zpráva z webu'
+  };
   var STORE = 'le-theme';
 
   /* ---------- Téma (počáteční stav nastavuje inline skript v <head>) ---------- */
@@ -12,7 +30,7 @@
     doc.setAttribute('data-theme', t);
     if (persist) { try { localStorage.setItem(STORE, t); } catch (e) { /* privátní režim */ } }
     document.querySelectorAll('[data-theme-toggle]').forEach(function (b) {
-      b.setAttribute('aria-label', t === 'dark' ? 'Přepnout na světlý režim' : 'Přepnout na tmavý režim');
+      b.setAttribute('aria-label', t === 'dark' ? T.toLight : T.toDark);
       b.setAttribute('aria-pressed', t === 'dark' ? 'true' : 'false');
     });
   }
@@ -40,7 +58,7 @@
   if (menuBtn && menu) {
     var setMenu = function (open) {
       menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      menuBtn.setAttribute('aria-label', open ? 'Zavřít menu' : 'Otevřít menu');
+      menuBtn.setAttribute('aria-label', open ? T.menuClose : T.menuOpen);
       menu.hidden = !open;
     };
     menuBtn.addEventListener('click', function () { setMenu(menu.hidden); });
@@ -68,7 +86,7 @@
   document.querySelectorAll('[data-copy-link]').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var st = btn.parentNode.querySelector('[data-copy-status]');
-      var done = function (ok) { if (st) st.textContent = ok ? 'Odkaz zkopírován do schránky.' : 'Zkopírujte adresu z řádku prohlížeče.'; };
+      var done = function (ok) { if (st) st.textContent = ok ? T.copied : T.copyFail; };
       if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(location.href).then(function () { done(true); }, function () { done(false); });
       else done(false);
     });
@@ -78,13 +96,7 @@
   document.querySelectorAll('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
   /* ---------- Formuláře ---------- */
-  var MSG = {
-    valueMissing: 'Toto pole je povinné.',
-    typeMismatch: 'Zadejte platnou e-mailovou adresu.',
-    patternMismatch: 'Zkontrolujte formát.',
-    tooShort: 'Text je příliš krátký.',
-    consent: 'Bez souhlasu se zpracováním vám nemůžeme odpovědět.'
-  };
+  var MSG = { valueMissing: T.required, typeMismatch: T.email, patternMismatch: T.pattern, tooShort: T.short, consent: T.consent };
 
   function fieldError(el) {
     if (el.validity.valid) return '';
@@ -116,7 +128,7 @@
     return Object.keys(data).filter(function (k) { return k.charAt(0) !== '_' && data[k]; })
       .map(function (k) { return (labelFor(k) || k) + ': ' + data[k]; }).join('\n');
   }
-  var LABELS = {
+  var LABELS = EN ? { name: 'Name', email: 'Email', phone: 'Phone', company: 'Company', role: 'I am', topic: 'Topic', message: 'Message', consent: 'Consent', interest: 'Interest', horizon: 'Horizon', size: 'Company size' } : {
     name: 'Jméno', email: 'E-mail', phone: 'Telefon', company: 'Firma', role: 'Jsem', revenue: 'Obrat',
     horizon: 'Horizont', message: 'Zpráva', topic: 'Téma', budget: 'Rozpočet', industry: 'Obor',
     result: 'Výsledek', consent: 'Souhlas', interest: 'Zájem'
@@ -134,7 +146,7 @@
 
   function submitForm(form, data) {
     var provider = (CFG.forms && CFG.forms.provider) || 'mailto';
-    var subject = form.getAttribute('data-subject') || 'Zpráva z webu';
+    var subject = form.getAttribute('data-subject') || T.subject;
     if (provider === 'netlify') {
       var body = new URLSearchParams(Object.assign({ 'form-name': form.getAttribute('name') || 'contact' }, data));
       return fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body.toString() })
@@ -182,12 +194,12 @@
         if (msg && !firstBad) firstBad = el;
       });
       if (firstBad) {
-        setStatus(form, 'error', 'Prosím zkontrolujte zvýrazněná pole.');
+        setStatus(form, 'error', T.check);
         firstBad.focus();
         return;
       }
       var hp = form.querySelector('.hp-input');
-      var okMsg = form.getAttribute('data-ok') || 'Děkujeme, zpráva odešla. Ozveme se do 48 hodin.';
+      var okMsg = form.getAttribute('data-ok') || T.ok;
       if (hp && hp.value) { form.reset(); setStatus(form, 'ok', okMsg); return; } // bot
       var data = collect(form);
       data._page = location.pathname;
@@ -195,8 +207,7 @@
       if (btn) btn.disabled = true;
       submitForm(form, data).then(function (how) {
         if (how === 'mailto') {
-          setStatus(form, 'info', 'Otevřeli jsme váš e-mailový program s předvyplněnou zprávou — stačí ji odeslat. ' +
-            'Pokud se neotevřel, napište nám přímo na <a href="mailto:' + CFG.email + '">' + CFG.email + '</a>.');
+          setStatus(form, 'info', T.mailto + '<a href="mailto:' + CFG.email + '">' + CFG.email + '</a>.');
         } else {
           form.reset();
           setStatus(form, 'ok', okMsg);
@@ -204,7 +215,7 @@
         form.dispatchEvent(new CustomEvent('form:sent', { detail: { how: how, data: data } }));
         if (window.plausible) window.plausible('Form: ' + form.getAttribute('data-form'));
       }).catch(function () {
-        setStatus(form, 'error', 'Odeslání se nepodařilo. Zkuste to prosím znovu nebo napište na <a href="mailto:' + CFG.email + '">' + CFG.email + '</a>.');
+        setStatus(form, 'error', T.fail + '<a href="mailto:' + CFG.email + '">' + CFG.email + '</a>.');
       }).then(function () { if (btn) btn.disabled = false; });
     });
   });

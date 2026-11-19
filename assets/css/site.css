@@ -1416,3 +1416,5 @@ table.cmp tr:last-child th, table.cmp tr:last-child td { border-bottom: 0; }
 .featured-card { border-color: var(--accent); }
 [data-theme="dark"] .featured-card { border-color: var(--gold); }
 .copy-row { font-size: 13px; text-align: center; }
+.nav-lang { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; color: var(--text-muted); text-decoration: none; padding: 10px 6px; }
+.nav-lang:hover { color: var(--gold-ink); }

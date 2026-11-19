@@ -92,7 +92,7 @@ Cíl: víc organické návštěvnosti (SEO/GEO), vyšší konverze a dosah mimo 
 - [x] Insights pro Legent AI (`legent/insights/`) – rozcestník + 2 články (bezpečný start s AI vč. GDPR/AI Act; AI agent pro faktury vč. ARES a registru plátců DPH), RSS, odkaz v navigaci a patičce
 - [x] Srovnávací stránka „Broker, nebo příprava na prodej?“ (`broker-vs-priprava.html`) – férová tabulka 3 cest, kdy co stačí, FAQ JSON-LD; odkazy z úvodu, Exit Readiness, patičky, llms.txt
 - [x] Sdílitelné výsledky kalkulaček (stav v URL + tlačítko „Zkopírovat odkaz“) a zapamatování posledního výsledku Exit testu / AI auditu v prohlížeči (s testy)
-- [ ] Anglické verze: `en/index.html` (Legacy) a `legent/en/index.html` (Legent) + hreflang
+- [x] Anglické verze: `en/index.html` (Legacy – vč. sekce pro zahraniční kupce) a `legent/en/index.html` (Legent) + hreflang, přepínač CZ/EN, anglické hlášky formulářů (s testy)
 - [ ] Korektura nových textů, Lighthouse, `npm test`, aktualizace QA reportu
 
 ## Otevřené otázky pro majitele → `docs/OPEN-QUESTIONS.md`

@@ -71,6 +71,15 @@ export default async function functional({ browser, base, fail, pages }) {
     });
   }
 
+  // Anglické verze: hlášky formuláře v angličtině
+  for (const page of ['en/index.html', 'legent/en/index.html']) {
+    await run('EN formulář', page, async (pg) => {
+      await pg.click('#contact-form button[type="submit"]');
+      const err = await pg.locator('#cf-name-err').innerText();
+      expect(/required/i.test(err), `chybová hláška není anglicky: ${err}`);
+    });
+  }
+
   // Předvyplnění tématu z URL
   await run('předvyplnění tématu', 'legent/kontakt.html?topic=gastro', async (pg) => {
     expect((await pg.locator('#cf-topic').inputValue()) === 'Gastronomie', 'téma se nepředvyplnilo');
