@@ -18,6 +18,7 @@ Zakladatelé: Thuc Tuan Nguyen (CEO, M&A, CZ/EN/VI) a Matěj Klíma (CTO, AI). K
 ## O firmě
 - [O nás](https://legacyenterprises.cz/o-nas.html): příběh, tým, principy, AI operační model
 - [Etický kodex](https://legacyenterprises.cz/eticky-kodex.html): důvěrnost, střet zájmů, odpovědné používání AI
+- [Pro partnery](https://legacyenterprises.cz/partneri.html): spolupráce s účetními, daňovými poradci, advokáty a bankami (doporučení pod NDA, klient zůstává partnerovi)
 - [Kontakt](https://legacyenterprises.cz/kontakt.html)
 
 ## English

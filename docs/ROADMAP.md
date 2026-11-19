@@ -96,6 +96,12 @@ Cíl: víc organické návštěvnosti (SEO/GEO), vyšší konverze a dosah mimo 
 - [x] Korektura nových textů (30 nálezů: definice asset deal, ručení za DPH, zádržné × úschova, AI Act, souhlasy ve formulářích → informace dle čl. 6/1 b,f GDPR…), Lighthouse 32 stránek (98–100), QA report aktualizován
 - [x] Bonus: blok nejnovějších článků na obou úvodních stránkách, anglické OG obrázky, větší dotykové cíle v patičkách
 
+## Fáze 3 – obchodní kanály (do 22. 11.)
+
+- [x] Stránka „Pro partnery“ (`partneri.html`) – účetní, daňoví poradci, advokáti, banky: principy, role podle profese, 4 kroky doporučení, materiály pro klienty, FAQ (JSON-LD), formulář; odkaz z patičky, O nás, llms.txt
+- [ ] Vietnamská stránka (`vi/index.html`) pro vietnamské podnikatele v ČR – nástupnictví a prodej firmy; označit k revizi rodilým mluvčím (Thuc Tuan Nguyen)
+- [ ] Finální kontrola fáze 3 (testy, Lighthouse, korektura)
+
 ## Otevřené otázky pro majitele → `docs/OPEN-QUESTIONS.md`
 
 ## Log iterací
