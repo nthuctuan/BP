@@ -47,7 +47,7 @@ Legenda: `[x]` hotovo a ověřeno · `[~]` rozpracováno · `[ ]` čeká
 - [x] `legent/sluzby.html` — 4 služby (výstupy, délka, cena), harmonogram Sprintu, srovnávací tabulka
 - [x] `legent/reseni.html` — 6 oborů × 3 typičtí agenti, předvyplnění oboru v kontaktu
 - [x] `legent/ai-audit.html` — AI readiness audit (obor + 10 otázek, 5 oblastí, doporučení podle oboru, tisk, odeslání)
-- [ ] `legent/roi.html` — ROI kalkulačka automatizace
+- [x] `legent/roi.html` — ROI kalkulačka (hodiny, hodnota, návratnost, ROI 12 měs., čistý přínos)
 - [ ] `legent/o-nas.html` — kdo stojí za Legent AI, principy, AI Act & GDPR
 - [ ] `legent/kontakt.html` — formulář
 - [ ] `legent/ochrana-osobnich-udaju.html`, `legent/404.html`, SEO soubory, OG, favicon
@@ -91,3 +91,4 @@ Legenda: `[x]` hotovo a ověřeno · `[~]` rozpracováno · `[ ]` čeká
 - **#3b** — GDPR zásady (tabulka účelů a právních základů, doby uložení, příjemci, AI, práva, ÚOOÚ), cookies (bez cookie lišty – jen localStorage tématu), etický kodex (7 oblastí), 404, sitemap/robots generátor (povoleni AI crawleři pro GEO), llms.txt; identifikace firmy z `site.config.json` (partial `company`). Opraveno přetečení tabulek na mobilu.
 - **#3c** — ověření statistik (WebSearch): údaje v2 neověřitelné → nahrazeny zdrojovanými s odkazy. Insights: rozcestník + 3 SEO články, související články, odběr. Web Legacy kompletní (16 stránek), testy zelené kromě odkazu na Legent AI.
 - **#3d** — Legent AI: design systém (tmavý, glass, gradient, bento), partials, favicon + OG, sdílený site.js (kopie přes build), úvodní stránka s ilustrativní konzolí agentů (3 scénáře, respektuje reduced motion).
+- **#3e** — Legent: Služby a ceník, Řešení (6 oborů), AI readiness audit, ROI kalkulačka; funkční testy auditu a ROI zelené. Zbývá: O nás, Kontakt, GDPR, 404, llms.txt.

@@ -96,6 +96,15 @@ export default async function functional({ browser, base, fail, pages }) {
     expect((await pg.locator('[data-recs] li').count()) >= 3, 'chybí doporučení');
   });
 
+  // Legent: ROI
+  await run('ROI kalkulačka', 'legent/roi.html', async (pg) => {
+    const a = await pg.locator('[data-out="hours"]').innerText();
+    await pg.locator('#r-people').fill('20');
+    const b = await pg.locator('[data-out="hours"]').innerText();
+    expect(a !== b, 'počet hodin se nezměnil');
+    expect(/Kč/.test(await pg.locator('[data-out="value"]').innerText()), 'chybí měna');
+  });
+
   // Kalkulačka
   await run('kalkulačka', 'kalkulacka.html', async (pg) => {
     const v1 = await pg.locator('[data-out="mid"]').innerText();
