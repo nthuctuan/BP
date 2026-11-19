@@ -88,7 +88,7 @@ Cíl: víc organické návštěvnosti (SEO/GEO), vyšší konverze a dosah mimo 
 - [x] Slovník pojmů M&A (`slovnik.html`) – 32 hesel, rejstřík A–Z (vč. Č), DefinedTermSet JSON-LD, prolinkováno z článků, patičky, Insights, llms.txt
 - [x] RSS feed pro Insights (`insights/feed.xml`, generuje `tools/seo.mjs`) + `<link rel="alternate">` v hlavičce
 - [x] `/.well-known/security.txt` (oba weby)
-- [ ] Nové články Legacy: „Earn-out, zádržné a vendor financing“, „ETA v Česku: jak koupit první firmu“
+- [x] Nové články Legacy: „Earn-out, zádržné a vendor financing“ (FAQ JSON-LD), „ETA v Česku: jak koupit první firmu“ (HowTo JSON-LD) – prolinkováno z Insights, Pro kupce, Exit Readiness, llms.txt, RSS
 - [ ] Insights pro Legent AI (`legent/insights/`) – 2 články: „Jak bezpečně začít s AI ve firmě“, „AI agent pro přijaté faktury krok za krokem“
 - [ ] Srovnávací stránka „Broker vs. příprava na prodej“ (`broker-vs-priprava.html`)
 - [ ] Sdílitelné výsledky kalkulaček (stav v URL) a uložení posledního výsledku testů v prohlížeči
