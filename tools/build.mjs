@@ -15,7 +15,7 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const CHECK = process.argv.includes('--check');
 const config = JSON.parse(readFileSync(join(ROOT, 'site.config.json'), 'utf8'));
 
-const IGNORE = new Set(['node_modules', '.git', 'tools', 'tests', 'docs', 'test-results']);
+const IGNORE = new Set(['node_modules', '.git', 'tools', 'tests', 'docs', 'test-results', 'legent-agents']);
 
 function walk(dir, out = []) {
   for (const name of readdirSync(dir)) {

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Smyšlená testovací odpověď ve tvaru služby rozhraniCRPDPH -->
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Body>
+    <StatusNespolehlivyPlatceResponse xmlns="http://adis.mfcr.cz/rozhraniCRPDPH/">
+      <status statusCode="0" statusText="OK"/>
+      <statusPlatceDPH dic="12345679" nespolehlivyPlatce="NE" cisloFu="461">
+        <zverejneneUcty>
+          <ucet datumZverejneni="2024-01-02"><standardniUcet cislo="2001234561" kodBanky="2010"/></ucet>
+        </zverejneneUcty>
+      </statusPlatceDPH>
+    </StatusNespolehlivyPlatceResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

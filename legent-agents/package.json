@@ -1,0 +1,21 @@
+{
+  "name": "legent-agents",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Legent AI – sada AI agentů pro malé a střední firmy (faktury, poptávky, KPI report). Claude API + deterministické validace + schvalování člověkem.",
+  "type": "module",
+  "bin": {
+    "legent": "./bin/legent.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "demo": "node bin/legent.js demo --offline"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.11.0",
+    "zod": "^4.6.7"
+  }
+}

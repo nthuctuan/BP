@@ -1,0 +1,22 @@
+FAKTURA – DAŇOVÝ DOKLAD č. KP-2026-077
+(Smyšlená vzorová data pro testy Legent AI)
+
+Dodavatel: Kotle Plus s.r.o., Nádražní 88, 370 01 České Budějovice
+IČO: 29073162   DIČ: CZ29073162
+Odběratel: Novák Instal s.r.o., IČO: 87654326
+
+Datum vystavení: 17. 11. 2026
+DUZP: 17. 11. 2026
+Splatnost: 1. 12. 2026
+Variabilní symbol: 2026077
+Bankovní účet: 1234567899/0800
+
+Položky:
+1) Kondenzační kotle 40 kW – velkoodběr 20 ks × 50 000,00 Kč, DPH 21 %
+
+Rekapitulace DPH:
+21 %: základ 1 000 000,00 Kč, DPH 210 000,00 Kč
+
+Celkem bez DPH: 1 000 000,00 Kč
+DPH celkem: 210 000,00 Kč
+Celkem k úhradě: 1 210 000,00 Kč

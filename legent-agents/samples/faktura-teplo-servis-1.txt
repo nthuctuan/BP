@@ -1,0 +1,23 @@
+FAKTURA – DAŇOVÝ DOKLAD č. 2026-0412
+(Smyšlená vzorová data pro testy Legent AI)
+
+Dodavatel: Teplo Servis s.r.o., Lipová 12, 779 00 Olomouc
+IČO: 12345679   DIČ: CZ12345679
+Odběratel: Novák Instal s.r.o., IČO: 87654326
+
+Datum vystavení: 14. 11. 2026
+DUZP: 14. 11. 2026
+Splatnost: 28. 11. 2026
+Variabilní symbol: 20260412
+Bankovní účet: 2001234561/2010
+
+Položky:
+1) Oběhové čerpadlo 25-60 2 ks × 4 500,00 Kč, DPH 21 %
+2) Montáž a seřízení 1 ks × 3 400,00 Kč, DPH 21 %
+
+Rekapitulace DPH:
+21 %: základ 12 400,00 Kč, DPH 2 604,00 Kč
+
+Celkem bez DPH: 12 400,00 Kč
+DPH celkem: 2 604,00 Kč
+Celkem k úhradě: 15 004,00 Kč

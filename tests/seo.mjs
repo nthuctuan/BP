@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const cfg = JSON.parse(readFileSync(join(ROOT, 'site.config.json'), 'utf8'));
-const IGNORE = new Set(['node_modules', '.git', 'tools', 'tests', 'docs', 'test-results', '_site']);
+const IGNORE = new Set(['node_modules', '.git', 'tools', 'tests', 'docs', 'test-results', '_site', 'legent-agents']);
 const walk = (d, o = []) => { for (const n of readdirSync(d)) { if (IGNORE.has(n)) continue; const p = join(d, n); statSync(p).isDirectory() ? walk(p, o) : n.endsWith('.html') && o.push(p); } return o; };
 
 const errors = [];

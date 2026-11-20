@@ -1,0 +1,22 @@
+FAKTURA – DAŇOVÝ DOKLAD č. 2026-0431
+(Smyšlená vzorová data pro testy Legent AI)
+
+Dodavatel: Teplo Servis s.r.o., Lipová 12, 779 00 Olomouc
+IČO: 12345679   DIČ: CZ12345679
+Odběratel: Novák Instal s.r.o., IČO: 87654326
+
+Datum vystavení: 18. 11. 2026
+DUZP: 18. 11. 2026
+Splatnost: 2. 12. 2026
+Variabilní symbol: 20260431
+Bankovní účet: 2001234561/2010
+
+Položky:
+1) Expanzní nádoba 18 l 1 ks × 2 800,00 Kč, DPH 21 %
+
+Rekapitulace DPH:
+21 %: základ 2 800,00 Kč, DPH 588,00 Kč
+
+Celkem bez DPH: 2 800,00 Kč
+DPH celkem: 588,00 Kč
+Celkem k úhradě: 3 388,00 Kč

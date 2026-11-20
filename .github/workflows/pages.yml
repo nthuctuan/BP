@@ -27,7 +27,7 @@ jobs:
         run: |
           mkdir _site
           rsync -a --exclude '.git*' --exclude 'node_modules' --exclude 'tools' --exclude 'tests' \
-            --exclude 'docs' --exclude 'test-results' --exclude 'package*.json' --exclude '.htmlvalidate*' \
+            --exclude 'docs' --exclude 'test-results' --exclude 'legent-agents' --exclude 'package*.json' --exclude '.htmlvalidate*' \
             --exclude 'site.config.json' --exclude 'README.md' --exclude '_site' ./ _site/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

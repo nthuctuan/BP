@@ -1,0 +1,22 @@
+FAKTURA – DAŇOVÝ DOKLAD č. SM-11873
+(Smyšlená vzorová data pro testy Legent AI)
+
+Dodavatel: Stavebniny Morava a.s., Průmyslová 4, 602 00 Brno
+IČO: 24681351   DIČ: CZ24681351
+Odběratel: Novák Instal s.r.o., IČO: 87654326
+
+Datum vystavení: 16. 11. 2026
+DUZP: 16. 11. 2026
+Splatnost: 30. 11. 2026
+Variabilní symbol: 11873
+Bankovní účet: 3456789007/0300
+
+Položky:
+1) Izolační materiál, paleta 4 ks × 10 000,00 Kč, DPH 21 %
+
+Rekapitulace DPH:
+21 %: základ 40 000,00 Kč, DPH 8 600,00 Kč
+
+Celkem bez DPH: 40 000,00 Kč
+DPH celkem: 8 600,00 Kč
+Celkem k úhradě: 48 600,00 Kč

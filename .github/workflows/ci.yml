@@ -20,3 +20,21 @@ jobs:
           npx playwright install --with-deps chromium
       - name: Build check, HTML validace, testy (odkazy, a11y, mobil, funkce)
         run: npm test
+
+  agents:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: legent-agents
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: legent-agents/package-lock.json
+      - run: npm ci
+      - name: Testy agentů (offline, bez API klíče)
+        run: npm test
+      - name: Demo celé pipeline (offline)
+        run: LEGENT_DATA=$RUNNER_TEMP/legent node bin/legent.js demo --offline

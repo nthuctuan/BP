@@ -1,0 +1,12 @@
+{
+  "_poznamka": "Smyšlený profil firmy pro testy Legent AI",
+  "name": "Novák Instal s.r.o.",
+  "services": ["Výměna a servis plynových kotlů", "Tepelná čerpadla", "Revize plynových zařízení"],
+  "area": "Brno a okolí do 40 km",
+  "pricing": [
+    "Obhlídka zdarma v Brně, mimo Brno 490 Kč",
+    "Výměna plynového kotle včetně montáže: obvykle 55 000–90 000 Kč podle typu a stavu rozvodů (přesnou cenu dáváme až po obhlídce)"
+  ],
+  "tone": "věcný, vstřícný, vykat, podpis: Tým Novák Instal",
+  "rules": ["Nikdy neslibuj přesnou cenu bez obhlídky.", "Navrhuj jen termíny ze seznamu volných termínů."]
+}

@@ -16,7 +16,7 @@ const shotsDir = args.includes('--shots') ? args[args.indexOf('--shots') + 1] : 
 const only = args.includes('--only') ? args[args.indexOf('--only') + 1] : null;
 const AXE = readFileSync(join(ROOT, 'node_modules/axe-core/axe.min.js'), 'utf8');
 
-const IGNORE = new Set(['node_modules', '.git', 'tools', 'tests', 'docs', 'test-results']);
+const IGNORE = new Set(['node_modules', '.git', 'tools', 'tests', 'docs', 'test-results', 'legent-agents']);
 function walk(dir, out = []) {
   for (const name of readdirSync(dir)) {
     if (IGNORE.has(name)) continue;

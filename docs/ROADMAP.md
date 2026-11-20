@@ -102,6 +102,19 @@ Cíl: víc organické návštěvnosti (SEO/GEO), vyšší konverze a dosah mimo 
 - [x] Vietnamská stránka (`vi/index.html`) – hoàn cảnh, postup, ceny, Viets, formulář s vietnamskými hláškami, hreflang, přepínač VI, OG obrázek; **k revizi rodilým mluvčím** (OPEN-QUESTIONS #12)
 - [x] Finální kontrola fáze 3 (testy 36 stránek, Lighthouse partneri 100 / vi 99, QA report)
 
+## Fáze 4 – Legent AI: koncept a AI agenti (od 20. 11.)
+
+Cíl: z Legent AI udělat skutečný produkt – nejen web, ale i funkční agenty, na kterých lze stavět pilotní nasazení.
+
+- [x] Produktový koncept `legent-agents/docs/KONCEPT.md` – vize, katalog agentů, architektura, bezpečnost (GDPR, AI Act), obchodní model, roadmapa pilotů
+- [x] Sada agentů `legent-agents/` (Node.js, Claude API, strukturované výstupy, human-in-the-loop fronta, audit log)
+  - [x] Agent pro přijaté faktury (vytěžení → validace IČO/DIČ/DPH → ARES / registr plátců DPH → rozhodnutí → fronta ke schválení → export)
+  - [x] Agent pro poptávky (klasifikace, vytěžení, návrh odpovědi s termíny, vždy ke schválení)
+  - [x] Agent pro týdenní KPI report (deterministické výpočty + komentář bez vymýšlení čísel)
+  - [x] CLI, offline režim s testovacím LLM, syntetická data, testy (`node --test`)
+- [ ] Web Legent: stránka „Agenti“ – katalog agentů, architektura (diagram), živá ukázka validace faktury v prohlížeči
+- [ ] Ověření: testy agentů, `npm test` webu, Lighthouse, korektura, aktualizace dokumentace
+
 ## Otevřené otázky pro majitele → `docs/OPEN-QUESTIONS.md`
 
 ## Log iterací

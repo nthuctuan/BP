@@ -8,7 +8,7 @@ import { execSync } from 'node:child_process';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const cfg = JSON.parse(readFileSync(join(ROOT, 'site.config.json'), 'utf8'));
-const IGNORE = new Set(['node_modules', '.git', 'tools', 'tests', 'docs', 'test-results']);
+const IGNORE = new Set(['node_modules', '.git', 'tools', 'tests', 'docs', 'test-results', 'legent-agents']);
 
 function walk(dir, out = []) {
   for (const n of readdirSync(dir)) {
