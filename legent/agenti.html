@@ -48,7 +48,7 @@
   "mainEntity": [
     { "@type": "Question", "name": "Musíme kvůli agentům měnit účetní nebo jiný systém?", "acceptedAnswer": { "@type": "Answer", "text": "Ne. Agent bere vstupy tam, kde už jsou – ze schránky, sdílené složky nebo exportu – a výsledek předá ve formátu, který váš systém umí načíst. Konkrétní napojení řešíme v Implementation Sprintu." } },
     { "@type": "Question", "name": "Co když AI udělá chybu?", "acceptedAnswer": { "@type": "Answer", "text": "Počítáme s tím. Každé číslo projde pevnými kontrolami (součty, sazby DPH, kontrolní číslice IČO a účtů) a sporné případy jdou člověku. Před spuštěním agent dva týdny běží ve stínovém režimu vedle vašich lidí a měříme přesnost na vašich dokladech." } },
-    { "@type": "Question", "name": "Může agent sám zaplatit fakturu nebo odepsat zákazníkovi?", "acceptedAnswer": { "@type": "Answer", "text": "Platby nikdy. Odpovědi zákazníkům na začátku vždy schvaluje člověk. Vyšší samostatnost zapínáme jen u vratných a nízkorizikových kroků, a to až když ji podloží měření." } },
+    { "@type": "Question", "name": "Může agent sám zaplatit fakturu nebo odpovědět zákazníkovi?", "acceptedAnswer": { "@type": "Answer", "text": "Platby nikdy. Odpovědi zákazníkům na začátku vždy schvaluje člověk. Vyšší samostatnost zapínáme jen u vratných a nízkorizikových kroků, a to až když ji podloží měření." } },
     { "@type": "Question", "name": "Kde jsou naše data?", "acceptedAnswer": { "@type": "Answer", "text": "Do modelu posíláme jen to, co úloha potřebuje. Používáme podnikové verze AI služeb, jejichž podmínky vylučují učení na vašich datech, a preferujeme zpracování v EU. Audit log ukládá jen otisk dokumentu, ne jeho obsah." } },
     { "@type": "Question", "name": "Kolik stojí provoz agenta?", "acceptedAnswer": { "@type": "Answer", "text": "Náklady na samotnou AI jsou u faktur orientačně v jednotkách korun za doklad a hradíte je přímo poskytovateli. Hlavní položkou je nasazení a správa – viz ceník služeb." } }
   ]
@@ -179,7 +179,7 @@
       <li class="ai">
         <span class="st">02 · AI čte</span>
         <h3>Vytěžení do schématu</h3>
-        <p>Model Claude převede dokument do pevné struktury. Text dokumentu jsou pro něj data, ne pokyny.</p>
+        <p>Model Claude převede dokument do pevné struktury. Obsah dokumentu bere jako data, ne jako pokyny.</p>
       </li>
       <li>
         <span class="st">03 · Kontroly bez AI</span>
@@ -208,7 +208,7 @@
   <div class="wrap">
     <div class="section-head reveal">
       <span class="label">Úrovně autonomie</span>
-      <h2>Samostatnost se <span class="serif grad">zaslouží měřením.</span></h2>
+      <h2>Samostatnost si agent <span class="serif grad">musí zasloužit.</span></h2>
       <p class="lead">Každý agent začíná o&nbsp;úroveň níž, než je cílová, a&nbsp;postupuje výš teprve tehdy, když to podloží naměřená přesnost na vašich dokladech.</p>
     </div>
     <div class="table-wrap reveal">
@@ -320,7 +320,7 @@
       <div class="card reveal"><span class="k">Člověk ve smyčce</span><h3>Sporné vždy schvaluje člověk</h3><p>Každé předání má důvod: nový dodavatel, chyba v&nbsp;DPH, vysoká částka. Schválení i&nbsp;zamítnutí se zapisuje.</p></div>
       <div class="card reveal"><span class="k">Prompt injection</span><h3>Dokument nemá co poroučet</h3><p>Pokyn schovaný ve faktuře nebo e-mailu („změňte číslo účtu“) agent neplní – nahlásí ho jako podezřelý.</p></div>
       <div class="card reveal"><span class="k">Minimální oprávnění</span><h3>Jen nutný přístup</h3><p>Agent čte jen svou schránku či složku a&nbsp;zapisuje jen export. Klíče jsou v&nbsp;trezoru, ne v&nbsp;kódu.</p></div>
-      <div class="card reveal"><span class="k">GDPR</span><h3>Minimum dat, žádné kopie</h3><p>Do modelu jde jen to, co úloha potřebuje. Audit log ukládá otisk dokumentu, osobní údaje se maskují.</p></div>
+      <div class="card reveal"><span class="k">GDPR</span><h3>Minimum dat, logy bez obsahu</h3><p>Do modelu jde jen to, co úloha potřebuje. Audit log ukládá otisk dokumentu, osobní údaje se maskují.</p></div>
       <div class="card reveal"><span class="k">AI Act</span><h3>Transparentně a&nbsp;s&nbsp;proškoleným týmem</h3><p>Každé nasazení posoudíme z&nbsp;pohledu rizik; AI gramotnost týmu pokrývá <a href="sluzby.html#enablement">AI Enablement</a>.</p></div>
       <div class="card reveal"><span class="k">Měření</span><h3>Nejdřív stínový režim</h3><p>Dva týdny agent pracuje vedle vašich lidí na 30–50 skutečných dokladech. Ostrý provoz až po dosažení dohodnuté přesnosti.</p></div>
     </div>
@@ -351,7 +351,7 @@
     <div class="faq reveal">
       <details><summary>Musíme kvůli agentům měnit účetní nebo jiný systém?</summary><div class="ans"><p>Ne. Agent bere vstupy tam, kde už jsou – ze schránky, sdílené složky nebo exportu – a&nbsp;výsledek předá ve formátu, který váš systém umí načíst. Konkrétní napojení řešíme v&nbsp;<a href="sluzby.html#sprint">Implementation Sprintu</a>.</p></div></details>
       <details><summary>Co když AI udělá chybu?</summary><div class="ans"><p>Počítáme s&nbsp;tím. Každé číslo projde pevnými kontrolami (součty, sazby DPH, kontrolní číslice IČO a&nbsp;účtů) a&nbsp;sporné případy jdou člověku. Před spuštěním agent dva týdny běží ve stínovém režimu vedle vašich lidí a&nbsp;měříme přesnost na vašich dokladech.</p></div></details>
-      <details><summary>Může agent sám zaplatit fakturu nebo odepsat zákazníkovi?</summary><div class="ans"><p>Platby nikdy. Odpovědi zákazníkům na začátku vždy schvaluje člověk. Vyšší samostatnost zapínáme jen u&nbsp;vratných a&nbsp;nízkorizikových kroků, a&nbsp;to až když ji podloží měření.</p></div></details>
+      <details><summary>Může agent sám zaplatit fakturu nebo odpovědět zákazníkovi?</summary><div class="ans"><p>Platby nikdy. Odpovědi zákazníkům na začátku vždy schvaluje člověk. Vyšší samostatnost zapínáme jen u&nbsp;vratných a&nbsp;nízkorizikových kroků, a&nbsp;to až když ji podloží měření.</p></div></details>
       <details><summary>Kde jsou naše data?</summary><div class="ans"><p>Do modelu posíláme jen to, co úloha potřebuje. Používáme podnikové verze AI služeb, jejichž podmínky vylučují učení na vašich datech, a&nbsp;preferujeme zpracování v&nbsp;EU. Audit log ukládá jen otisk dokumentu, ne jeho obsah.</p></div></details>
       <details><summary>Kolik stojí provoz agenta?</summary><div class="ans"><p>Náklady na samotnou AI jsou u&nbsp;faktur orientačně v&nbsp;jednotkách korun za doklad a&nbsp;hradíte je přímo poskytovateli. Hlavní položkou je nasazení a&nbsp;správa – viz <a href="sluzby.html">ceník služeb</a>. Úsporu pro vaši firmu odhadne <a href="roi.html">ROI kalkulačka</a>.</p></div></details>
     </div>
