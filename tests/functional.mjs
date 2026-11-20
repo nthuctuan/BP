@@ -126,6 +126,25 @@ export default async function functional({ browser, base, fail, pages }) {
     expect(/Kč/.test(await pg.locator('[data-out="value"]').innerText()), 'chybí měna');
   });
 
+  // Legent: živá ukázka kontroly faktury (stejná pravidla jako agent)
+  await run('ukázka kontroly faktury', 'legent/agenti.html', async (pg) => {
+    const title = () => pg.locator('[data-decision-title]').innerText();
+    await pg.waitForFunction(() => document.querySelector('[data-decision-title]')?.textContent.trim() !== '—');
+    expect(/Automaticky/.test(await title()), 'vzorová faktura „V pořádku“ nebyla schválena automaticky');
+    await pg.locator('[data-sample="vat"]').click();
+    expect(/schválení/.test(await title()), 'chyba v DPH nevedla k předání člověku');
+    expect(/neodpovídá základu/.test(await pg.locator('[data-reasons]').innerText()), 'chybí důvod u chyby v DPH');
+    await pg.locator('[data-sample="ok"]').click();
+    await pg.locator('#d-ico').fill('12345678');
+    expect(/kontrolní číslici/.test(await pg.locator('[data-checks]').innerText()), 'neplatné IČO nebylo zachyceno');
+    await pg.locator('[data-sample="big"]').click();
+    expect(/540\s000/.test(await pg.locator('[data-reasons]').innerText()), 'chybí upozornění na ručení za DPH');
+    await pg.locator('[data-sample="ok"]').click();
+    await pg.locator('#d-base').fill('20 000');
+    await pg.locator('[data-recalc]').click();
+    expect((await pg.locator('#d-total').inputValue()).replace(/\s/g, '') === '24200', 'dopočet celkové částky nesedí');
+  });
+
   // Kalkulačka
   await run('kalkulačka', 'kalkulacka.html', async (pg) => {
     const v1 = await pg.locator('[data-out="mid"]').innerText();

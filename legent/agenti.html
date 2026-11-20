@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<title>AI agenti pro firmy · jak fungují a živá ukázka | Legent AI</title>
+<meta name="description" content="Tři hotoví AI agenti pro české firmy: přijaté faktury, poptávky a týdenní report. Jak pracují, kdy rozhoduje člověk, úrovně autonomie a živá ukázka kontroly faktury.">
+<link rel="canonical" href="https://legent.ai/agenti.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:site_name" content="Legent AI">
+<meta property="og:title" content="AI agenti v praxi · Legent AI">
+<meta property="og:description" content="AI čte, pravidla kontrolují, člověk schvaluje. Katalog agentů, architektura a živá ukázka kontroly faktury.">
+<meta property="og:url" content="https://legent.ai/agenti.html">
+<meta property="og:image" content="https://legent.ai/assets/img/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<!-- @partial head root="" -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07080F">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="Insights – Legent AI" href="insights/feed.xml">
+<link rel="preload" href="assets/fonts/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/instrument-serif-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="assets/css/legent.css">
+<script>document.documentElement.classList.add('js');</script>
+<script src="assets/js/config.js" defer></script>
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/legent.js" defer></script>
+<!-- @end head -->
+<script type="module" src="assets/js/agenti.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Legent AI", "item": "https://legent.ai/" },
+    { "@type": "ListItem", "position": 2, "name": "AI agenti", "item": "https://legent.ai/agenti.html" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Musíme kvůli agentům měnit účetní nebo jiný systém?", "acceptedAnswer": { "@type": "Answer", "text": "Ne. Agent bere vstupy tam, kde už jsou – ze schránky, sdílené složky nebo exportu – a výsledek předá ve formátu, který váš systém umí načíst. Konkrétní napojení řešíme v Implementation Sprintu." } },
+    { "@type": "Question", "name": "Co když AI udělá chybu?", "acceptedAnswer": { "@type": "Answer", "text": "Počítáme s tím. Každé číslo projde pevnými kontrolami (součty, sazby DPH, kontrolní číslice IČO a účtů) a sporné případy jdou člověku. Před spuštěním agent dva týdny běží ve stínovém režimu vedle vašich lidí a měříme přesnost na vašich dokladech." } },
+    { "@type": "Question", "name": "Může agent sám zaplatit fakturu nebo odepsat zákazníkovi?", "acceptedAnswer": { "@type": "Answer", "text": "Platby nikdy. Odpovědi zákazníkům na začátku vždy schvaluje člověk. Vyšší samostatnost zapínáme jen u vratných a nízkorizikových kroků, a to až když ji podloží měření." } },
+    { "@type": "Question", "name": "Kde jsou naše data?", "acceptedAnswer": { "@type": "Answer", "text": "Do modelu posíláme jen to, co úloha potřebuje. Používáme podnikové verze AI služeb, jejichž podmínky vylučují učení na vašich datech, a preferujeme zpracování v EU. Audit log ukládá jen otisk dokumentu, ne jeho obsah." } },
+    { "@type": "Question", "name": "Kolik stojí provoz agenta?", "acceptedAnswer": { "@type": "Answer", "text": "Náklady na samotnou AI jsou u faktur orientačně v jednotkách korun za doklad a hradíte je přímo poskytovateli. Hlavní položkou je nasazení a správa – viz ceník služeb." } }
+  ]
+}
+</script>
+</head>
+<body>
+<!-- @partial header root="" active="agenti" -->
+<a class="skip-link" href="#main">Přeskočit na obsah</a>
+<nav class="topnav" aria-label="Hlavní navigace">
+  <div class="wrap">
+    <div class="nav-inner">
+      <a href="index.html" class="logo" aria-label="Legent AI – úvodní stránka">
+        <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lg-agenti" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7C4DFF"/><stop offset="1" stop-color="#3B82F6"/></linearGradient></defs><rect width="32" height="32" rx="8" fill="url(#lg-agenti)"/><path d="M16 23.5c-3.2-2.4-6.8-2.6-9.5-1.2V9.6c2.7-1.4 6.3-1.2 9.5 1.2 3.2-2.4 6.8-2.6 9.5-1.2v12.7c-2.7-1.4-6.3-1.2-9.5 1.2zM16 10.8v12.7" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        Legent AI
+      </a>
+      <ul class="nav-links">
+        <li><a href="sluzby.html" data-nav="sluzby">Služby</a></li>
+        <li><a href="reseni.html" data-nav="reseni">Řešení</a></li>
+        <li><a href="agenti.html" data-nav="agenti" aria-current="page">Agenti</a></li>
+        <li><a href="ai-audit.html" data-nav="audit">AI audit</a></li>
+        <li><a href="roi.html" data-nav="roi">ROI kalkulačka</a></li>
+        <li><a href="insights/index.html" data-nav="insights">Insights</a></li>
+        <li><a href="o-nas.html" data-nav="about">O nás</a></li>
+        <li><a href="en/index.html" hreflang="en" lang="en">EN</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="kontakt.html" class="btn btn-primary" data-nav="contact">Konzultace zdarma <span class="arrow">→</span></a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Otevřít menu">
+          <svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <ul>
+        <li><a href="sluzby.html" data-nav="sluzby">Služby a ceník</a></li>
+        <li><a href="reseni.html" data-nav="reseni">Řešení podle oboru</a></li>
+        <li><a href="agenti.html" data-nav="agenti" aria-current="page">AI agenti a živá ukázka</a></li>
+        <li><a href="ai-audit.html" data-nav="audit">AI readiness audit</a></li>
+        <li><a href="roi.html" data-nav="roi">ROI kalkulačka</a></li>
+        <li><a href="insights/index.html" data-nav="insights">Insights a návody</a></li>
+        <li><a href="o-nas.html" data-nav="about">O nás</a></li>
+        <li><a href="en/index.html" hreflang="en" lang="en">English version</a></li>
+      </ul>
+      <a href="kontakt.html" class="btn btn-primary">Konzultace zdarma <span class="arrow">→</span></a>
+    </div>
+  </div>
+</nav>
+<!-- @end header -->
+
+<main id="main">
+
+<section class="page-hero">
+  <div class="wrap">
+    <ol class="crumbs" aria-label="Drobečková navigace">
+      <li><a href="index.html">Legent AI</a></li>
+      <li aria-current="page">AI agenti</li>
+    </ol>
+    <span class="label"><span class="dot"></span>Agenti v0.1 · připraveni na pilot</span>
+    <h1>AI čte. Pravidla kontrolují. <span class="serif grad">Člověk schvaluje.</span></h1>
+    <p class="lead">Takhle stavíme AI agenty pro malé a&nbsp;střední firmy. Model čte dokumenty a&nbsp;píše texty, pevná pravidla zkontrolují každé číslo a&nbsp;sporné případy jdou člověku. Žádná černá skříňka – a&nbsp;níže si to můžete sami vyzkoušet.</p>
+    <nav class="chips mt-32" aria-label="Obsah stránky">
+      <a href="#katalog" class="tag">Hotoví agenti</a><a href="#jak-funguje" class="tag">Jak agent pracuje</a><a href="#autonomie" class="tag">Úrovně autonomie</a><a href="#ukazka" class="tag">Živá ukázka</a><a href="#bezpecnost" class="tag">Bezpečnost</a><a href="#faq" class="tag">Otázky</a>
+    </nav>
+  </div>
+</section>
+
+<section class="section" id="katalog">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="label">Hotovo a otestováno</span>
+      <h2>Tři agenti, <span class="serif grad">připravení na pilot.</span></h2>
+      <p class="lead">Začínáme tam, kde je nejvíc opakované práce a&nbsp;kde se přínos dá změřit od prvního týdne.</p>
+    </div>
+    <div class="grid-3">
+      <article class="card reveal">
+        <span class="k">Účetnictví · autonomie L1</span>
+        <h3>Přijaté faktury</h3>
+        <p>Z&nbsp;PDF, fotky nebo e-mailu vytáhne dodavatele, částky, DPH a&nbsp;bankovní spojení. Zkontroluje IČO, DIČ, sazby a&nbsp;součty DPH, číslo účtu a&nbsp;duplicity, volitelně ověří dodavatele v&nbsp;ARES a&nbsp;registru plátců DPH.</p>
+        <ul class="ticks">
+          <li>Jasné faktury připraví k&nbsp;zaúčtování sám</li>
+          <li>Nový dodavatel, chyba nebo vysoká částka → člověk</li>
+          <li>Hlídá nespolehlivé plátce a&nbsp;nezveřejněné účty</li>
+        </ul>
+        <a class="more" href="#ukazka">Vyzkoušet kontrolu faktury →</a>
+      </article>
+      <article class="card reveal">
+        <span class="k">Obchod · autonomie L0</span>
+        <h3>Poptávky</h3>
+        <p>Roztřídí příchozí poptávky, vytáhne kontakt a&nbsp;požadavek, pozná spam a&nbsp;připraví odpověď s&nbsp;volnými termíny obhlídky.</p>
+        <ul class="ticks">
+          <li>Odpověď v&nbsp;jazyce zákazníka</li>
+          <li>Termíny jen z&nbsp;vašeho kalendáře, ceny jen z&nbsp;ceníku</li>
+          <li>Nic neodejde bez schválení</li>
+        </ul>
+        <a class="more" href="reseni.html#servis">Pro servisní firmy →</a>
+      </article>
+      <article class="card reveal">
+        <span class="k">Vedení · autonomie L2</span>
+        <h3>Týdenní KPI report</h3>
+        <p>Z&nbsp;exportu vydaných faktur spočítá tržby, marži, pohledávky po splatnosti a&nbsp;největší dlužníky a&nbsp;připíše krátký komentář pro majitele.</p>
+        <ul class="ticks">
+          <li>Čísla počítá kód, ne AI</li>
+          <li>Komentář s&nbsp;číslem mimo data se zahodí</li>
+          <li>Přehled za týden na jedné obrazovce</li>
+        </ul>
+        <a class="more" href="roi.html">Spočítat úsporu →</a>
+      </article>
+    </div>
+    <p class="note mt-32">V&nbsp;přípravě: upomínky pohledávek, třídění e-mailů, servisní protokoly, rezervace, zákaznická podpora a&nbsp;znalostní asistent. Co typicky nasazujeme v&nbsp;jednotlivých oborech, najdete v&nbsp;<a href="reseni.html">Řešeních podle oboru</a>.</p>
+  </div>
+</section>
+
+<section class="section" id="jak-funguje">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="label">Architektura</span>
+      <h2>Jak agent pracuje – <span class="serif grad">krok za krokem.</span></h2>
+      <p class="lead">Pořadí kroků řídí kód, ne model. Výsledek je předvídatelný, testovatelný a&nbsp;každý krok se dá zpětně dohledat.</p>
+    </div>
+    <ol class="flow reveal" aria-label="Průběh zpracování">
+      <li>
+        <span class="st">01 · Vstup</span>
+        <h3>Kde data už jsou</h3>
+        <p>E-mailová schránka, sdílená složka, webový formulář nebo export z&nbsp;účetnictví.</p>
+      </li>
+      <li class="ai">
+        <span class="st">02 · AI čte</span>
+        <h3>Vytěžení do schématu</h3>
+        <p>Model Claude převede dokument do pevné struktury. Text dokumentu jsou pro něj data, ne pokyny.</p>
+      </li>
+      <li>
+        <span class="st">03 · Kontroly bez AI</span>
+        <h3>Pravidla jako u&nbsp;účetní</h3>
+        <p>Kontrolní číslice IČO a&nbsp;účtů, sazby a&nbsp;součty DPH, data, duplicity, ARES a&nbsp;registr plátců DPH.</p>
+      </li>
+      <li>
+        <span class="st">04 · Rozhodnutí</span>
+        <h3>Sám, nebo člověk?</h3>
+        <div class="branch">
+          <span class="ok"><i></i>vše v&nbsp;pořádku → automaticky dál</span>
+          <span class="rev"><i></i>cokoli sporného → fronta ke schválení</span>
+        </div>
+      </li>
+      <li>
+        <span class="st">05 · Výstup</span>
+        <h3>Do vašich systémů</h3>
+        <p>Účetnictví, CRM, kalendář nebo report pro majitele – ve formátu, který systém umí načíst.</p>
+      </li>
+    </ol>
+    <p class="flow-audit reveal"><span class="tag">audit log</span> Každý krok i&nbsp;každé schválení se zapisuje – s&nbsp;otiskem dokumentu, ne s&nbsp;jeho obsahem. Osobní údaje se v&nbsp;záznamech maskují.</p>
+  </div>
+</section>
+
+<section class="section" id="autonomie">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="label">Úrovně autonomie</span>
+      <h2>Samostatnost se <span class="serif grad">zaslouží měřením.</span></h2>
+      <p class="lead">Každý agent začíná o&nbsp;úroveň níž, než je cílová, a&nbsp;postupuje výš teprve tehdy, když to podloží naměřená přesnost na vašich dokladech.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table class="compare">
+        <thead><tr><th scope="col">Úroveň</th><th scope="col">Co agent dělá sám</th><th scope="col">Kde ji používáme</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">L0 · návrh</th><td>Vše připraví, člověk každý výstup schválí.</td><td>Komunikace se zákazníky, první týdny každého agenta.</td></tr>
+          <tr><th scope="row">L1 · pravidla</th><td>Jasné případy dokončí, sporné předá člověku s&nbsp;důvodem.</td><td>Faktury od známých dodavatelů pod limitem.</td></tr>
+          <tr><th scope="row">L2 · namátková kontrola</th><td>Dokončí vše, člověk kontroluje vzorek.</td><td>Interní reporty, třídění dokumentů.</td></tr>
+          <tr><th scope="row">L3 · plná autonomie</th><td>Bez kontroly.</td><td>Jen interní, vratné a&nbsp;nízkorizikové kroky. Platby nikdy.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="ukazka">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="label">Živá ukázka · běží jen ve vašem prohlížeči</span>
+      <h2>Vyzkoušejte, jak agent <span class="serif grad">kontroluje fakturu.</span></h2>
+      <p class="lead">Představte si, že AI už fakturu přečetla – níže jsou vytěžené údaje. Změňte je a&nbsp;sledujte, co pravidla zachytí. Běží tu stejná pravidla, jaká používá agent; nic se nikam neodesílá a&nbsp;vzorová data jsou smyšlená.</p>
+    </div>
+  </div>
+  <form class="wrap tool" data-invoice-demo aria-label="Ukázka kontroly faktury" novalidate>
+    <div class="panel form">
+      <div class="field">
+        <span class="lbl" id="samples-lbl">Vzorové faktury</span>
+        <div class="samples" role="group" aria-labelledby="samples-lbl">
+          <button type="button" data-sample="ok" aria-pressed="true">V pořádku</button>
+          <button type="button" data-sample="vat" aria-pressed="false">Chyba v DPH</button>
+          <button type="button" data-sample="new" aria-pressed="false">Nový dodavatel</button>
+          <button type="button" data-sample="account" aria-pressed="false">Chybný účet</button>
+          <button type="button" data-sample="big" aria-pressed="false">Nezveřejněný účet</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="field"><label for="d-ico">IČO dodavatele</label><input id="d-ico" name="ico" type="text" inputmode="numeric" autocomplete="off" maxlength="8"></div>
+        <div class="field"><label for="d-dic">DIČ dodavatele</label><input id="d-dic" name="dic" type="text" autocomplete="off" maxlength="14"></div>
+      </div>
+      <div class="field">
+        <label for="d-account">Bankovní účet</label>
+        <input id="d-account" name="account" type="text" autocomplete="off" spellcheck="false">
+        <span class="hint">Český formát [předčíslí-]číslo/kód banky, např. 2001234561/2010.</span>
+      </div>
+      <div class="row-3">
+        <div class="field"><label for="d-issue">Vystaveno</label><input id="d-issue" name="issue" type="date"></div>
+        <div class="field"><label for="d-duzp">DUZP</label><input id="d-duzp" name="duzp" type="date"></div>
+        <div class="field"><label for="d-due">Splatnost</label><input id="d-due" name="due" type="date"></div>
+      </div>
+      <div class="row">
+        <div class="field"><label for="d-base">Základ daně (Kč)</label><input id="d-base" name="base" type="text" inputmode="decimal" autocomplete="off"></div>
+        <div class="field">
+          <label for="d-rate">Sazba DPH</label>
+          <select id="d-rate" name="rate">
+            <option value="21">21 %</option>
+            <option value="12">12 %</option>
+            <option value="0">0 %</option>
+            <option value="15">15 % (zrušená sazba)</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="field"><label for="d-vat">DPH (Kč)</label><input id="d-vat" name="vat" type="text" inputmode="decimal" autocomplete="off"></div>
+        <div class="field"><label for="d-total">Celkem k úhradě (Kč)</label><input id="d-total" name="total" type="text" inputmode="decimal" autocomplete="off"></div>
+      </div>
+      <p class="hint"><button type="button" class="btn-link" data-recalc>Dopočítat DPH a&nbsp;celkem ze základu</button></p>
+      <div class="field">
+        <label for="d-registry">Registr plátců DPH</label>
+        <select id="d-registry" name="registry">
+          <option value="">Neověřeno (offline režim)</option>
+          <option value="ok">Spolehlivý plátce, účet zveřejněn</option>
+          <option value="unpublished">Spolehlivý plátce, účet NENÍ zveřejněn</option>
+          <option value="unreliable">Nespolehlivý plátce DPH</option>
+        </select>
+        <span class="hint">V&nbsp;ostrém provozu agent stav zjistí z&nbsp;registru MF&nbsp;ČR sám.</span>
+      </div>
+      <label class="consent"><input type="checkbox" name="known" checked> <span>Dodavatel je už známý (dříve schválený)</span></label>
+      <p class="hint">Limit pro automatické schválení: 50&nbsp;000&nbsp;Kč s&nbsp;DPH (nastavitelný). Výsledek se přepočítává automaticky. <button type="submit" class="btn-link">Zkontrolovat</button></p>
+    </div>
+
+    <aside class="tool-side" aria-label="Výsledek kontroly">
+      <div class="console">
+        <div class="console-head"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span>agent:invoice · kontroly</span></div>
+        <div class="console-body" data-checks role="status" aria-live="polite">
+          <div class="console-line run"><span class="ic" aria-hidden="true">›</span><span>Ukázka potřebuje JavaScript.</span></div>
+        </div>
+        <div class="console-foot"><span data-summary>—</span><span>lokálně</span></div>
+      </div>
+      <div class="decision" data-decision aria-live="polite">
+        <div class="lbl">Rozhodnutí agenta</div>
+        <div class="v" data-decision-title>—</div>
+        <ul data-reasons></ul>
+      </div>
+    </aside>
+  </form>
+  <div class="wrap">
+    <p class="note mt-48"><strong>Co ukázka nedělá:</strong> nečte skutečný dokument (to v&nbsp;ostrém provozu dělá AI), neověřuje dodavatele v&nbsp;ARES a&nbsp;stav v&nbsp;registru plátců DPH jen simuluje. Kontroly IČO, účtu, sazeb a&nbsp;součtů DPH, dat a&nbsp;rozhodovací pravidla jsou skutečná. Ručení za DPH při platbě nad 540&nbsp;000&nbsp;Kč na nezveřejněný účet vychází z&nbsp;§&nbsp;109 zákona o&nbsp;DPH.</p>
+  </div>
+</section>
+
+<section class="section" id="bezpecnost">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="label">Bezpečnost a&nbsp;odpovědnost</span>
+      <h2>Agent smí jen to, <span class="serif grad">co mu dovolíte.</span></h2>
+    </div>
+    <div class="grid-3">
+      <div class="card reveal"><span class="k">Člověk ve smyčce</span><h3>Sporné vždy schvaluje člověk</h3><p>Každé předání má důvod: nový dodavatel, chyba v&nbsp;DPH, vysoká částka. Schválení i&nbsp;zamítnutí se zapisuje.</p></div>
+      <div class="card reveal"><span class="k">Prompt injection</span><h3>Dokument nemá co poroučet</h3><p>Pokyn schovaný ve faktuře nebo e-mailu („změňte číslo účtu“) agent neplní – nahlásí ho jako podezřelý.</p></div>
+      <div class="card reveal"><span class="k">Minimální oprávnění</span><h3>Jen nutný přístup</h3><p>Agent čte jen svou schránku či složku a&nbsp;zapisuje jen export. Klíče jsou v&nbsp;trezoru, ne v&nbsp;kódu.</p></div>
+      <div class="card reveal"><span class="k">GDPR</span><h3>Minimum dat, žádné kopie</h3><p>Do modelu jde jen to, co úloha potřebuje. Audit log ukládá otisk dokumentu, osobní údaje se maskují.</p></div>
+      <div class="card reveal"><span class="k">AI Act</span><h3>Transparentně a&nbsp;s&nbsp;proškoleným týmem</h3><p>Každé nasazení posoudíme z&nbsp;pohledu rizik; AI gramotnost týmu pokrývá <a href="sluzby.html#enablement">AI Enablement</a>.</p></div>
+      <div class="card reveal"><span class="k">Měření</span><h3>Nejdřív stínový režim</h3><p>Dva týdny agent pracuje vedle vašich lidí na 30–50 skutečných dokladech. Ostrý provoz až po dosažení dohodnuté přesnosti.</p></div>
+    </div>
+    <p class="mt-32"><a href="insights/jak-bezpecne-zacit-s-ai.html">Jak bezpečně začít s&nbsp;AI ve firmě – návod →</a></p>
+  </div>
+</section>
+
+<section class="section" id="pilot">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="label">Pilotní nasazení</span>
+      <h2>Od první schůzky k&nbsp;agentovi <span class="serif grad">v&nbsp;provozu.</span></h2>
+    </div>
+    <ol class="steps reveal">
+      <li><h3>Assessment</h3><p>Vybereme proces s&nbsp;největším přínosem, změříme výchozí stav a&nbsp;připravíme testovací sadu z&nbsp;vašich dokladů.</p><span class="dur">~2 týdny</span></li>
+      <li><h3>Nasazení a&nbsp;stínový režim</h3><p>Napojíme vstupy a&nbsp;výstupy, nastavíme pravidla a&nbsp;agent běží vedle vašich lidí. Porovnáváme výsledky.</p><span class="dur">4 týdny</span></li>
+      <li><h3>Ostrý provoz a&nbsp;měření</h3><p>Po dosažení dohodnuté přesnosti agent přebírá práci. Každý měsíc report: ušetřené hodiny, opravy, náklady.</p><span class="dur">průběžně</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="label">Časté otázky</span>
+      <h2>Na co se ptají <span class="serif grad">majitelé firem.</span></h2>
+    </div>
+    <div class="faq reveal">
+      <details><summary>Musíme kvůli agentům měnit účetní nebo jiný systém?</summary><div class="ans"><p>Ne. Agent bere vstupy tam, kde už jsou – ze schránky, sdílené složky nebo exportu – a&nbsp;výsledek předá ve formátu, který váš systém umí načíst. Konkrétní napojení řešíme v&nbsp;<a href="sluzby.html#sprint">Implementation Sprintu</a>.</p></div></details>
+      <details><summary>Co když AI udělá chybu?</summary><div class="ans"><p>Počítáme s&nbsp;tím. Každé číslo projde pevnými kontrolami (součty, sazby DPH, kontrolní číslice IČO a&nbsp;účtů) a&nbsp;sporné případy jdou člověku. Před spuštěním agent dva týdny běží ve stínovém režimu vedle vašich lidí a&nbsp;měříme přesnost na vašich dokladech.</p></div></details>
+      <details><summary>Může agent sám zaplatit fakturu nebo odepsat zákazníkovi?</summary><div class="ans"><p>Platby nikdy. Odpovědi zákazníkům na začátku vždy schvaluje člověk. Vyšší samostatnost zapínáme jen u&nbsp;vratných a&nbsp;nízkorizikových kroků, a&nbsp;to až když ji podloží měření.</p></div></details>
+      <details><summary>Kde jsou naše data?</summary><div class="ans"><p>Do modelu posíláme jen to, co úloha potřebuje. Používáme podnikové verze AI služeb, jejichž podmínky vylučují učení na vašich datech, a&nbsp;preferujeme zpracování v&nbsp;EU. Audit log ukládá jen otisk dokumentu, ne jeho obsah.</p></div></details>
+      <details><summary>Kolik stojí provoz agenta?</summary><div class="ans"><p>Náklady na samotnou AI jsou u&nbsp;faktur orientačně v&nbsp;jednotkách korun za doklad a&nbsp;hradíte je přímo poskytovateli. Hlavní položkou je nasazení a&nbsp;správa – viz <a href="sluzby.html">ceník služeb</a>. Úsporu pro vaši firmu odhadne <a href="roi.html">ROI kalkulačka</a>.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="cta reveal">
+      <div>
+        <h2>Chcete agenta na <span class="serif grad">svých dokladech?</span></h2>
+        <p class="mt-16">Připravujeme první pilotní nasazení. Ozvěte se, pokud chcete být u&nbsp;toho – ukážeme agenta na vašich vlastních dokladech.</p>
+      </div>
+      <div class="actions">
+        <a href="kontakt.html?topic=pilot" class="btn btn-primary">Mám zájem o&nbsp;pilot <span class="arrow">→</span></a>
+        <a href="ai-audit.html" class="btn btn-ghost">AI audit zdarma</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- @partial footer root="" -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a href="index.html" class="logo">
+          <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#7C4DFF"/><path d="M16 23.5c-3.2-2.4-6.8-2.6-9.5-1.2V9.6c2.7-1.4 6.3-1.2 9.5 1.2 3.2-2.4 6.8-2.6 9.5-1.2v12.7c-2.7-1.4-6.3-1.2-9.5 1.2zM16 10.8v12.7" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          Legent AI
+        </a>
+        <p>AI agenti a automatizace pro malé a střední firmy v Česku. Divize skupiny <a href="../index.html">Legacy Enterprises</a>.</p>
+      </div>
+      <div class="foot-col">
+        <h2>Služby</h2>
+        <ul>
+          <li><a href="sluzby.html#assessment">AI Readiness Assessment</a></li>
+          <li><a href="sluzby.html#sprint">Implementation Sprint</a></li>
+          <li><a href="sluzby.html#retainer">Legent AI Retainer</a></li>
+          <li><a href="sluzby.html#enablement">AI Enablement</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h2>Nástroje</h2>
+        <ul>
+          <li><a href="ai-audit.html">AI readiness audit</a></li>
+          <li><a href="roi.html">ROI kalkulačka</a></li>
+          <li><a href="reseni.html">Řešení podle oboru</a></li>
+          <li><a href="agenti.html">AI agenti a živá ukázka</a></li>
+          <li><a href="insights/index.html">Insights a návody</a></li>
+          <li><a href="assets/downloads/legent-ai-prehled-sluzeb.pdf" download>Přehled služeb (PDF)</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h2>Kontakt</h2>
+        <ul>
+          <li><a href="kontakt.html">Konzultace zdarma</a></li>
+          <li><a href="mailto:contact@legacyenterprises.cz">contact@legacyenterprises.cz</a></li>
+          <li><a href="o-nas.html">O nás</a></li>
+          <li><a href="o-nas.html#ke-stazeni">Logo ke stažení</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 Legacy Enterprises s.r.o. · IČO [doplnit] · Praha</span>
+      <span><a href="ochrana-osobnich-udaju.html">Ochrana osobních údajů</a><a href="ochrana-osobnich-udaju.html#cookies">Cookies</a><a href="../index.html">Legacy Enterprises</a></span>
+    </div>
+  </div>
+</footer>
+<!-- @end footer -->
+</body>
+</html>

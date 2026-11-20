@@ -176,7 +176,7 @@
 
   /* Předvyplnění tématu z URL (?topic=…) */
   var TOPICS = { univerze: 'Univerze', viets: 'Viets', studio: 'Venture Studio', legent: 'Legent AI', buy: 'Koupě firmy', sell: 'Prodej firmy', exit: 'Příprava firmy na prodej', family: 'Nástupnictví v rodině',
-    servis: 'Servis a instalace', ucetni: 'Účetní kancelář', gastro: 'Gastronomie', autoservis: 'Autoservis', eshop: 'E-commerce', vyroba: 'Výroba', audit: 'AI Readiness Assessment', sprint: 'Implementation Sprint' };
+    servis: 'Servis a instalace', ucetni: 'Účetní kancelář', gastro: 'Gastronomie', autoservis: 'Autoservis', eshop: 'E-commerce', vyroba: 'Výroba', audit: 'AI Readiness Assessment', sprint: 'Implementation Sprint', pilot: 'Pilotní nasazení agenta' };
   try {
     var qp = new URLSearchParams(location.search).get('topic');
     var topicSel = document.querySelector('select[name="topic"]');

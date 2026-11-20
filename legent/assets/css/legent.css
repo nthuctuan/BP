@@ -416,3 +416,40 @@ a.more { display: inline-block; padding: 6px 0; }
 .copy-row { font-size: 13px; text-align: center; }
 .consent-note { font-size: 13px; color: var(--dim); line-height: 1.55; max-width: none; }
 .foot-bot a { display: inline-block; padding: 5px 0; }
+
+/* Stránka Agenti: diagram průběhu, živá ukázka kontroly faktury */
+.flow { list-style: none; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+.flow > li { position: relative; padding: 22px 20px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--glass); display: grid; gap: 8px; align-content: start; }
+.flow > li.ai { border-color: rgba(182,156,255,0.45); background: linear-gradient(135deg, rgba(124,77,255,0.18), rgba(59,130,246,0.08)); }
+.flow .st { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--sky); }
+.flow h3 { font-size: 17px; line-height: 1.3; }
+.flow p { font-size: 14px; color: var(--muted); }
+.flow > li:not(:last-child)::after { content: "→"; position: absolute; right: -14px; top: 50%; width: 12px; transform: translateY(-50%); text-align: center; color: var(--violet); font-size: 14px; }
+.flow .branch { display: grid; gap: 8px; font-size: 14px; }
+.flow .branch span { display: flex; gap: 8px; align-items: baseline; color: var(--muted); }
+.flow .branch i { width: 8px; height: 8px; border-radius: 50%; flex: none; display: inline-block; }
+.flow .branch .ok i { background: var(--green); }
+.flow .branch .rev i { background: var(--amber); }
+.flow-audit { margin-top: 16px; padding: 14px 20px; border: 1px dashed var(--border-strong); border-radius: var(--radius); font-size: 14px; color: var(--muted); max-width: none; }
+.flow-audit .tag { margin-right: 8px; }
+@media (max-width: 1000px) {
+  .flow { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .flow > li:not(:last-child)::after { content: "↓"; right: auto; left: 26px; top: auto; bottom: -17px; transform: none; }
+}
+.samples { display: flex; flex-wrap: wrap; gap: 8px; }
+.samples button { font: inherit; font-family: var(--mono); font-size: 12px; padding: 7px 12px; border-radius: 999px; border: 1px solid var(--border-strong); background: transparent; color: var(--muted); cursor: pointer; }
+.samples button:hover { color: var(--text); border-color: var(--violet); }
+.samples button[aria-pressed="true"] { color: var(--text); border-color: var(--violet); background: rgba(124,77,255,0.18); }
+.form .row-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 640px) { .form .row-3 { grid-template-columns: minmax(0, 1fr); } }
+.console-line.err .ic { color: var(--red); }
+.console-line.err b { color: var(--text); font-weight: 500; }
+[data-invoice-demo] .console-body { min-height: 220px; }
+.decision { padding: 22px 24px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--glass); }
+.decision .lbl { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); }
+.decision .v { font-size: 21px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.25; margin-top: 6px; }
+.decision ul { margin-top: 10px; padding-left: 18px; display: grid; gap: 6px; font-size: 14px; color: var(--muted); }
+.decision.auto { border-color: rgba(52,211,153,0.45); background: rgba(52,211,153,0.08); }
+.decision.auto .v { color: #A7F3D0; }
+.decision.review { border-color: rgba(251,191,36,0.45); background: rgba(251,191,36,0.07); }
+.decision.review .v { color: #FDE68A; }

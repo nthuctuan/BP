@@ -56,3 +56,9 @@ export function isValidIban(value) {
 export const CZ_VAT_RATES = [0, 12, 21];
 
 export const round2 = (n) => Math.round((Number(n) + Number.EPSILON) * 100) / 100;
+
+/** Je účet mezi zveřejněnými účty plátce DPH? (porovnání bez úvodních nul a mezer) */
+export function isPublishedAccount(account, published) {
+  const norm = (a) => String(a).replace(/\s/g, '').replace(/^0+-?/, '').replace(/-0+/, '-').toUpperCase();
+  return published.some((p) => norm(p) === norm(account));
+}

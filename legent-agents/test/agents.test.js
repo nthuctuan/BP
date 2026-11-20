@@ -35,7 +35,7 @@ test('faktura: chybně spočítané DPH je zachyceno', async () => {
   const { store, config } = fresh();
   const r = await runInvoiceAgent({ doc: doc('faktura-chyba-dph.txt'), llm, store, config });
   assert.equal(r.decision.status, 'review');
-  assert.ok(r.checks.some((c) => c.level === 'error' && /očekáváno 8400/.test(c.message)));
+  assert.ok(r.checks.some((c) => c.level === 'error' && /očekáváno 8\u00a0400\u00a0Kč/.test(c.message)));
 });
 
 test('faktura: částka nad limitem jde ke schválení', async () => {

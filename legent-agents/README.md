@@ -67,6 +67,8 @@ Klíčová rozhodnutí:
   dokumenty a píše texty. Výsledek je předvídatelný, testovatelný a levnější.
 - **Strukturované výstupy** (`client.beta.messages.parse` + Zod schéma) – odpověď modelu vždy odpovídá schématu.
 - **Kontroly bez AI** – kontrolní součty IČO a účtů, sazby DPH 0/12/21 %, součty, data, duplicity.
+  Moduly `src/validators/` a `src/rules/` nemají žádné závislosti; `npm run build` v kořeni repozitáře je kopíruje
+  do webu (`legent/assets/js/agents/`), kde je používá živá ukázka na stránce `agenti.html`.
 - **Člověk ve smyčce** – vše sporné jde do fronty; schválení i zamítnutí se zapisuje do audit logu.
 - **Ochrana proti prompt injection** – text dokumentů je pro model data, ne pokyny.
 - **Logy bez obsahu** – audit log ukládá otisk dokumentu, ne jeho text; osobní údaje se maskují.
@@ -80,6 +82,7 @@ src/config.js          konfigurace z proměnných prostředí
 src/llm.js             Claude API (strukturované výstupy, fallback) + offline režim
 src/core/store.js      fronta ke schválení, audit log, exporty (JSONL), maskování údajů
 src/validators/cz.js   IČO, DIČ, české účty, IBAN, sazby DPH
+src/rules/             pravidla kontroly faktur bez AI (sdílí je i živá ukázka na webu Legent AI)
 src/connectors/        ARES (REST), registr plátců DPH (SOAP MF ČR)
 src/agents/            invoice.js, enquiry.js, report.js
 samples/               smyšlená vzorová data

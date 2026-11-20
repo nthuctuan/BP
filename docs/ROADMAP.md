@@ -112,8 +112,8 @@ Cíl: z Legent AI udělat skutečný produkt – nejen web, ale i funkční agen
   - [x] Agent pro poptávky (klasifikace, vytěžení, návrh odpovědi s termíny, vždy ke schválení)
   - [x] Agent pro týdenní KPI report (deterministické výpočty + komentář bez vymýšlení čísel)
   - [x] CLI, offline režim s testovacím LLM, syntetická data, testy (`node --test`)
-- [ ] Web Legent: stránka „Agenti“ – katalog agentů, architektura (diagram), živá ukázka validace faktury v prohlížeči
-- [ ] Ověření: testy agentů, `npm test` webu, Lighthouse, korektura, aktualizace dokumentace
+- [x] Web Legent: stránka „Agenti“ – katalog agentů, architektura (diagram), živá ukázka validace faktury v prohlížeči
+- [x] Ověření: testy agentů, `npm test` webu, Lighthouse, korektura, aktualizace dokumentace
 
 ## Otevřené otázky pro majitele → `docs/OPEN-QUESTIONS.md`
 
@@ -133,3 +133,4 @@ Cíl: z Legent AI udělat skutečný produkt – nejen web, ale i funkční agen
 - **#5 (čt 19. 11. večer)** — uživatel požádal o pokračování a vylepšování → fáze 2, nová smyčka po 30 min.
 - **#5b (čt 19. 11. ~22:10)** — fáze 2 hotová: slovník, RSS, security.txt, 2+2 články, srovnání broker vs. příprava, sdílení výpočtů, EN verze; korektura + Lighthouse; `npm test` zelený (34 stránek).
 - **#6 (čt 19. 11. 22:20)** — fáze 3 hotová (Pro partnery, vietnamská stránka). Všechny body fází 1–3 hotové a ověřené → smyčka ukončena.
+- **#F4 (pá 20. 11.)** — Legent AI: sada agentů `legent-agents/` v0.1 (faktury, poptávky, KPI report; Claude API se strukturovanými výstupy a server-side fallbackem, kontroly IČO/DIČ/DPH/účtů, ARES, registr plátců DPH, fronta ke schválení, audit log, CLI, offline demo, 23 testů, CI job), produktový koncept `docs/KONCEPT.md`, nová stránka `legent/agenti.html` (katalog, diagram průběhu, úrovně autonomie L0–L3, živá ukázka kontroly faktury nad stejnými pravidly jako agent, FAQ + JSON-LD), odkazy z navigace, patičky, úvodu, článku a llms.txt. Lighthouse agenti.html: 98/100/100/100. Opraveno: duplicitní „Insights“ v mobilním menu Legent.

@@ -7,7 +7,7 @@
 //
 //   npm run build            → přepíše soubory
 //   node tools/build.mjs --check → jen ověří, že je vše aktuální (pro CI/testy)
-import { readFileSync, writeFileSync, readdirSync, statSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, readdirSync, statSync, existsSync, mkdirSync } from 'node:fs';
 import { join, dirname, relative, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -83,12 +83,17 @@ for (const file of walk(ROOT)) {
 }
 
 // Sdílený JS: zdroj assets/js/site.js → kopie pro samostatně nasaditelný web Legent AI
-const SHARED = [['assets/js/site.js', 'legent/assets/js/site.js']];
+const SHARED = [
+  ['assets/js/site.js', 'legent/assets/js/site.js'],
+  // Pravidla agentů Legent AI pro živou ukázku na stránce legent/agenti.html (stejný kód jako agent)
+  ['legent-agents/src/validators/cz.js', 'legent/assets/js/agents/validators/cz.js'],
+  ['legent-agents/src/rules/invoice-rules.js', 'legent/assets/js/agents/rules/invoice-rules.js'],
+];
 for (const [from, to] of SHARED) {
   const src = '/* KOPIE z ' + from + ' — needitovat zde, spusťte npm run build */\n' + readFileSync(join(ROOT, from), 'utf8');
   const dest = join(ROOT, to);
   const cur = existsSync(dest) ? readFileSync(dest, 'utf8') : '';
-  if (cur !== src) { if (CHECK) stale.push(to); else { writeFileSync(dest, src); changed++; } }
+  if (cur !== src) { if (CHECK) stale.push(to); else { mkdirSync(dirname(dest), { recursive: true }); writeFileSync(dest, src); changed++; } }
 }
 
 if (CHECK) {

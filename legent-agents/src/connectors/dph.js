@@ -38,7 +38,4 @@ export async function checkVatPayer(dic, { fetchImpl = fetch, timeoutMs = 8000 }
 }
 
 /** Je účet mezi zveřejněnými? (porovnání bez úvodních nul a mezer) */
-export function isPublishedAccount(account, published) {
-  const norm = (a) => String(a).replace(/\s/g, '').replace(/^0+-?/, '').replace(/-0+/, '-').toUpperCase();
-  return published.some((p) => norm(p) === norm(account));
-}
+export { isPublishedAccount } from '../validators/cz.js';

@@ -6,7 +6,7 @@ Stav k 19. 11. 2026 (fáze 2 a 3: 36 stránek včetně anglických a vietnamské
 
 | Oblast | Výsledek |
 |---|---|
-| Stránek celkem | 36 (Legacy 23 vč. EN a VI, Legent 13 vč. EN) |
+| Stránek celkem | 37 (Legacy 23 vč. EN a VI, Legent 14 vč. EN) |
 | HTML validace (`html-validate`) | 0 chyb |
 | Přístupnost (axe-core, světlý i tmavý režim) | 0 kritických a vážných nálezů |
 | Rozbité interní odkazy a kotvy | 0 |
@@ -15,11 +15,12 @@ Stav k 19. 11. 2026 (fáze 2 a 3: 36 stránek včetně anglických a vietnamské
 | Korektura textů | 2 nezávislá kola (CZ + EN), 70 nálezů zapracováno |
 | Externí požadavky (fonty, trackery) | 0 — vše self-hosted, bez cookies |
 | SEO kontrola (titulky, popisky, canonical, sitemap, sirotci) | prochází |
-| Funkční testy | téma, mobilní menu, formuláře (CZ i EN hlášky), předvyplnění tématu, Exit test (+ zapamatování), AI audit, kalkulačka (+ stav v URL), ROI |
+| Funkční testy | téma, mobilní menu, formuláře (CZ i EN hlášky), předvyplnění tématu, Exit test (+ zapamatování), AI audit, kalkulačka (+ stav v URL), ROI, živá ukázka kontroly faktury (Legent Agenti) |
 | Lighthouse (mobil, simulované 4G) | výkon 98–100, přístupnost/best practices/SEO 100 |
+| Sada agentů `legent-agents/` | 23/23 testů (`node --test`), offline demo celé pipeline, samostatný CI job |
 | CI (GitHub Actions) | zelené |
 
-## Lighthouse — všechny indexované stránky (mobil, 34 stránek)
+## Lighthouse — všechny indexované stránky (mobil, 35 stránek)
 
 | Stránka | Výkon | Přístupnost | Best practices | SEO | LCP | CLS | TBT |
 |---|---|---|---|---|---|---|---|
@@ -39,6 +40,7 @@ Stav k 19. 11. 2026 (fáze 2 a 3: 36 stránek včetně anglických a vietnamské
 | `kalkulacka.html` | 100 | 100 | 100 | 100 | 1.4 s | 0 | 50 ms |
 | `kontakt.html` | 100 | 100 | 100 | 100 | 1.4 s | 0 | 70 ms |
 | `kupci.html` | 100 | 100 | 100 | 100 | 1.4 s | 0 | 30 ms |
+| `legent/agenti.html` | 98 | 100 | 100 | 100 | 2.4 s | 0 | 0 ms |
 | `legent/ai-audit.html` | 100 | 100 | 100 | 100 | 1.2 s | 0 | 10 ms |
 | `legent/en/index.html` | 100 | 100 | 100 | 100 | 1.2 s | 0 | 60 ms |
 | `legent/index.html` | 100 | 100 | 100 | 100 | 1.2 s | 0 | 30 ms |
